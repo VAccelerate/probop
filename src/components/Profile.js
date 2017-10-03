@@ -5,6 +5,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <Form>
+        <h1>Profile</h1>
         <FormGroup>
           <Label for="exampleEmail" sm={2}>Name</Label>
           <Input type="text" name="name" id="name" placeholder="Name" />
@@ -29,11 +30,16 @@ export default class Example extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="Ethnicity" sm={2}>Ethnicity</Label>
-          <Input type="select" name="ethnicity" id="ethnicity" />
+          <Input type="select" name="ethnicity" id="ethnicity" >
+            <option>Maori</option>
+            <option>Pakeha/NZ European</option>
+            <option>Pasifika</option>
+            <option>...</option>
+          </Input>
         </FormGroup>
         <FormGroup check>
           <Col sm={{ size: 10, offset: 2 }}>
-            <Button>Submit</Button>
+            <Button>Next</Button>
           </Col>
         </FormGroup>
       </Form>
