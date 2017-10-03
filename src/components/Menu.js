@@ -34,7 +34,7 @@ class Menu extends React.Component {
                 <NavLink href="./components/Contacts">Setup Contacts</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="./components/Helplines">Helplines</NavLink>
+                <Link to="/helplines">Helplines</Link>
               </NavItem>
               <NavItem>
                 <NavLink href="./components/Guide">How To Use Guide</NavLink>
