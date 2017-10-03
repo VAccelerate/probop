@@ -11,8 +11,8 @@ class App extends Component {
         <Menu />
         <Dashboard />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
