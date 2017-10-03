@@ -1,3 +1,7 @@
 language: node_js
+before_install: 
+ - 'yarn install'
+before_script:
+ - 'yarn build'
 notifications:
   slack: bopmasters:G1jozpIb25zq4D5vYuxBR8XR
