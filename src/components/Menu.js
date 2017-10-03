@@ -33,7 +33,7 @@ export default class Menu extends React.Component {
                 <NavLink href="./components/Helplines">Helplines</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="./components/Guide">How To Guide</NavLink>
+                <NavLink href="./components/Guide">How To Use Guide</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
