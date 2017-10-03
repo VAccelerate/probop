@@ -6,7 +6,8 @@
     "bootstrap": "4.0.0-alpha.6",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-strap": "^0.0.1"
+    "react-transition-group": "^2.2.1",
+    "reactstrap": "^4.8.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.14"
