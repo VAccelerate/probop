@@ -41,7 +41,7 @@ class Dashboard extends Component{
             <p>TBC Help is on the way</p>
           </ModalBody>
           <ModalFooter>
-            <Button color="success" onClick={this.toggle}>I'm feeling safe now</Button>
+            <Button color="success" onClick={this.toggle}>I&#39;m feeling safe now</Button>
           </ModalFooter>
         </Modal>
       </div>
