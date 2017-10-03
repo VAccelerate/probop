@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Dashboard from './components/Dashboard'
 import Contacts from './components/Contacts'
+import ListContacts from './components/ListContacts'
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <Dashboard />
         <Contacts />
+        <ListContacts />
       </div>
     );
   }
