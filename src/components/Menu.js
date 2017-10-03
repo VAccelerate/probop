@@ -1,5 +1,6 @@
 import React from 'react'
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -24,7 +25,10 @@ class Menu extends React.Component {
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="./components/Profile">Manage Profile</NavLink>
+                <Link to="/">Dashboard</Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/profile">Manage Profile</Link>
               </NavItem>
               <NavItem>
                 <NavLink href="./components/Contacts">Setup Contacts</NavLink>
