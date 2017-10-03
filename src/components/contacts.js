@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import { Button } from 'reactstrap'
+import { ListGroup, ListGroupItem } from 'reactstrap'
 
-const Contacts = (props) => {
+//ListGroup AND ListGroupItem does not exist but are required.
+
+export default class Contacts extends React.Component {
+  render() {
     return (
-      <div>
-        <h1>Contacts</h1>
-        <Button color="danger">danger</Button>
-        <Button color="warning">warning</Button>
-      </div>
-    )
+      <ListGroup>
+        <ListGroupItem disabled tag="a" href="#">Jeremy</ListGroupItem>
+        <ListGroupItem tag="a" href="#">Pauline</ListGroupItem>
+        <ListGroupItem tag="a" href="#">Zayne</ListGroupItem>
+        <ListGroupItem tag="a" href="#">Damon</ListGroupItem>
+        <ListGroupItem tag="a" href="#">BopSass</ListGroupItem>
+      </ListGroup>
+    );
+  }
 }
-
-export default Contacts
