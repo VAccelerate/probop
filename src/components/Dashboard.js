@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
-import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap'
+import { 
+        Button,
+        Modal
+} from 'reactstrap'
 // import SafeModal from './SafeModal'
 
 class Dashboard extends Component{
 
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state = {
-      modal:true
-    }
+    this.state = {modal: false}
     this.toggle = this.toggle.bind(this)
+    console.log(this.state)
   }
 
   toggle(){
     this.setState({
-      modal: true
-    })
-    console.log(this.state.modal)
+      modal: !this.state.modal
+    }, () => console.log(this.state.modal))
   }
 
   render(){
@@ -33,14 +34,6 @@ class Dashboard extends Component{
           <h3>I&#39;m feeling vulnerable</h3>
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalBody>
-            Danger Alert Sent!
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
-              Im feeling safe now
-            </Button>
-          </ModalFooter>
         </Modal>
       </div>
     )
