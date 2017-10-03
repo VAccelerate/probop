@@ -24,3 +24,5 @@ matrix:
   include:
     - node_js: 0.10
       env: TEST_SUITE=simple
+notifications:
+  slack: bopmasters:G1jozpIb25zq4D5vYuxBR8XR
