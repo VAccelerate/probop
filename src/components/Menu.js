@@ -21,14 +21,19 @@ export default class Menu extends React.Component {
       <div>
         <Navbar color="faded" light>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
                 <NavLink href="./components/Profile">Manage Profile</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="./components/Contacts">Contact for the Alert</NavLink>
+                <NavLink href="./components/Contacts">Setup Contacts</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="./components/Helplines">Helplines</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="./components/Guide">How To Guide</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
