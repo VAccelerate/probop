@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
-export default class Example extends React.Component {
+class Profile extends React.Component {
   render() {
     return (
       <Form>
@@ -43,6 +43,8 @@ export default class Example extends React.Component {
           </Col>
         </FormGroup>
       </Form>
-    );
+    )
   }
 }
+
+export default Profile
