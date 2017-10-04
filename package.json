@@ -4,21 +4,34 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-beta",
+    "install": "^0.10.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-responsive-carousel": "^3.1.27",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^1.1.2",
     "reactstrap": "^4.8.0"
   },
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "react-scripts": "1.0.14"
+    "husky": "^0.14.3",
+    "react-scripts": "1.0.14",
+    "standard": "^10.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "precommit": "yarn standard",
+    "prepush": "yarn standard"
+  },
+  "standard": {
+    "ignore": [
+      "**/src/registerServiceWorker.js"
+    ],
+    "globals": [
+      "it"
+    ]
   }
 }

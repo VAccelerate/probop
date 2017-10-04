@@ -5,23 +5,23 @@ import ManageContacts from './ManageContacts'
 import Menu from './Menu'
 
 class Contacts extends Component {
-  constructor(props){
+  constructor (props) {
     super(props)
-      this.state = {manageVisible: false}
-      this.toggle = this.toggle.bind(this)
-    }
+    this.state = {manageVisible: false}
+    this.toggle = this.toggle.bind(this)
+  }
 
-  toggle(){
+  toggle () {
     this.setState({
       manageVisible: !this.state.manageVisible
     })
   }
 
-  render() {
+  render () {
     return (
       <div>
-        {!this.state.manageVisible ?
-          <div>
+        {!this.state.manageVisible
+          ? <div>
             <Menu />
             <h1>Contacts</h1>
             <ListGroup>
@@ -37,13 +37,12 @@ class Contacts extends Component {
               <ListGroupItem>
                 <ListGroupItemHeading>Zayne Imtiaz</ListGroupItemHeading>
               </ListGroupItem>
-            </ListGroup><br></br>
-            <Button color="primary" size="lg" onClick={this.toggle}>
+            </ListGroup><br />
+            <Button color='primary' size='lg' onClick={this.toggle}>
               Add Contact
             </Button>
           </div>
-          :
-          <ManageContacts />
+          : <ManageContacts />
         }
       </div>
     )
