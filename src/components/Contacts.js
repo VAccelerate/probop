@@ -3,7 +3,7 @@ import { ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading, Butt
 import ManageContacts from './ManageContacts'
 
 
-class Contacts extends React.Component {
+class Contacts extends Component {
 
   constructor(props){
       super(props)

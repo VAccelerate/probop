@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
- class ManageContacts extends React.Component {
+ class ManageContacts extends Component {
   render() {
     return (
       <div>
