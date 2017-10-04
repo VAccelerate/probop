@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import { Carousel } from 'react-responsive-carousel'
 import { Link } from 'react-router-dom'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 class Guide extends Component {
   render () {
