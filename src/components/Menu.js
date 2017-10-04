@@ -37,7 +37,7 @@ class Menu extends React.Component {
                 <Link to="/helplines">Helplines</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="guide">How To Use Guide</NavLink>
+                <Link to="/guide">How To Use Guide</Link>
               </NavItem>
             </Nav>
           </Collapse>
