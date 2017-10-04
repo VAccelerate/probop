@@ -31,13 +31,13 @@ class Menu extends React.Component {
                 <Link to="/profile">Manage Profile</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="./components/Contacts">Setup Contacts</NavLink>
+                <NavLink href="/contacts">Setup Contacts</NavLink>
               </NavItem>
               <NavItem>
                 <Link to="/helplines">Helplines</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="./components/Guide">How To Use Guide</NavLink>
+                <NavLink href="guide">How To Use Guide</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

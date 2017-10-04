@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-beta",
+    "install": "^0.10.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-responsive-carousel": "^3.1.27",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^1.1.2",
