@@ -2,13 +2,13 @@ import React from 'react'
 
 import Menu from './Menu'
 
-const Helpline = (props) => {
+const Helplines = (props) => {
     return (
       <div>
         <Menu />
-        <h1>Helpline</h1>
+        <h1>Helplines</h1>
       </div>
     )
 }
 
-export default Helpline
+export default Helplines
