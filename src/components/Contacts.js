@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading, Button } from 'reactstrap'
 import ManageContacts from './ManageContacts'
 
-//ListGroup AND ListGroupItem does not exist but are required.
 
 class Contacts extends React.Component {
 
