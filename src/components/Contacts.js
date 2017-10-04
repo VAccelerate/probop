@@ -45,7 +45,6 @@ class Contacts extends Component {
           <ManageContacts />
         }
       </div>
-
     )
   }
 }
