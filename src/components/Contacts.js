@@ -20,6 +20,7 @@ class Contacts extends Component {
   render() {
     return (
       <div>
+        <Menu />
         {!this.state.manageVisible ?
           <div>
             <Menu />
