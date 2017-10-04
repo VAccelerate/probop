@@ -10,9 +10,9 @@ import Guide from './components/Guide'
 const App = (props) => (
   <div>
     <Switch>
-      <Route exact path='/' component={Dashboard}/>
-      <Route path='/profile' component={Profile}/>
-      <Route path='/helplines' component={Helplines}/>
+      <Route exact path='/' component={Dashboard} />
+      <Route path='/profile' component={Profile} />
+      <Route path='/helplines' component={Helplines} />
       <Route path='/contacts' component={Contacts} />
       <Route path='/guide' component={Guide} />
     </Switch>

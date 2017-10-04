@@ -1,5 +1,5 @@
 import React from 'react'
-import { 
+import {
   Button,
   Modal,
   ModalBody,
@@ -7,14 +7,14 @@ import {
 } from 'reactstrap'
 
 const SafeModal = (props) => {
-  return(
+  return (
     <Modal isOpen={props.modal} toggle={props.toggle} autoFocus={false}>
       <ModalBody>
         <h1>Danger alert sent!</h1>
         <p>TBC Help is on the way</p>
       </ModalBody>
       <ModalFooter>
-        <Button color="success" onClick={props.toggle}>
+        <Button color='success' onClick={props.toggle}>
           I&#39;m feeling safe now
         </Button>
       </ModalFooter>
