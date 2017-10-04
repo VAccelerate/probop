@@ -31,7 +31,7 @@ class Menu extends React.Component {
                 <Link to="/profile">Manage Profile</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="./components/Contacts">Setup Contacts</NavLink>
+                <Link to="/contacts">Setup Contacts</Link>
               </NavItem>
               <NavItem>
                 <Link to="/helplines">Helplines</Link>
