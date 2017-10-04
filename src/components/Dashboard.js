@@ -9,13 +9,12 @@ class Dashboard extends Component{
     super(props)
     this.state = {modal: false}
     this.toggle = this.toggle.bind(this)
-    console.log(this.state)
   }
 
   toggle(){
     this.setState({
       modal: !this.state.modal
-    }, () => console.log(this.state.modal))
+    })
   }
 
   render(){
