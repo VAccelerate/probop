@@ -12,6 +12,7 @@
     "reactstrap": "^4.8.0"
   },
   "devDependencies": {
+    "eslint": "^4.8.0",
     "react-scripts": "1.0.14"
   },
   "scripts": {
