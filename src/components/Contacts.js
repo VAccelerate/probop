@@ -6,16 +6,16 @@ import ManageContacts from './ManageContacts'
 class Contacts extends Component {
 
   constructor(props){
-      super(props)
+    super(props)
       this.state = {manageVisible: false}
       this.toggle = this.toggle.bind(this)
     }
 
-    toggle(){
-      this.setState({
-        manageVisible: !this.state.manageVisible
-        })
-    }
+  toggle(){
+    this.setState({
+      manageVisible: !this.state.manageVisible
+    })
+  }
 
   render() {
     return (
