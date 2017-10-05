@@ -18,7 +18,7 @@ class ManageContacts extends Component {
           <FormGroup check>
             <Label check>
               <Input type='checkbox' />{' '}
-              Vulnerable
+            Vulnerable
           </Label>
             <Label check>
               <Input type='checkbox' />{' '}
