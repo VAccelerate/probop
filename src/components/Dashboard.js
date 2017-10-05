@@ -3,6 +3,7 @@ import { Button } from 'reactstrap'
 
 import SafeModal from './SafeModal'
 import Menu from './Menu'
+import { getUserLocation } from '../helpers'
 
 class Dashboard extends Component {
   constructor (props) {
@@ -11,7 +12,11 @@ class Dashboard extends Component {
       modal: false,
       contact: 'sms://+14035550185',
       vulnerableMessage: '?body=I%20am%20feeling%20vulnerable',
-      dangerMessage: '?body=I%20am%20in%20danger'
+      dangerMessage: '?body=I%20am%20in%20danger',
+      userLocation: {
+        latitude: 0,
+        longitude: 0
+      }
     }
     this.toggle = this.toggle.bind(this)
   }
@@ -19,6 +24,13 @@ class Dashboard extends Component {
   toggle () {
     this.setState({
       modal: !this.state.modal
+    })
+  }
+  componentDidMount () {
+    getUserLocation ((position) => {
+      this.setState({
+        userLocation: position
+      })
     })
   }
 
@@ -41,6 +53,7 @@ class Dashboard extends Component {
           </Button>
         </a>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
+        {console.log(this.state.userLocation)}
       </div>
     )
   }
