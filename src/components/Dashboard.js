@@ -54,6 +54,9 @@ class Dashboard extends Component {
         </a>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
         {console.log(this.state.userLocation)}
+        <br />
+        <br />
+        <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>
       </div>
     )
   }
