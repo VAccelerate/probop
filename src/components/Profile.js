@@ -1,18 +1,40 @@
+/* global localStorage */
 import React from 'react'
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 import Menu from './Menu'
 
 class Profile extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      submitted: false,
+      name: ''
+    }
+    this.onSubmit = this.onSubmit.bind(this)
+  }
+
+  onSubmit (e) {
+    e.preventDefault()
+    localStorage.setItem('profileName', e.target.elements[0].value)
+    localStorage.setItem('profileDOB', e.target.elements[1].value)
+    localStorage.setItem('profileMobile', e.target.elements[2].value)
+    localStorage.setItem('profileEmail', e.target.elements[3].value)
+  }
+
+  // componentDidMount(){
+  //   alert(this.refs.name.value)
+  // }
+
   render () {
     return (
       <div>
         <Menu />
-        <Form>
+        <Form onSubmit={this.onSubmit}>
           <h1>Profile</h1>
           <FormGroup>
-            <Label for='exampleEmail' sm={2}>Name</Label>
-            <Input type='text' name='name' id='name' placeholder='Name' />
+            <Label for='name' sm={2}>Name</Label>
+            <Input type='text' id='name' name='name' value='tesfsxt' />
           </FormGroup>
           <FormGroup>
             <Label for='DOB' sm={2}>Date of birth</Label>
@@ -20,7 +42,7 @@ class Profile extends React.Component {
           </FormGroup>
           <FormGroup>
             <Label for='mobile' sm={2}>Mobile Number</Label>
-            <Input type='number' name='mobile' id='mobile' placeholder='Mobile' />
+            <Input type='text' name='mobile' id='mobile' placeholder='Mobile' />
           </FormGroup>
           <FormGroup>
             <Label for='email' sm={2}>Email</Label>
