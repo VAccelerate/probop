@@ -1,5 +1,5 @@
 /* global localStorage */
-import React from 'react'
+import React, { Component } from 'react'
 import { Col, Button, Form, FormGroup, Label, Input, Modal,
 ModalBody,
 ModalFooter } from 'reactstrap'
@@ -16,11 +16,11 @@ import {
   PROFILE_ETHNICITY
 } from '../constants'
 
-class Profile extends React.Component {
+class Profile extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      modal: false,
+      modal: false
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.toggle = this.toggle.bind(this)
@@ -28,7 +28,7 @@ class Profile extends React.Component {
 
   onSubmit (e) {
     e.preventDefault()
-    for (const element of e.target.elements){
+    for (const element of e.target.elements) {
       localStorage.setItem(element.id, element.value)
     }
     this.toggle()
