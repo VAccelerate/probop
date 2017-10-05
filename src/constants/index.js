@@ -1,3 +1,4 @@
+export const PROFILE = 'profile'
 export const PROFILE_NAME = 'profileName'
 export const PROFILE_DOB = 'profileDOB'
 export const PROFILE_MOBILE = 'profileMobile'
