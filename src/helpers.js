@@ -1,10 +1,14 @@
 export function getUserLocation (callback) {
   navigator.geolocation.getCurrentPosition(
-      (position) => {
-        callback({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude
-        })
+      (err, position) => {
+        if (err) {
+          callback(err, position)
+        } else {
+          callback(err, {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          })
+        }
       }
     )
 }
