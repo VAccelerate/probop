@@ -29,8 +29,7 @@
   },
   "standard": {
     "ignore": [
-      "**/src/registerServiceWorker.js",
-      "**/src/components/Guide.js"
+      "**/src/registerServiceWorker.js"
     ],
     "globals": [
       "it"
