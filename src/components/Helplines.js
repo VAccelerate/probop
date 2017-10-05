@@ -1,19 +1,21 @@
 import React from 'react'
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap'
 import Menu from './Menu'
+import * as FontAwesome from 'react-icons/lib/fa'
 
 const Helplines = (props) => {
   return (
     <div>
       <Menu />
       <h1>Helplines</h1>
+      <h3> Lets go for a ? </h3>
       <ListGroup>
         <ListGroup>
           <ListGroupItem>
             <ListGroupItemHeading>
               Alcohol & Drug Helpline
             </ListGroupItemHeading>
-            <p>0800 787 797<br />https://alcoholdrughelp.org.nz/</p>
+            <p><FontAwesome.FaPhone />0800 787 797<br /><FontAwesome.FaEnvelope />https://alcoholdrughelp.org.nz/</p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
