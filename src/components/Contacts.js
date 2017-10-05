@@ -37,6 +37,9 @@ class Contacts extends Component {
               <ListGroupItem>
                 <ListGroupItemHeading>Zayne Imtiaz</ListGroupItemHeading>
               </ListGroupItem>
+              <ListGroupItem>
+                <ListGroupItemHeading>Damen</ListGroupItemHeading>
+              </ListGroupItem>
             </ListGroup><br />
             <Button color='primary' size='lg' onClick={this.toggle}>
               Add Contact
