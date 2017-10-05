@@ -1,30 +1,44 @@
 /* global localStorage */
 import React from 'react'
-import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Col, Button, Form, FormGroup, Label, Input, Modal,
+ModalBody,
+ModalFooter } from 'reactstrap'
 
 import Menu from './Menu'
+import {
+  PROFILE_NAME,
+  PROFILE_DOB,
+  PROFILE_EMAIL,
+  PROFILE_MOBILE,
+  PROFILE_ADRS1,
+  PROFILE_ADRS2,
+  PROFILE_CITY,
+  PROFILE_ETHNICITY
+} from '../constants'
 
 class Profile extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      submitted: false,
-      name: ''
+      modal: false,
     }
     this.onSubmit = this.onSubmit.bind(this)
+    this.toggle = this.toggle.bind(this)
   }
 
   onSubmit (e) {
     e.preventDefault()
-    localStorage.setItem('profileName', e.target.elements[0].value)
-    localStorage.setItem('profileDOB', e.target.elements[1].value)
-    localStorage.setItem('profileMobile', e.target.elements[2].value)
-    localStorage.setItem('profileEmail', e.target.elements[3].value)
+    for (const element of e.target.elements){
+      localStorage.setItem(element.id, element.value)
+    }
+    this.toggle()
   }
 
-  // componentDidMount(){
-  //   alert(this.refs.name.value)
-  // }
+  toggle () {
+    this.setState({
+      modal: !this.state.modal
+    })
+  }
 
   render () {
     return (
@@ -34,29 +48,29 @@ class Profile extends React.Component {
           <h1>Profile</h1>
           <FormGroup>
             <Label for='name' sm={2}>Name</Label>
-            <Input type='text' id='name' name='name' value='tesfsxt' />
+            <Input type='text' name='name' id={PROFILE_NAME} defaultValue={localStorage.getItem(PROFILE_NAME)} />
           </FormGroup>
           <FormGroup>
             <Label for='DOB' sm={2}>Date of birth</Label>
-            <Input type='date' name='date' id='date' />
+            <Input type='date' name='date' id={PROFILE_DOB} defaultValue={localStorage.getItem(PROFILE_DOB)} />
           </FormGroup>
           <FormGroup>
             <Label for='mobile' sm={2}>Mobile Number</Label>
-            <Input type='text' name='mobile' id='mobile' placeholder='Mobile' />
+            <Input type='text' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={localStorage.getItem(PROFILE_MOBILE)} />
           </FormGroup>
           <FormGroup>
             <Label for='email' sm={2}>Email</Label>
-            <Input type='email' name='email' id='email' placeholder='Email' />
+            <Input type='email' name='email' id={PROFILE_EMAIL} placeholder='Email' defaultValue={localStorage.getItem(PROFILE_EMAIL)} />
           </FormGroup>
           <FormGroup>
             <Label for='Address' sm={2}>Address</Label>
-            <Input type='text' name='address1' id='address1' placeholder='Address Line 1' />
-            <Input type='text' name='address2' id='address2' placeholder='Address Line 2' />
-            <Input type='text' name='city' id='city' placeholder='City' />
+            <Input type='text' name='address1' id={PROFILE_ADRS1} placeholder='Address Line 1' defaultValue={localStorage.getItem(PROFILE_ADRS1)} />
+            <Input type='text' name='address2' id={PROFILE_ADRS2} placeholder='Address Line 2' defaultValue={localStorage.getItem(PROFILE_ADRS2)} />
+            <Input type='text' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={localStorage.getItem(PROFILE_CITY)} />
           </FormGroup>
           <FormGroup>
-            <Label for='Ethnicity' sm={2}>Ethnicity</Label>
-            <Input type='select' name='ethnicity' id='ethnicity' >
+            <Label for='ethnicity' sm={2}>Ethnicity</Label>
+            <Input type='select' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={localStorage.getItem(PROFILE_ETHNICITY)} >
               <option>Maori</option>
               <option>Pakeha/NZ European</option>
               <option>Pasifika</option>
@@ -65,10 +79,20 @@ class Profile extends React.Component {
           </FormGroup>
           <FormGroup check>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Next</Button>
+              <Button>Submit</Button>
             </Col>
           </FormGroup>
         </Form>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} autoFocus={false} backdrop='static'>
+          <ModalBody>
+            <h1>Profile Updated Successfully</h1>
+          </ModalBody>
+          <ModalFooter>
+            <Button color='success' onClick={this.toggle}>
+            OK
+            </Button>
+          </ModalFooter>
+        </Modal>
       </div>
     )
   }

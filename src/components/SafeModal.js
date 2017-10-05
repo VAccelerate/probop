@@ -8,7 +8,7 @@ import {
 
 const SafeModal = (props) => {
   return (
-    <Modal isOpen={props.modal} toggle={props.toggle} autoFocus={false}>
+    <Modal isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
       <ModalBody>
         <h1>Danger alert sent!</h1>
         <p>TBC Help is on the way</p>
