@@ -16,55 +16,55 @@ const Helplines = (props) => {
             <ListGroupItemHeading>
                 Alcohol & Drug Helpline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone />  0800 787 797<br /><FontAwesome.FaEnvelope /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800787797'>0800 787 797</a> <br /><FontAwesome.FaGlobe /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
                 Are you Okay (Violence Helpline)
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone />  0800 456 450<br /><FontAwesome.FaEnvelope /> <a href='http://www.areyouok.org.nz/'>http://www.areyouok.org.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800456450'>0800 456 450</a> <br /><FontAwesome.FaGlobe /> <a href='http://www.areyouok.org.nz/'>http://www.areyouok.org.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
                 Depression Hotline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone />0800 111 757<br /><FontAwesome.FaCommenting /> 4202 <br /> <FontAwesome.FaEnvelope /> <a href='https://depression.org.nz/'>https://depression.org.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800456450'>0800 111 757</a> <br /><FontAwesome.FaCommenting /> 4202 <br /> <FontAwesome.FaGlobe /> <a href='https://depression.org.nz/'>https://depression.org.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
                 Lifeline (Crisis Support)
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone />  0800 543 354<br /><FontAwesome.FaEnvelope /> <a href='https://www.lifeline.org.nz/'>https://www.lifeline.org.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800543354'>0800 543 354</a> <br /><FontAwesome.FaGlobe /> <a href='https://www.lifeline.org.nz/'>https://www.lifeline.org.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
                 Pacifika Helpline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone /> 0800 787 799<br /><FontAwesome.FaCommenting /> 8681</p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800787799'>0800 787 799</a> <br /><FontAwesome.FaCommenting /> 8681</p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
             Outline (Sexuality & Gender Support)
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone /> 0800 688 5463<br /><FontAwesome.FaEnvelope /> <a href='http://www.outline.org.nz/'>http://www.outline.org.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+648006885463'>0800 688 5463</a> <br /><FontAwesome.FaGlobe /> <a href='http://www.outline.org.nz/'>http://www.outline.org.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
             Shakti (Ethnic women support)
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone />  0800 742 584<br /><FontAwesome.FaEnvelope /> <a href='http://shakti-international.org/'>http://shakti-international.org/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800742584'>0800 742 584</a> <br /><FontAwesome.FaGlobe /> <a href='http://shakti-international.org/'>http://shakti-international.org/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
             Youthline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone />  0800 376 633<br /><FontAwesome.FaCommenting /> 234<br /><FontAwesome.FaEnvelope /> <a href='https://www.youthline.co.nz/'>https://www.youthline.co.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800376633'>0800 376 633</a> <br /><FontAwesome.FaCommenting /> 234<br /><FontAwesome.FaGlobe /> <a href='https://www.youthline.co.nz/'>https://www.youthline.co.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
             Safe to Talk (Sexaul Assault Support Line)
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone /><br /><FontAwesome.FaCommenting /><br /><FontAwesome.FaEnvelope /> </p>
+            <p><FontAwesome.FaPhone /><br /><FontAwesome.FaCommenting /><br /><FontAwesome.FaGlobe /> </p>
           </ListGroupItem>
         </ListGroup>
       </ListGroup>
