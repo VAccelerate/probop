@@ -28,7 +28,7 @@ const Helplines = (props) => {
             <ListGroupItemHeading>
                 Depression Hotline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone /><a href='tel://+64800456450'>0800 111 757</a> <br /><FontAwesome.FaCommenting /> 4202 <br /> <FontAwesome.FaGlobe /> <a href='https://depression.org.nz/'>https://depression.org.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800456450'>0800 111 757</a> <br /><FontAwesome.FaCommenting /> <a href='sms://4202'>4202</a> <br /> <FontAwesome.FaGlobe /> <a href='https://depression.org.nz/'>https://depression.org.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
@@ -40,7 +40,7 @@ const Helplines = (props) => {
             <ListGroupItemHeading>
                 Pacifika Helpline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone /><a href='tel://+64800787799'>0800 787 799</a> <br /><FontAwesome.FaCommenting /> 8681</p>
+            <p><FontAwesome.FaPhone /> <a href='tel://+64800787799'>0800 787 799</a> <br /><FontAwesome.FaCommenting /> <a href='sms://8681'>8681</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
@@ -58,7 +58,7 @@ const Helplines = (props) => {
             <ListGroupItemHeading>
             Youthline
               </ListGroupItemHeading>
-            <p><FontAwesome.FaPhone /><a href='tel://+64800376633'>0800 376 633</a> <br /><FontAwesome.FaCommenting /> 234<br /><FontAwesome.FaGlobe /> <a href='https://www.youthline.co.nz/'>https://www.youthline.co.nz/</a></p>
+            <p><FontAwesome.FaPhone /><a href='tel://+64800376633'>0800 376 633</a> <br /><FontAwesome.FaCommenting /> <a href='sms://234'>234</a><br /><FontAwesome.FaGlobe /> <a href='https://www.youthline.co.nz/'>https://www.youthline.co.nz/</a></p>
           </ListGroupItem>
           <ListGroupItem>
             <ListGroupItemHeading>
