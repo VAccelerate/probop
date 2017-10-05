@@ -1,8 +1,16 @@
 /* global localStorage */
 import React, { Component } from 'react'
-import { Col, Button, Form, FormGroup, Label, Input, Modal,
-ModalBody,
-ModalFooter } from 'reactstrap'
+import {
+  Col,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Modal,
+  ModalBody,
+  ModalFooter
+} from 'reactstrap'
 
 import Menu from './Menu'
 import {
