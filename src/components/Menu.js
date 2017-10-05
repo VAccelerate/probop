@@ -1,5 +1,5 @@
 import React from 'react'
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink } from 'reactstrap'
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 class Menu extends React.Component {
@@ -37,7 +37,7 @@ class Menu extends React.Component {
                 <Link to='/helplines'>Helplines</Link>
               </NavItem>
               <NavItem>
-                <Link to="/guide">How To Use Guide</Link>
+                <Link to='/guide'>How To Use Guide</Link>
               </NavItem>
             </Nav>
           </Collapse>
