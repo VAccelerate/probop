@@ -16,7 +16,8 @@ class Dashboard extends Component {
       userLocation: {
         latitude: 0,
         longitude: 0
-      }
+      },
+      showUserLocation: false
     }
     this.toggle = this.toggle.bind(this)
   }
@@ -30,7 +31,8 @@ class Dashboard extends Component {
   componentDidMount () {
     getUserLocation((position) => {
       this.setState({
-        userLocation: position
+        userLocation: position,
+        showUserLocation: true
       })
     })
     let userAgent = navigator.userAgent || navigator.vendor || window.opera
@@ -61,10 +63,10 @@ class Dashboard extends Component {
           </Button>
         </a>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
-        {console.log(this.state.userLocation)}
+        {console.log(this.state.userLocation.coords)}
         <br />
         <br />
-        <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>
+        {this.state.showUserLocation ? <a href={`http://www.google.com/maps/place/${this.state.userLocation.coords.latitude},${this.state.userLocation.coords.longitude}`}>See Where I am</a> : null}
       </div>
     )
   }
