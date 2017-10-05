@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
-import { BrowserRouter } from 'react-router-dom'
 
 import SafeModal from './SafeModal'
 import Menu from './Menu'
@@ -23,25 +22,24 @@ class Dashboard extends Component {
     })
   }
 
-  sendSMS (message) {
-    let path = this.state.contact + this.state[message]
-    console.log(path)
-  }
-
   render () {
     return (
       <div>
         <Menu />
         <h1>Dashboard</h1>
-        <Button color='danger' onClick={()=>{this.toggle(); this.sendSMS('dangerMessage')}}>
-          <h3>I need urgent help</h3>
-          <p>TBC</p>
-        </Button>
+        <a href={this.state.contact + this.state.dangerMessage}>
+          <Button color='danger' onClick={this.toggle}>
+            <h3>I need urgent help</h3>
+            <p>TBC</p>
+          </Button>
+        </a>
         <br />
         <br />
-        <Button color='warning' onClick={()=>{this.toggle(); this.sendSMS('vulnerableMessage')}}>
-          <h3>I&#39;m feeling vulnerable</h3>
-        </Button>
+        <a href={this.state.contact + this.state.vulnerableMessage}>
+          <Button color='warning' onClick={this.toggle}>
+            <h3>I&#39;m feeling vulnerable</h3>
+          </Button>
+        </a>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
       </div>
     )
