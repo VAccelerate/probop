@@ -27,7 +27,7 @@ class Dashboard extends Component {
     })
   }
   componentDidMount () {
-    getUserLocation ((position) => {
+    getUserLocation((position) => {
       this.setState({
         userLocation: position
       })
