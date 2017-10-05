@@ -7,9 +7,7 @@ const Helplines = (props) => {
   return (
     <div>
       <Menu />
-      <h1>
-         Helplines
-       </h1>
+      <h1>Helplines</h1>
       <ListGroup>
         <ListGroup>
           <ListGroupItem>
