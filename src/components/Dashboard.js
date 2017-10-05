@@ -10,7 +10,7 @@ class Dashboard extends Component {
     super(props)
     this.state = {
       modal: false,
-      contact: 'sms://+14035550185',
+      contact: 'sms://+14035550185/',
       vulnerableMessage: '?body=I%20am%20feeling%20vulnerable',
       dangerMessage: '?body=I%20am%20in%20danger',
       userLocation: {
@@ -26,12 +26,20 @@ class Dashboard extends Component {
       modal: !this.state.modal
     })
   }
+
   componentDidMount () {
     getUserLocation((position) => {
       this.setState({
         userLocation: position
       })
     })
+    let userAgent = navigator.userAgent || navigator.vendor || window.opera
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      this.setState({
+        vulnerableMessage: '&body=I%20am%20feeling%20vulnerable',
+        dangerMessage: '&body=I%20am%20in%20danger'
+      })
+    }
   }
 
   render () {
