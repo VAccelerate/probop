@@ -16,9 +16,22 @@ class Dashboard extends Component {
       userLocation: {
         latitude: 0,
         longitude: 0
-      }
+      },
+      showUserLocation: false
     }
     this.toggle = this.toggle.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick (e) {
+    e.preventDefault()
+    getUserLocation((position) => {
+      this.setState({
+        userLocation: position
+      })
+      console.log(this.state.userLocation)
+    })
+    this.toggle()
   }
 
   toggle () {
@@ -30,7 +43,8 @@ class Dashboard extends Component {
   componentDidMount () {
     getUserLocation((position) => {
       this.setState({
-        userLocation: position
+        userLocation: position,
+        showUserLocation: true
       })
     })
     let userAgent = navigator.userAgent || navigator.vendor || window.opera
@@ -48,7 +62,7 @@ class Dashboard extends Component {
         <Menu />
         <h1>Dashboard</h1>
         <a href={this.state.contact + this.state.dangerMessage}>
-          <Button color='danger' onClick={this.toggle}>
+          <Button color='danger' onClick={this.handleClick}>
             <h3>I need urgent help</h3>
             <p>TBC</p>
           </Button>
@@ -56,15 +70,14 @@ class Dashboard extends Component {
         <br />
         <br />
         <a href={this.state.contact + this.state.vulnerableMessage}>
-          <Button color='warning' onClick={this.toggle}>
+          <Button color='warning' onClick={this.handleClick}>
             <h3>I&#39;m feeling vulnerable</h3>
           </Button>
         </a>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
-        {console.log(this.state.userLocation)}
         <br />
         <br />
-        <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>
+        {this.state.showUserLocation && <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>}
       </div>
     )
   }
