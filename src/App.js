@@ -6,6 +6,7 @@ import Profile from './components/Profile'
 import Helplines from './components/Helplines'
 import Contacts from './components/Contacts'
 import Guide from './components/Guide'
+// import NoGps from './components/NoGps'
 
 const App = (props) => (
   <div>

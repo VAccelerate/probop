@@ -4,6 +4,7 @@ import { Button } from 'reactstrap'
 import SafeModal from './SafeModal'
 import Menu from './Menu'
 import { getUserLocation } from '../helpers'
+import './Dashboard.css'
 
 class Dashboard extends Component {
   constructor (props) {
@@ -60,20 +61,22 @@ class Dashboard extends Component {
     return (
       <div>
         <Menu />
-        <h1>Dashboard</h1>
-        <a href={this.state.contact + this.state.dangerMessage}>
-          <Button color='danger' onClick={this.handleClick}>
-            <h3>I need urgent help</h3>
-            <p>TBC</p>
-          </Button>
-        </a>
-        <br />
-        <br />
-        <a href={this.state.contact + this.state.vulnerableMessage}>
-          <Button color='warning' onClick={this.handleClick}>
-            <h3>I&#39;m feeling vulnerable</h3>
-          </Button>
-        </a>
+        <div id='googlemaps' />
+        <div id='alerts'>
+          <a href={this.state.contact + this.state.dangerMessage}>
+            <Button color='danger' onClick={this.handleClick}>
+              <h3>I need urgent help</h3>
+              <p>TBC</p>
+            </Button>
+          </a>
+          <br />
+          <br />
+          <a href={this.state.contact + this.state.vulnerableMessage}>
+            <Button color='warning' onClick={this.handleClick}>
+              <h3>I&#39;m feeling vulnerable</h3>
+            </Button>
+          </a>
+        </div>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
         <br />
         <br />

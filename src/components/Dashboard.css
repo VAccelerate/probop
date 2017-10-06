@@ -1,0 +1,13 @@
+#googlemaps { 
+    height: 100%; 
+    width: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 0; /* Set z-index to 0 as it will be on a layer below the alert buttons */
+  }
+  
+  #alerts { 
+    position: relative; 
+    z-index: 1; /* The z-index should be higher than Google Maps */
+  }
