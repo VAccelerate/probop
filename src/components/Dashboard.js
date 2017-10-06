@@ -77,7 +77,7 @@ class Dashboard extends Component {
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
         <br />
         <br />
-        {this.state.showUserLocation ? <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a> : null}
+        {this.state.showUserLocation && <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>}
       </div>
     )
   }
