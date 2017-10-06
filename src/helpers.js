@@ -1,13 +1,13 @@
 export function getUserLocation (callback) {
   navigator.geolocation.getCurrentPosition(
-      (err, position) => {
-        if (err) {
-          callback(err, position)
-        } else {
-          callback(err, {
+      (position, err) => {
+        if (position) {
+          callback({
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
-          })
+          }, err)
+        } else {
+          console.log(err.message)
         }
       }
     )
