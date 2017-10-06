@@ -1,0 +1,29 @@
+.Menu{
+  float: right;
+  margin-right: -5%;
+  margin-top: -5%;
+}
+
+
+.Danger{
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+  text-align: center;
+}
+
+.buttonContainer{
+  position: fixed;
+  right:    0;
+  bottom:   5%;
+  width:100%;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  width: 60%;
+  margin: 8%auto;
+  color: 	#00CED1;
+
+}

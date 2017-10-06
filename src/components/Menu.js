@@ -1,6 +1,7 @@
 import React from 'react'
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import './Dashboard.css'
 
 class Menu extends React.Component {
   constructor (props) {
@@ -19,7 +20,7 @@ class Menu extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className='Menu'>
         <Navbar color='faded' light>
           <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
           <Collapse isOpen={!this.state.collapsed} navbar>
