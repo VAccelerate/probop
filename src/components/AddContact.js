@@ -11,7 +11,7 @@ import {
   CONTACT_DANGER
 } from '../constants'
 
-class ManageContacts extends Component {
+class AddContact extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -32,6 +32,9 @@ class ManageContacts extends Component {
     for (const element of e.target.elements) {
       if (element.id === CONTACT_NAME) {
         name = element.value
+        if (contact[name]) {
+          break
+        }
         contact[name] = {}
       } else if (element.id) {
         if (element.type === 'chekbox') {
@@ -42,6 +45,7 @@ class ManageContacts extends Component {
       }
     }
     localStorage.setItem(CONTACTS, JSON.stringify(contact))
+    console.log(JSON.parse(localStorage.getItem(CONTACTS)))
   }
 
   toggle () {
@@ -83,4 +87,4 @@ class ManageContacts extends Component {
   }
 }
 
-export default ManageContacts
+export default AddContact
