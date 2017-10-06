@@ -62,6 +62,43 @@ class Profile extends Component {
             <Label for='DOB' sm={2}>Date of birth</Label>
             <Input type='date' name='date' id={PROFILE_DOB} defaultValue={localStorage.getItem(PROFILE_DOB)} />
           </FormGroup>
+          <FormGroup tag="fieldset">
+            <Label for='gender' sm={2}>Gender</Label>
+            <FormGroup check>
+               <Label check>
+                 <Input type="radio" name="radio1" />{' '}
+                 Male
+               </Label>
+             </FormGroup>
+            <FormGroup check>
+               <Label check>
+                 <Input type="radio" name="radio1" />{' '}
+                 Female
+               </Label>
+             </FormGroup>
+            <FormGroup check>
+               <Label check>
+                 <Input type="radio" name="radio1" />{' '}
+                 Trans
+               </Label>
+             </FormGroup>
+            <FormGroup check>
+               <Label check>
+                 <Input type="radio" name="radio1" />{' '}
+                 Other
+               </Label>
+             </FormGroup>
+          </FormGroup>
+          <FormGroup>
+            <Label for='ethnicity' sm={2}>Ethnicity</Label>
+            <Input type='select' name='ethnicity'id={PROFILE_ETHNICITY} defaultValue={localStorage.getItem(PROFILE_ETHNICITY)} >
+              <option>Asian</option>
+              <option>M&#257;ori</option>
+              <option>Pakeha/NZ European</option>
+              <option>Pasifika</option>
+              <option>Other</option>
+            </Input>
+          </FormGroup>
           <FormGroup>
             <Label for='mobile' sm={2}>Mobile Number</Label>
             <Input type='text' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={localStorage.getItem(PROFILE_MOBILE)} />
@@ -77,14 +114,12 @@ class Profile extends Component {
             <Input type='text' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={localStorage.getItem(PROFILE_CITY)} />
           </FormGroup>
           <FormGroup>
-            <Label for='ethnicity' sm={2}>Ethnicity</Label>
-            <Input type='select' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={localStorage.getItem(PROFILE_ETHNICITY)} >
-              <option>Maori</option>
-              <option>Pakeha/NZ European</option>
-              <option>Pasifika</option>
-              <option>...</option>
-            </Input>
+            <Label for='OtherAddress' sm={2}>Other most frequent address</Label>
+            <Input type='text' name='address1' id={PROFILE_ADRS1} placeholder='Address Line 1' defaultValue={localStorage.getItem(PROFILE_ADRS1)} />
+            <Input type='text' name='address2' id={PROFILE_ADRS2} placeholder='Address Line 2' defaultValue={localStorage.getItem(PROFILE_ADRS2)} />
+            <Input type='text' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={localStorage.getItem(PROFILE_CITY)} />
           </FormGroup>
+
           <FormGroup check>
             <Col sm={{ size: 10, offset: 2 }}>
               <Button>Submit</Button>
