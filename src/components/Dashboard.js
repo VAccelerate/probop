@@ -23,13 +23,13 @@ class Dashboard extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(e) {
+  handleClick (e) {
     e.preventDefault()
     getUserLocation((position) => {
       this.setState({
         userLocation: position
       })
-    console.log(this.state.userLocation)
+      console.log(this.state.userLocation)
     })
     this.toggle()
   }
