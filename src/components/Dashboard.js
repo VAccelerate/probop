@@ -48,7 +48,6 @@ class Dashboard extends Component {
         <div className='Menu'>
           <Menu />
         </div>
-        <h4>Dashboard</h4>
         <div className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>
             <Button className='Danger' onClick={this.toggle}>

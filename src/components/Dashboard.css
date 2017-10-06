@@ -1,9 +1,9 @@
 .Menu{
-  float: right;
-  margin-right: -5%;
-  margin-top: -5%;
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  margin-left: -8px;
 }
-
 
 .Danger{
   background-color: #dc3545;
@@ -20,10 +20,18 @@
   text-align: center;
 }
 
+.item{
+  float: right;
+}
+/*.title{
+  text-align: center;
+  width: 70%;
+  color: 	#00CED1;
+}*/
+
 h4 {
   text-align: center;
   width: 60%;
   margin: 8%auto;
   color: 	#00CED1;
-
 }
