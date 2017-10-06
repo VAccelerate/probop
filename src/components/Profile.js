@@ -45,7 +45,6 @@ class Profile extends Component {
         profile[element.id] = element.value
       }
     }
-    localStorage.clear()
     localStorage.setItem(PROFILE, JSON.stringify(profile))
     this.toggle()
   }

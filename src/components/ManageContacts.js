@@ -1,27 +1,77 @@
+/* global localStorage */
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
+import Menu from './Menu'
+import {
+  CONTACTS,
+  CONTACT_NAME,
+  CONTACT_NUMBER,
+  CONTACT_VULNERABLE,
+  CONTACT_DANGER
+} from '../constants'
+
 class ManageContacts extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      modal: false
+    }
+    this.onSubmit = this.onSubmit.bind(this)
+    this.toggle = this.toggle.bind(this)
+    this.getContactData = this.getContactData.bind(this)
+  }
+
+  onSubmit (e) {
+    e.preventDefault()
+    let contact = {}
+    let name
+    if (JSON.parse(localStorage.getItem(CONTACTS))) {
+      contact = JSON.parse(localStorage.getItem(CONTACTS))
+    }
+    for (const element of e.target.elements) {
+      if (element.id === CONTACT_NAME) {
+        name = element.value
+        contact[name] = {}
+      } else if (element.id) {
+        if (element.type === 'chekbox') {
+          contact[name][element.id] = element.checked
+        } else {
+          contact[name][element.id] = element.value
+        }
+      }
+    }
+    localStorage.setItem(CONTACTS, JSON.stringify(contact))
+  }
+
+  toggle () {
+  }
+
+  getContactData () {
+
+  }
+
   render () {
     return (
       <div>
+        <Menu />
         <h1>Manage Contacts</h1>
-        <Form>
+        <Form onSubmit={this.onSubmit}>
           <FormGroup>
             <Label for='exampleName'>Name</Label>
-            <Input type='name' name='name' id='exampleName' placeholder='place name' />
+            <Input type='text' id={CONTACT_NAME} />
           </FormGroup>
           <FormGroup>
             <Label for='exampleNumber'>Mobile Number</Label>
-            <Input type='number' name='number' id='exampleNumber' placeholder='mobile number here' />
+            <Input type='text' id={CONTACT_NUMBER} placeholder='mobile number here' />
           </FormGroup>
           <FormGroup check>
             <Label check>
-              <Input type='checkbox' />{' '}
+              <Input type='checkbox' id={CONTACT_VULNERABLE} />{' '}
             Vulnerable
           </Label>
             <Label check>
-              <Input type='checkbox' />{' '}
+              <Input type='checkbox' id={CONTACT_DANGER} />{' '}
               Danger
           </Label>
           </FormGroup>
