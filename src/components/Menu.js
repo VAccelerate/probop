@@ -2,6 +2,7 @@ import React from 'react'
 import { Collapse, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './Dashboard.css'
+import './Menu.css'
 
 class Menu extends React.Component {
   constructor (props) {
@@ -21,7 +22,7 @@ class Menu extends React.Component {
   render () {
     return (
       <div className='Menu'>
-        <Navbar className='navbar-dark bg-dark'>
+        <Navbar className='navbar-dark'>
           <NavbarBrand className='title'><h4>Dashboard</h4>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
