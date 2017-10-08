@@ -1,0 +1,45 @@
+.Menu{
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  margin-left: -8px;
+}
+
+.Danger{
+  background-color: #de0000;
+  border-color: #de0000;
+  color: #fff;
+  text-align: center;
+}
+
+
+.buttonContainer{
+  position: fixed;
+  right:    0;
+  bottom:   5%;
+  width:100%;
+  text-align: center;
+  padding: 2% 12%;
+  box-sizing:
+}
+
+.item{
+  float: right;
+}
+/*.title{
+  text-align: center;
+  width: 70%;
+  color: 	#00CED1;
+}*/
+
+h4 {
+  text-align: center;
+  width: 60%;
+  margin: 8%auto;
+  color: 	#00CED1;
+}
+
+.btn-block{
+  display: block;
+  width: 100%;
+}

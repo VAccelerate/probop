@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
-
 import SafeModal from './SafeModal'
 import Menu from './Menu'
 import { getUserLocation } from '../helpers'
+import './Dashboard.css'
 
 class Dashboard extends Component {
   constructor (props) {
@@ -58,26 +58,32 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div>
-        <Menu />
-        <h1>Dashboard</h1>
-        <a href={this.state.contact + this.state.dangerMessage}>
-          <Button color='danger' onClick={this.handleClick}>
-            <h3>I need urgent help</h3>
-            <p>TBC</p>
-          </Button>
-        </a>
-        <br />
-        <br />
-        <a href={this.state.contact + this.state.vulnerableMessage}>
-          <Button color='warning' onClick={this.handleClick}>
-            <h3>I&#39;m feeling vulnerable</h3>
-          </Button>
-        </a>
-        <SafeModal toggle={this.toggle} modal={this.state.modal} />
-        <br />
-        <br />
-        {this.state.showUserLocation && <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>}
+      <div className='container'>
+        <div className='Menu'>
+          <Menu />
+        </div>
+        <div className='buttonContainer'>
+          <a href={this.state.contact + this.state.dangerMessage}>
+            <Button className='Danger' onClick={this.toggle} block>
+              <h3>I need urgent help</h3>
+              <p>TBC</p>
+            </Button>
+          </a>
+          <br />
+          <br />
+          <a href={this.state.contact + this.state.vulnerableMessage}>
+            <Button color='warning' onClick={this.toggle} >
+              <h3>I&#39;m feeling vulnerable</h3>
+            </Button>
+          </a>
+          <SafeModal toggle={this.toggle} modal={this.state.modal} />
+          {console.log(this.state.userLocation)}
+          <br />
+          <br />
+          <div className='location'>
+            <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am </a>
+          </div>
+        </div>
       </div>
     )
   }

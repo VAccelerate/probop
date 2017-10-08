@@ -1,6 +1,7 @@
 import React from 'react'
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
+import { Collapse, Navbar, NavbarBrand, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import './Dashboard.css'
 
 class Menu extends React.Component {
   constructor (props) {
@@ -19,12 +20,14 @@ class Menu extends React.Component {
   }
   render () {
     return (
-      <div>
-        <Navbar color='faded' light>
+      <div className='Menu'>
+        <Navbar className='navbar-dark bg-dark'>
+          <NavbarBrand className='title'><h4>Dashboard</h4>
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
+            <Nav navbar style={{textAlign: 'right'}}>
+              <NavItem className='item'>
                 <Link to='/'>Dashboard</Link>
               </NavItem>
               <NavItem>
