@@ -5,6 +5,7 @@ import SafeModal from './SafeModal'
 import Menu from './Menu'
 import { getUserLocation } from '../helpers'
 import './Dashboard.css'
+import Map from './GoogleMaps/Map'
 
 class Dashboard extends Component {
   constructor (props) {
@@ -60,6 +61,7 @@ class Dashboard extends Component {
   render () {
     return (
       <div>
+        <Map />
         <Menu />
         <div id='googlemaps' />
         <div id='alerts'>
