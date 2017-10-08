@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import Dashboard from './components/Dashboard'
 import Profile from './components/Profile'
 import Helplines from './components/Helplines'
-import Contacts from './components/Contacts'
+import Contacts from './components/contacts/Contacts'
 import Guide from './components/Guide'
 
 const App = (props) => (
