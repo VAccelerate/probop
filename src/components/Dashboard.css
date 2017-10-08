@@ -5,22 +5,32 @@
   margin-left: -8px;
 }
 
-.Danger{
+.danger{
   background-color: #de0000;
   border-color: #de0000;
   color: #fff;
   text-align: center;
+  padding: 2% 2%;
 }
 
+.warning{
+  background-color: #00A0AF;
+  border-color: #00A0AF;
+  color: #fff;
+  text-align: center;
+  padding: 7% 10%;
 
+}
 .buttonContainer{
   position: fixed;
   right:    0;
   bottom:   5%;
   width:100%;
   text-align: center;
-  padding: 2% 12%;
-  box-sizing:
+  padding: 9%;
+}
+.buttonContainer button {
+  font-size: 1.75rem;
 }
 
 .item{

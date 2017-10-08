@@ -50,16 +50,16 @@ class Dashboard extends Component {
         </div>
         <div className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>
-            <Button className='Danger' onClick={this.toggle} block>
-              <h3>I need urgent help</h3>
+            <Button className='danger' onClick={this.toggle} block>
+              I need urgent help
               <p>TBC</p>
             </Button>
           </a>
           <br />
           <br />
           <a href={this.state.contact + this.state.vulnerableMessage}>
-            <Button color='warning' onClick={this.toggle} >
-              <h3>I&#39;m feeling vulnerable</h3>
+            <Button className='warning' onClick={this.toggle} block>
+            I&#39;m feeling vulnerable
             </Button>
           </a>
           <SafeModal toggle={this.toggle} modal={this.state.modal} />
@@ -69,7 +69,7 @@ class Dashboard extends Component {
           <div className='location'>
             <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am </a>
           </div>
-        </div>
+        </div>n
       </div>
     )
   }
