@@ -10,7 +10,7 @@ export const wrapper = (options) => (WrappedComponent) => {
   const libraries = options.libraries || ['places']
 
   class Wrapper extends React.Component {
-    constructor(props, context) {
+    constructor (props, context) {
       super(props, context)
 
       this.state = {
@@ -20,7 +20,7 @@ export const wrapper = (options) => (WrappedComponent) => {
       }
     }
 
-    componentDidMount() {
+    componentDidMount () {
       const refs = this.refs
       this.scriptCache.google.onLoad((err, tag) => {
         const maps = window.google.maps
@@ -47,7 +47,7 @@ export const wrapper = (options) => (WrappedComponent) => {
       })
     }
 
-    componentWillMount() {
+    componentWillMount () {
       this.scriptCache = cache({
         google: GoogleApi({
           apiKey: apiKey,
@@ -56,7 +56,7 @@ export const wrapper = (options) => (WrappedComponent) => {
       })
     }
 
-    render() {
+    render () {
       const props = Object.assign({}, this.props, {
         loaded: this.state.loaded,
         map: this.state.map,
