@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
-
 import SafeModal from './SafeModal'
 import Menu from './Menu'
 import { getUserLocation } from '../helpers'
@@ -63,10 +62,10 @@ class Dashboard extends Component {
     return (
       <div>
         <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${API_KEY}`} alt='' /></div>
-        <div id='alerts'>
+        <div id='alerts' className='buttonContainer'>
           <Menu />
           <a href={this.state.contact + this.state.dangerMessage}>
-            <Button color='danger' onClick={this.handleClick}>
+            <Button color='danger' onClick={this.handleClick} block>
               <h3>I need urgent help</h3>
               <p>TBC</p>
             </Button>
@@ -83,6 +82,9 @@ class Dashboard extends Component {
         <br />
         <br />
         {this.state.showUserLocation ? <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a> : null}
+          <div className='location'>
+            <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am </a>
+          </div>
       </div>
     )
   }
