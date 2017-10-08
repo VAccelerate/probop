@@ -22,7 +22,8 @@ class Menu extends React.Component {
     return (
       <div className='Menu'>
         <Navbar className='navbar-dark bg-dark'>
-          <NavbarBrand className='title'><h4>Dashboard</h4></NavbarBrand>
+          <NavbarBrand className='title'><h4>Dashboard</h4>
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar style={{textAlign: 'right'}}>

@@ -50,7 +50,7 @@ class Dashboard extends Component {
         </div>
         <div className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>
-            <Button className='Danger' onClick={this.toggle}>
+            <Button className='Danger' onClick={this.toggle} block>
               <h3>I need urgent help</h3>
               <p>TBC</p>
             </Button>
@@ -58,7 +58,7 @@ class Dashboard extends Component {
           <br />
           <br />
           <a href={this.state.contact + this.state.vulnerableMessage}>
-            <Button color='warning' onClick={this.toggle}>
+            <Button color='warning' onClick={this.toggle} >
               <h3>I&#39;m feeling vulnerable</h3>
             </Button>
           </a>

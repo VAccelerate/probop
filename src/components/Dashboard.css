@@ -6,11 +6,12 @@
 }
 
 .Danger{
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #de0000;
+  border-color: #de0000;
   color: #fff;
   text-align: center;
 }
+
 
 .buttonContainer{
   position: fixed;
@@ -18,6 +19,8 @@
   bottom:   5%;
   width:100%;
   text-align: center;
+  padding: 2% 12%;
+  box-sizing:
 }
 
 .item{
@@ -34,4 +37,9 @@ h4 {
   width: 60%;
   margin: 8%auto;
   color: 	#00CED1;
+}
+
+.btn-block{
+  display: block;
+  width: 100%;
 }
