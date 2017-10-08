@@ -16,9 +16,22 @@ class Dashboard extends Component {
       userLocation: {
         latitude: 0,
         longitude: 0
-      }
+      },
+      showUserLocation: false
     }
     this.toggle = this.toggle.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick (e) {
+    e.preventDefault()
+    getUserLocation((position) => {
+      this.setState({
+        userLocation: position
+      })
+      console.log(this.state.userLocation)
+    })
+    this.toggle()
   }
 
   toggle () {
@@ -30,7 +43,8 @@ class Dashboard extends Component {
   componentDidMount () {
     getUserLocation((position) => {
       this.setState({
-        userLocation: position
+        userLocation: position,
+        showUserLocation: true
       })
     })
     let userAgent = navigator.userAgent || navigator.vendor || window.opera
