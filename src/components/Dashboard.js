@@ -58,10 +58,8 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div className='container'>
-        <div className='Menu'>
-          <Menu />
-        </div>
+      <div >
+        <Menu />
         <div className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>
             <Button className='Danger' onClick={this.toggle} block>
