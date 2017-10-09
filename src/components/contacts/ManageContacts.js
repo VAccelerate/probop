@@ -2,9 +2,7 @@
 import React, { Component } from 'react'
 import { ListGroup, ListGroupItem, Button, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import Menu from '../Menu'
 
-// import Menu from '../Menu'
 import { CONTACTS } from '../../constants'
 
 class ManageContacts extends Component {
@@ -45,11 +43,7 @@ class ManageContacts extends Component {
     const {contactAdded, contactEdited, name} = this.state
     return (
       <div>
-        <Menu />
         <div>
-          <br />
-          <br />
-          <br />
           <Alert color='dark' isOpen={contactAdded} toggle={this.toggle}>
             Done! {name} was added to your contact list
           </Alert >

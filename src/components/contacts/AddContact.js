@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import { Redirect } from 'react-router'
+
 import {
   CONTACTS,
   CONTACT_NAME,
@@ -106,19 +107,19 @@ class AddContact extends Component {
             <FormGroup check>
               <Label check>
                 <Input type='checkbox' id={CONTACT_VULNERABLE} />{' '}
-            Vulnerable
-          </Label>
-              <Label check>
-                <Input type='checkbox' id={CONTACT_DANGER} />{' '}
-              Danger
-          </Label>
-            </FormGroup>
-            <Button color='primary' size='lg'>Save Changes</Button>{' '}
-          </Form>
-          <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
-            message='Contact with the same name already exists' />
-          <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
-            message='Name and number are required' />
+                  Vulnerable
+              </Label>
+                  <Label check>
+                    <Input type='checkbox' id={CONTACT_DANGER} />{' '}
+                  Danger
+              </Label>
+                </FormGroup>
+              <Button color='primary' size='lg'>Save Changes</Button>{' '}
+            </Form>
+            <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
+              message='Contact with the same name already exists' />
+            <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
+              message='Name and number are required' />
         </div>
         }
       </div>

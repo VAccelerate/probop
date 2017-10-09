@@ -1,3 +1,28 @@
 .Menu > .navbar-dark.navbar {
+  background-color: #000;
+}
+
+.Menu {
+  z-index:1;
+  position: relative;
+}
+
+.Menu h4 {
+  color: #00CED1;
+}
+.Menu > .navbar-dark.navbar {
     background-color: #000;
+}
+
+div.navbar-collapse {
+    font-size: 18pt;
+    font-family: HelveticaNeue-Light;
+    text-align: left;
+    line-height: 32pt;
+}
+.navbar-collapse  li {
+    background-color: #fff;
+}
+.navbar-collapse  li a{
+    color: rgba(51, 51, 51, 1);
 }

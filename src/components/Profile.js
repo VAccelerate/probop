@@ -11,8 +11,6 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap'
-
-import Menu from './Menu'
 import {
   PROFILE,
   PROFILE_NAME,
@@ -41,12 +39,14 @@ class Profile extends Component {
   }
 
   componentDidMount () {
-    let genders = document.getElementsByName('gender')
-    genders.forEach((gender) => {
-      if (gender.value === JSON.parse(localStorage.getItem(PROFILE))['profileGender']) {
-        gender.checked = true
-      }
-    })
+    if (localStorage.getItem(PROFILE)) {
+      let genders = document.getElementsByName('gender')
+      genders.forEach((gender) => {
+        if (gender.value === JSON.parse(localStorage.getItem(PROFILE))[PROFILE_GENDER]) {
+          gender.checked = true
+        }
+      })
+    }
   }
 
   onSubmit (e) {
@@ -80,7 +80,6 @@ class Profile extends Component {
   render () {
     return (
       <div>
-        <Menu />
         <Form onSubmit={this.onSubmit}>
           <h1>Profile</h1>
           <FormGroup>
