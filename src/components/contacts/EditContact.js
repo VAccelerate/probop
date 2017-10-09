@@ -1,9 +1,8 @@
 /* global localStorage */
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
-import Menu from '../Menu'
 import {
   CONTACTS,
   CONTACT_NAME,
@@ -18,7 +17,8 @@ class EditContact extends Component {
     this.state = {
       name: this.props.location.state.name,
       contacts: JSON.parse(localStorage.getItem(CONTACTS)),
-      deleteModal: false
+      deleteModal: false,
+      edited: false
     }
     this.editContact = this.editContact.bind(this)
     this.getContactData = this.getContactData.bind(this)
@@ -45,7 +45,8 @@ class EditContact extends Component {
     localStorage.setItem(CONTACTS, JSON.stringify(contacts))
     this.setState({
       name,
-      contacts
+      contacts,
+      edited: true
     })
   }
 
@@ -70,36 +71,44 @@ class EditContact extends Component {
   }
 
   render () {
-    const {name} = this.state
+    const {name, edited} = this.state
     return (
       <div>
-        <Menu />
-        <h1>Edit Contact</h1>
-        <Form onSubmit={this.editContact}>
-          <FormGroup>
-            <Label>Name</Label>
-            <Input type='text' id={CONTACT_NAME} defaultValue={name} />
-          </FormGroup>
-          <FormGroup>
-            <Label>Mobile Number</Label>
-            <Input type='text' id={CONTACT_NUMBER} defaultValue={this.getContactData(CONTACT_NUMBER)} />
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type='checkbox' id={CONTACT_VULNERABLE} defaultChecked={this.getContactData(CONTACT_VULNERABLE)} />{' '}
-            Vulnerable
-          </Label>
-            <Label check>
-              <Input type='checkbox' id={CONTACT_DANGER} defaultChecked={this.getContactData(CONTACT_DANGER)} />{' '}
-              Danger
-          </Label>
-          </FormGroup>
-          <Button color='primary' size='lg'>Save Changes</Button>{' '}
-          <Button color='secondary' size='lg' onClick={this.toggle}>Remove Contact</Button>
+        {edited ? <Redirect to={{
+          pathname: '/contacts',
+          state: {
+            edited: true,
+            name
+          }
+        }} />
+        : <div>
+          <Form onSubmit={this.editContact}>
+            <FormGroup>
+              <Label>Name</Label>
+              <Input type='text' id={CONTACT_NAME} defaultValue={name} />
+            </FormGroup>
+            <FormGroup>
+              <Label>Mobile Number</Label>
+              <Input type='text' id={CONTACT_NUMBER} defaultValue={this.getContactData(CONTACT_NUMBER)} />
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type='checkbox' id={CONTACT_VULNERABLE} defaultChecked={this.getContactData(CONTACT_VULNERABLE)} />{' '}
+              Vulnerable
+            </Label>
+              <Label check>
+                <Input type='checkbox' id={CONTACT_DANGER} defaultChecked={this.getContactData(CONTACT_DANGER)} />{' '}
+                Danger
+            </Label>
+            </FormGroup>
+            <Button color='primary' size='lg'>Save Changes</Button>{' '}
+            <Button color='secondary' size='lg' onClick={this.toggle}>Remove Contact</Button>
 
-        </Form>
-        <DeleteModal toggle={this.toggle} modal={this.state.deleteModal} name={name}
-          deleteContact={this.deleteContact} />
+          </Form>
+          <DeleteModal toggle={this.toggle} modal={this.state.deleteModal} name={name}
+            deleteContact={this.deleteContact} />
+        </div>
+      }
       </div>
     )
   }
