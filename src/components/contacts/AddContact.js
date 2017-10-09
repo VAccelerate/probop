@@ -1,6 +1,7 @@
 /* global localStorage */
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
+import { Redirect } from 'react-router'
 
 import {
   CONTACTS,
@@ -16,11 +17,11 @@ class AddContact extends Component {
     this.state = {
       duplicateModal: false,
       emptyModal: false,
-      successModal: false
+      added: false,
+      name: ''
     }
     this.duplicateModalToggle = this.duplicateModalToggle.bind(this)
     this.emptyModalToggle = this.emptyModalToggle.bind(this)
-    this.successModalToggle = this.successModalToggle.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
 
@@ -35,7 +36,7 @@ class AddContact extends Component {
     if (localStorage.getItem(CONTACTS)) {
       contacts = JSON.parse(localStorage.getItem(CONTACTS))
     }
-    for (const element of e.target.elements) {
+    for (const element of Array.from(e.target.elements)) {
       // Get contact name to use as key in localStorage
       if (element.id === CONTACT_NAME) {
         name = element.value
@@ -43,7 +44,6 @@ class AddContact extends Component {
         if (contacts[name]) {
           this.duplicateModalToggle()
           return
-          // TODO add notification that contact already exists
         }
         contacts[name] = {}
       } else if (element.id) {
@@ -62,7 +62,11 @@ class AddContact extends Component {
     }
     // convert object to json string and save
     localStorage.setItem(CONTACTS, JSON.stringify(contacts))
-    this.successModalToggle()
+    // Used for redirect back to manage contacts page
+    this.setState({
+      added: true,
+      name
+    })
   }
 
   duplicateModalToggle () {
@@ -77,42 +81,46 @@ class AddContact extends Component {
     })
   }
 
-  successModalToggle () {
-    this.setState({
-      successModal: !this.state.successModal
-    })
-  }
-
   render () {
+    const {added, name} = this.state
     return (
       <div>
-        <Form onSubmit={this.onSubmit}>
-          <FormGroup>
-            <Label>Name</Label>
-            <Input type='text' id={CONTACT_NAME} />
-          </FormGroup>
-          <FormGroup>
-            <Label>Mobile Number</Label>
-            <Input type='tel' id={CONTACT_NUMBER} />
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type='checkbox' id={CONTACT_VULNERABLE} />{' '}
-            Vulnerable
-          </Label>
-            <Label check>
-              <Input type='checkbox' id={CONTACT_DANGER} />{' '}
-              Danger
-          </Label>
-          </FormGroup>
-          <Button color='primary' size='lg'>Save Changes</Button>{' '}
-        </Form>
-        <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
-          message='Contact with the same name already exists' />
-        <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
-          message='Name and number are required' />
-        <ContactsModal toggle={this.successModalToggle} modal={this.state.successModal}
-          message='Contact successfully added' />
+        {added
+        ? <Redirect to={{
+          pathname: '/contacts',
+          state: {
+            added: true,
+            name
+          }
+        }} />
+        : <div>
+          <Form onSubmit={this.onSubmit}>
+            <FormGroup>
+              <Label>Name</Label>
+              <Input type='text' id={CONTACT_NAME} />
+            </FormGroup>
+            <FormGroup>
+              <Label>Mobile Number</Label>
+              <Input type='tel' id={CONTACT_NUMBER} />
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type='checkbox' id={CONTACT_VULNERABLE} />{' '}
+                  Vulnerable
+              </Label>
+              <Label check>
+                <Input type='checkbox' id={CONTACT_DANGER} />{' '}
+                  Danger
+              </Label>
+            </FormGroup>
+            <Button color='primary' size='lg'>Save Changes</Button>{' '}
+          </Form>
+          <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
+            message='Contact with the same name already exists' />
+          <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
+            message='Name and number are required' />
+        </div>
+        }
       </div>
     )
   }

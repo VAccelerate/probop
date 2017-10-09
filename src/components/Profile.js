@@ -52,7 +52,7 @@ class Profile extends Component {
   onSubmit (e) {
     e.preventDefault()
     let profile = {}
-    for (const element of e.target.elements) {
+    for (const element of Array.from(e.target.elements)) {
       if (element.name === 'gender' && element.checked) {
         profile[PROFILE_GENDER] = element.value
       }
