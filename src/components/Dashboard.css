@@ -1,22 +1,61 @@
 #googlemaps { 
-    height: 100vh; 
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    z-index: 0; /* Set z-index to 0 as it will be on a layer below the alert buttons */
-  }
+  height: 100vh; 
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  z-index: 0; /* Set z-index to 0 as it will be on a layer below the alert buttons */
+}
 
-  .stretch {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-  }
+.stretch {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
   
-  #alerts { 
-    position: relative; 
-    z-index: 1; /* The z-index should be higher than Google Maps */
-  }
+#alerts { 
+  position: relative; 
+  z-index: 1; /* The z-index should be higher than Google Maps */
+}
+
+.Menu {
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  margin-left: -8px;
+}
+
+.Danger {
+  background-color: #de0000;
+  border-color: #de0000;
+  color: #fff;
+  text-align: center;
+}
+
+.buttonContainer {
+  position: fixed;
+  right:    0;
+  bottom:   5%;
+  width:100%;
+  text-align: center;
+  padding: 2% 12%;
+}
+
+.item {
+  float: right;
+}
+
+h4 {
+  text-align: center;
+  width: 60%;
+  margin: 8%auto;
+  color: 	#00CED1;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}

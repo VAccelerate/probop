@@ -62,8 +62,8 @@ class Dashboard extends Component {
   render () {
     return (
       <div>
-        <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${API_KEY}`} alt='' /></div>
-        <div id='alerts'>
+        {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${API_KEY}`} alt='' /></div>}
+        <div id='alerts buttonContainer'>
           <Menu />
           <a href={this.state.contact + this.state.dangerMessage}>
             <Button color='danger' onClick={this.handleClick}>
@@ -82,7 +82,7 @@ class Dashboard extends Component {
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
         <br />
         <br />
-        {this.state.showUserLocation ? <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a> : null}
+        {this.state.showUserLocation && <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am</a>}
       </div>
     )
   }
