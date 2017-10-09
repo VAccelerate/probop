@@ -29,7 +29,7 @@ class EditContact extends Component {
   editContact (e) {
     e.preventDefault()
     let {name, contacts} = this.state
-    for (const element of e.target.elements) {
+    for (const element of Array.from(e.target.elements)) {
       if (element.id === CONTACT_NAME && element.value !== name) {
         delete contacts[name]
         name = element.value

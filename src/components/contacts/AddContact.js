@@ -36,7 +36,7 @@ class AddContact extends Component {
     if (localStorage.getItem(CONTACTS)) {
       contacts = JSON.parse(localStorage.getItem(CONTACTS))
     }
-    for (const element of e.target.elements) {
+    for (const element of Array.from(e.target.elements)) {
       // Get contact name to use as key in localStorage
       if (element.id === CONTACT_NAME) {
         name = element.value
@@ -44,7 +44,6 @@ class AddContact extends Component {
         if (contacts[name]) {
           this.duplicateModalToggle()
           return
-          // TODO add notification that contact already exists
         }
         contacts[name] = {}
       } else if (element.id) {
@@ -109,17 +108,17 @@ class AddContact extends Component {
                 <Input type='checkbox' id={CONTACT_VULNERABLE} />{' '}
                   Vulnerable
               </Label>
-                  <Label check>
-                    <Input type='checkbox' id={CONTACT_DANGER} />{' '}
+              <Label check>
+                <Input type='checkbox' id={CONTACT_DANGER} />{' '}
                   Danger
               </Label>
-                </FormGroup>
-              <Button color='primary' size='lg'>Save Changes</Button>{' '}
-            </Form>
-            <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
-              message='Contact with the same name already exists' />
-            <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
-              message='Name and number are required' />
+            </FormGroup>
+            <Button color='primary' size='lg'>Save Changes</Button>{' '}
+          </Form>
+          <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
+            message='Contact with the same name already exists' />
+          <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
+            message='Name and number are required' />
         </div>
         }
       </div>
