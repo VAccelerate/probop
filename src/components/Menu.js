@@ -53,7 +53,7 @@ class Menu extends React.Component {
                 <Link to='/profile' onClick={() => this.setCurrentRoute('Manage Profile')}>Manage Profile</Link>
               </NavItem>
               <NavItem>
-                <Link to='/contacts' onClick={() => this.setCurrentRoute('Setup Contacts')}>Setup Contacts</Link>
+                <Link to='/contacts' onClick={() => this.setCurrentRoute('Setup Contacts')}>Manage Contacts</Link>
               </NavItem>
               <NavItem>
                 <Link to='/helplines' onClick={() => this.setCurrentRoute('Helplines')}>Helplines</Link>
