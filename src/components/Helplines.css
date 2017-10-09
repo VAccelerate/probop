@@ -1,0 +1,19 @@
+.ListGroup {
+  position: relative;
+  margin-top: 10%;
+}
+
+.FontAwesome {
+  color:#00A0AF;
+  font-size: 100%;
+  line-height: 50px;
+}
+
+.list-group-item-heading{
+  color: #000;
+}
+
+a {
+  color: #00A0AF;
+  font-size: fixed;
+}
