@@ -40,12 +40,14 @@ class Profile extends Component {
   }
 
   componentDidMount () {
-    let genders = document.getElementsByName('gender')
-    genders.forEach((gender) => {
-      if (gender.value === JSON.parse(localStorage.getItem(PROFILE))['profileGender']) {
-        gender.checked = true
-      }
-    })
+    if (localStorage.getItem(PROFILE)) {
+      let genders = document.getElementsByName('gender')
+      genders.forEach((gender) => {
+        if (gender.value === JSON.parse(localStorage.getItem(PROFILE))['profileGender']) {
+          gender.checked = true
+        }
+      })
+    }
   }
 
   onSubmit (e) {
