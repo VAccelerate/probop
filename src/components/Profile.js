@@ -43,7 +43,7 @@ class Profile extends Component {
     if (localStorage.getItem(PROFILE)) {
       let genders = document.getElementsByName('gender')
       genders.forEach((gender) => {
-        if (gender.value === JSON.parse(localStorage.getItem(PROFILE))['profileGender']) {
+        if (gender.value === JSON.parse(localStorage.getItem(PROFILE))[PROFILE_GENDER]) {
           gender.checked = true
         }
       })
