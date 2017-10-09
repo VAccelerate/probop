@@ -13,7 +13,8 @@ class Dashboard extends Component {
     super(props)
     this.state = {
       modal: false,
-      contact: 'sms://open?addresses=14035550185,17897987,232323/',
+      vulnerableAddress: '',
+      dangerAddress: '',
       vulnerableMessage: '?body=I%20am%20feeling%20vulnerable',
       dangerMessage: '?body=I%20am%20in%20danger',
       userLocation: {
@@ -51,33 +52,41 @@ class Dashboard extends Component {
       })
     })
 
-    let contacts = JSON.parse(localStorage.getItem(CONTACTS))
-    let contactKeys = [Object.keys(contacts)]
-    let vulnerableContacts = []
-    let dangerContacts = []
+    if (localStorage.getItem(CONTACTS)) {
+      let contacts = JSON.parse(localStorage.getItem(CONTACTS))
+      let contactKeys = [Object.keys(contacts)]
+      let vulnerableContacts = []
+      let dangerContacts = []
 
-    contactKeys.forEach((keys) => {
-      keys.forEach((contact) => {
-        if (contacts[contact].contactVulnerable) {
-          vulnerableContacts.push(contacts[contact].contactNumber)
-        } else dangerContacts.push(contacts[contact].contactNumber)
+      contactKeys.forEach((keys) => {
+        keys.forEach((contact) => {
+          if (contacts[contact].contactVulnerable) {
+            vulnerableContacts.push(contacts[contact].contactNumber)
+          }
+          if (contacts[contact].contactDanger) {
+            dangerContacts.push(contacts[contact].contactNumber)
+          }
+        })
       })
-    })
 
-    console.log(vulnerableContacts.toString())
+      let userAgent = navigator.userAgent || navigator.vendor || window.opera
 
-    let userAgent = navigator.userAgent || navigator.vendor || window.opera
+      if (/android/i.test(userAgent)) {
+        this.setState({
+          vulnerableAddress: 'sms:' + vulnerableContacts.toString(),
+          dangerAddress: 'sms:' + dangerContacts.toString()
+        })
+      }
 
-    if (/android/i.test(userAgent)) {
-      let vulnerableAddress = 'sms://' + vulnerableContacts.toString() + '/'
-      console.log(vulnerableAddress)
-    }
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      this.setState({
-        vulnerableMessage: '&body=I%20am%20feeling%20vulnerable',
-        dangerMessage: '&body=I%20am%20in%20danger'
-      })
+        this.setState({
+          vulnerableMessage: '&body=I%20am%20feeling%20vulnerable',
+          dangerMessage: '&body=I%20am%20in%20danger',
+          vulnerableAddress: 'sms://open?addresses=' + vulnerableContacts.toString() + '/',
+          dangerAddress: 'sms://open?addresses=' + dangerContacts.toString() + '/'
+        })
+      }
     }
   }
 
@@ -86,7 +95,7 @@ class Dashboard extends Component {
       <div >
         <Menu />
         <div className='buttonContainer'>
-          <a href={this.state.contact + this.state.dangerMessage}>
+          <a href={this.state.dangerAddress + this.state.dangerMessage}>
             <Button className='Danger' onClick={this.toggle} block>
               <h3>I need urgent help</h3>
               <p>TBC</p>
@@ -94,7 +103,7 @@ class Dashboard extends Component {
           </a>
           <br />
           <br />
-          <a href={this.state.contact + this.state.vulnerableMessage}>
+          <a href={this.state.vulnerableAddress + this.state.vulnerableMessage}>
             <Button color='warning' onClick={this.toggle} >
               <h3>I&#39;m feeling vulnerable</h3>
             </Button>
