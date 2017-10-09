@@ -64,7 +64,7 @@ class Dashboard extends Component {
         {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${GOOGLE_API_KEY}`} alt='' /></div>}
         <div id='alerts' className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>
-            <Button className='danger' onClick={this.handleClick} block>Help! I'm in danger</Button>
+            <Button className='danger' onClick={this.handleClick} block>Help! I&#39;m in danger</Button>
           </a>
           <a href={this.state.contact + this.state.vulnerableMessage}>
             <Button className='warning' onClick={this.handleClick} block>I feel unsafe</Button>
