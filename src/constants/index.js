@@ -16,4 +16,3 @@ export const CONTACT_DANGER = 'contactDanger'
 export const PROFILE_OTHERADRS1 = 'profileOtherAddress1'
 export const PROFILE_OTHERADRS2 = 'profileOtherAddress2'
 export const PROFILE_OTHERCITY = 'profileOtherCity'
-
