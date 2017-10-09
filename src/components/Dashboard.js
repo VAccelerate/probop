@@ -44,6 +44,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount () {
+
     getUserLocation((position) => {
       this.setState({
         userLocation: position,
@@ -59,14 +60,20 @@ class Dashboard extends Component {
     contactKeys.forEach((keys) => {
       keys.forEach((contact) => {
         if (contacts[contact].contactVulnerable) {
-          vulnerableContacts.push(contact.contactNumber)
-        } else dangerContacts.push(contact.contactNumber)
+          vulnerableContacts.push(contacts[contact].contactNumber)
+        } else dangerContacts.push(contacts[contact].contactNumber)
       })
     })
 
-    console.log(vulnerableContacts, dangerContacts)
+    console.log(vulnerableContacts.toString())
 
     let userAgent = navigator.userAgent || navigator.vendor || window.opera
+
+    if (/android/i.test(userAgent)) {
+      let vulnerableAddress = 'sms://' + vulnerableContacts.toString() + '/'
+      console.log(vulnerableAddress)
+    }
+
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
       this.setState({
         vulnerableMessage: '&body=I%20am%20feeling%20vulnerable',
