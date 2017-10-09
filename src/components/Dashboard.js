@@ -79,7 +79,6 @@ class Dashboard extends Component {
       }
 
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-
         this.setState({
           vulnerableMessage: '&body=I%20am%20feeling%20vulnerable',
           dangerMessage: '&body=I%20am%20in%20danger',
