@@ -69,7 +69,7 @@ class Dashboard extends Component {
           <div className='location'>
             <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am </a>
           </div>
-        </div>n
+        </div>
       </div>
     )
   }
