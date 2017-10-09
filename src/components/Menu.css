@@ -1,0 +1,12 @@
+.Menu > .navbar-dark.navbar {
+  background-color: #000;
+}
+
+.Menu {
+  z-index:1;
+  position: relative;
+}
+
+.Menu h4 {
+  color: #00CED1;
+}
