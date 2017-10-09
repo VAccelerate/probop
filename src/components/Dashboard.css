@@ -5,32 +5,36 @@
   margin-left: -8px;
 }
 
-.Danger{
+.danger{
   background-color: #de0000;
   border-color: #de0000;
   color: #fff;
   text-align: center;
+  padding: 0% 2%;
+  box-shadow: 0 4px #990000;
+
 }
 
-
+.warning{
+  background-color: #00A0AF;
+  border-color: #00A0AF;
+  color: #fff;
+  padding: 6% 2%;
+  box-shadow: 0 4px #008385;
+}
 .buttonContainer{
   position: fixed;
   right:    0;
-  bottom:   5%;
+  bottom:2%;
   width:100%;
   text-align: center;
-  padding: 2% 12%;
-  box-sizing:
+  padding:9%;
 }
-
-.item{
-  float: right;
+.buttonContainer button {
+  font-size: 1.75rem;
+  margin-bottom: -5%;
+  border-radius: 0px;
 }
-/*.title{
-  text-align: center;
-  width: 70%;
-  color: 	#00CED1;
-}*/
 
 h4 {
   text-align: center;
