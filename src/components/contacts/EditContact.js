@@ -1,6 +1,6 @@
 /* global localStorage */
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 import Menu from '../Menu'
@@ -17,12 +17,13 @@ class EditContact extends Component {
     super(props)
     this.state = {
       name: this.props.location.state.name,
-      contacts: JSON.parse(localStorage.getItem(CONTACTS))
+      contacts: JSON.parse(localStorage.getItem(CONTACTS)),
+      deleteModal: false
     }
     this.editContact = this.editContact.bind(this)
     this.getContactData = this.getContactData.bind(this)
     this.deleteContact = this.deleteContact.bind(this)
-    console.log(JSON.parse(localStorage.getItem(CONTACTS)))
+    this.toggle = this.toggle.bind(this)
   }
 
   editContact (e) {
@@ -62,6 +63,12 @@ class EditContact extends Component {
     })
   }
 
+  toggle () {
+    this.setState({
+      deleteModal: !this.state.deleteModal
+    })
+  }
+
   render () {
     const {name} = this.state
     return (
@@ -88,13 +95,34 @@ class EditContact extends Component {
           </Label>
           </FormGroup>
           <Button color='primary' size='lg'>Save Changes</Button>{' '}
-          <Link to='/contacts'>
-            <Button color='secondary' size='lg' onClick={this.deleteContact}>Remove Contact</Button>
-          </Link>
+          <Button color='secondary' size='lg' onClick={this.toggle}>Remove Contact</Button>
+
         </Form>
+        <DeleteModal toggle={this.toggle} modal={this.state.deleteModal} name={name}
+          deleteContact={this.deleteContact} />
       </div>
     )
   }
+}
+
+const DeleteModal = (props) => {
+  return (
+    <Modal isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
+      <ModalBody>
+        <h1>Are you sure you want to delete {props.name}?</h1>
+      </ModalBody>
+      <ModalFooter>
+        <Link to='/contacts'>
+          <Button color='danger' onClick={props.deleteContact}>
+            Yes
+          </Button>
+        </Link>
+        <Button color='danger' onClick={props.toggle}>
+          No
+        </Button>
+      </ModalFooter>
+    </Modal>
+  )
 }
 
 export default EditContact
