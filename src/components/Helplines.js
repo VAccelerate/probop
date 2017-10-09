@@ -16,10 +16,8 @@ const Helplines = (props) => {
               <ListGroupItemHeading>
                 Alcohol & Drug Helpline
               </ListGroupItemHeading>
-              <div className='FontAwesome'>
-                <FontAwesome.FaPhone /><a href='tel://+64800787797'>0800 787 797</a>
-                <br /><FontAwesome.FaGlobe /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a>
-              </div>
+              <FontAwesome.FaPhone /><a href='tel://+64800787797'>0800 787 797</a>
+              <br /><FontAwesome.FaGlobe /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
