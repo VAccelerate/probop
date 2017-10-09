@@ -18,44 +18,32 @@
   
 #alerts { 
   position: relative; 
-  z-index: 2; /* The z-index should be higher than Google Maps */
+  z-index: 5; /* The z-index should be higher than Google Maps */
+  margin-top: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: center;
 }
 
-.Menu {
-  z-index: 9999;
-  position: absolute;
-  width: 100%;
-  margin-left: -8px;
-}
-
-.Danger {
+.danger {
   background-color: #de0000;
   border-color: #de0000;
   color: #fff;
   text-align: center;
+  padding: 10%;
 }
 
-.buttonContainer {
-  position: fixed;
-  right:    0;
-  bottom:   5%;
-  width:100%;
+.warning{
+  background-color: #00A0AF;
+  border-color: #00A0AF;
+  color: #fff;
   text-align: center;
-  padding: 2% 12%;
+  padding: 10%;
+  margin-top: 10%;
 }
 
-.item {
-  float: right;
-}
-
-h4 {
-  text-align: center;
-  width: 60%;
-  margin: 8%auto;
-  color: 	#00CED1;
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
+.buttonContainer button {
+  font-size: 1.5rem;
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
 }
