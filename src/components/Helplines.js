@@ -9,7 +9,7 @@ const Helplines = (props) => {
     <div>
       <Menu />
       <h1>Helplines</h1>
-      <div className='ListGroup FontAwesome FaPhone FaGlobe'>
+      <div className='ListGroup FontAwesome'>
         <ListGroup>
           <ListGroup>
             <ListGroupItem>
