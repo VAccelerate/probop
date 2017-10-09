@@ -2,3 +2,15 @@
   position: relative;
   margin-top: 10%;
 }
+
+.FontAwesome {
+  color:#00A0AF;
+}
+
+.list-group-item-heading{
+  color: #000;
+}
+
+a {
+  color: #00A0AF;
+}

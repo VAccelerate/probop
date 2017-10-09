@@ -9,20 +9,23 @@ const Helplines = (props) => {
     <div>
       <Menu />
       <h1>Helplines</h1>
-      <div className='ListGroup'>
+      <div className='ListGroup FontAwesome'>
         <ListGroup>
           <ListGroup>
             <ListGroupItem>
               <ListGroupItemHeading>
                 Alcohol & Drug Helpline
               </ListGroupItemHeading>
-              <p><FontAwesome.FaPhone /><a href='tel://+64800787797'>0800 787 797</a> <br /><FontAwesome.FaGlobe /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a></p>
+              <div className='FontAwesome'>
+                <FontAwesome.FaPhone /><a href='tel://+64800787797'>0800 787 797</a>
+                <br /><FontAwesome.FaGlobe /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
                 Are you Okay (Violence Helpline)
               </ListGroupItemHeading>
-              <p><FontAwesome.FaPhone /><a href='tel://+64800456450'>0800 456 450</a> <br /><FontAwesome.FaGlobe /> <a href='http://www.areyouok.org.nz/'>http://www.areyouok.org.nz/</a></p>
+              <FontAwesome.FaPhone /><a href='tel://+64800456450'>0800 456 450</a> <br /><FontAwesome.FaGlobe /> <a href='http://www.areyouok.org.nz/'>http://www.areyouok.org.nz/</a>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
@@ -68,6 +71,7 @@ const Helplines = (props) => {
             </ListGroupItem>
           </ListGroup>
         </ListGroup>
+
       </div>
     </div>
   )
