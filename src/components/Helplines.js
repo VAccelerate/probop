@@ -9,15 +9,15 @@ const Helplines = (props) => {
     <div>
       <Menu />
       <h1>Helplines</h1>
-      <div className='ListGroup FontAwesome'>
+      <div className='ListGroup FontAwesome FaPhone'>
         <ListGroup>
           <ListGroup>
             <ListGroupItem>
               <ListGroupItemHeading>
                 Alcohol & Drug Helpline
               </ListGroupItemHeading>
-              <FontAwesome.FaPhone /><a href='tel://+64800787797'>0800 787 797</a>
-              <br /><FontAwesome.FaGlobe /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a>
+              <FontAwesome.FaPhone size='8%' /><a href='tel://+64800787797'>0800 787 797</a>
+              <br /><FontAwesome.FaGlobe size='8%' /> <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
