@@ -11,8 +11,6 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap'
-
-import Menu from './Menu'
 import {
   PROFILE,
   PROFILE_NAME,
@@ -80,7 +78,6 @@ class Profile extends Component {
   render () {
     return (
       <div>
-        <Menu />
         <Form onSubmit={this.onSubmit}>
           <h1>Profile</h1>
           <FormGroup>

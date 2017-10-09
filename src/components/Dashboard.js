@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import SafeModal from './SafeModal'
-import Menu from './Menu'
 import { getUserLocation } from '../helpers'
 import './Dashboard.css'
 
@@ -59,7 +58,6 @@ class Dashboard extends Component {
   render () {
     return (
       <div >
-        <Menu />
         <div className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>
             <Button className='danger' onClick={this.toggle} block>
