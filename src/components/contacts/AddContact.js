@@ -35,7 +35,7 @@ class AddContact extends Component {
     if (localStorage.getItem(CONTACTS)) {
       contacts = JSON.parse(localStorage.getItem(CONTACTS))
     }
-    for (const element of e.target.elements) {
+    for (const element of Array.from(e.target.elements)) {
       // Get contact name to use as key in localStorage
       if (element.id === CONTACT_NAME) {
         name = element.value
