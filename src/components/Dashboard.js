@@ -1,16 +1,19 @@
+/* global localStorage */
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
+
 import SafeModal from './SafeModal'
 import Menu from './Menu'
 import { getUserLocation } from '../helpers'
 import './Dashboard.css'
+import { CONTACTS } from '../constants'
 
 class Dashboard extends Component {
   constructor (props) {
     super(props)
     this.state = {
       modal: false,
-      contact: 'sms://+14035550185/',
+      contact: 'sms://open?addresses=14035550185,17897987,232323/',
       vulnerableMessage: '?body=I%20am%20feeling%20vulnerable',
       dangerMessage: '?body=I%20am%20in%20danger',
       userLocation: {
@@ -47,6 +50,22 @@ class Dashboard extends Component {
         showUserLocation: true
       })
     })
+
+    let contacts = JSON.parse(localStorage.getItem(CONTACTS))
+    let contactKeys = [Object.keys(contacts)]
+    let vulnerableContacts = []
+    let dangerContacts = []
+
+    contactKeys.forEach((keys) => {
+      keys.forEach((contact) => {
+        if (contacts[contact].contactVulnerable) {
+          vulnerableContacts.push(contact.contactNumber)
+        } else dangerContacts.push(contact.contactNumber)
+      })
+    })
+
+    console.log(vulnerableContacts, dangerContacts)
+
     let userAgent = navigator.userAgent || navigator.vendor || window.opera
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
       this.setState({
