@@ -18,8 +18,8 @@
   
 #alerts { 
   position: relative; 
-  z-index: 5; /* The z-index should be higher than Google Maps */
-  margin-top: 100%;
+  z-index: 1; /* The z-index should be higher than Google Maps */
+  margin-top: 90%;
   margin-left: 10%;
   margin-right: 10%;
   align-items: center;

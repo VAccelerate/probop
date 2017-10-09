@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { ListGroup, ListGroupItem, Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-import Menu from '../Menu'
 import { CONTACTS } from '../../constants'
 
 class ManageContacts extends Component {
@@ -31,8 +30,6 @@ class ManageContacts extends Component {
     return (
       <div>
         <div>
-          <Menu />
-          <h1>Contacts</h1>
           <ListGroup>
             {
               this.getContacts().map(id =>

@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 
-import Menu from '../Menu'
 import {
   CONTACTS,
   CONTACT_NAME,
@@ -87,8 +86,6 @@ class AddContact extends Component {
   render () {
     return (
       <div>
-        <Menu />
-        <h1>Add Contact</h1>
         <Form onSubmit={this.onSubmit}>
           <FormGroup>
             <Label>Name</Label>
