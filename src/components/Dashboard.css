@@ -18,7 +18,7 @@
   
 #alerts { 
   position: relative; 
-  z-index: 1; /* The z-index should be higher than Google Maps */
+  z-index: 2; /* The z-index should be higher than Google Maps */
 }
 
 .Menu {

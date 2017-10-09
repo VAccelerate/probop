@@ -6,7 +6,7 @@ import Menu from './Menu'
 import { getUserLocation } from '../helpers'
 import './Dashboard.css'
 
-const API_KEY = 'AIzaSyCpJxjn4o7c9fZGcqXJcnDeTQnYIhy0Or4'
+const GOOGLE_API_KEY = 'AIzaSyCpJxjn4o7c9fZGcqXJcnDeTQnYIhy0Or4'
 
 class Dashboard extends Component {
   constructor (props) {
@@ -62,11 +62,11 @@ class Dashboard extends Component {
   render () {
     return (
       <div>
-        {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${API_KEY}`} alt='' /></div>}
-        <div id='alerts buttonContainer'>
+        {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${GOOGLE_API_KEY}`} alt='' /></div>}
+        <div id='alerts' className='buttonContainer'>
           <Menu />
           <a href={this.state.contact + this.state.dangerMessage}>
-            <Button color='danger' onClick={this.handleClick}>
+            <Button color='danger' onClick={this.handleClick} block>
               <h3>I need urgent help</h3>
               <p>TBC</p>
             </Button>
