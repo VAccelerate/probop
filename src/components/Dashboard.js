@@ -44,7 +44,6 @@ class Dashboard extends Component {
   }
 
   componentDidMount () {
-
     getUserLocation((position) => {
       this.setState({
         userLocation: position,
