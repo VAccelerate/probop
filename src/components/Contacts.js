@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { ListGroup, ListGroupItem, ListGroupItemHeading, Button } from 'reactstrap'
-
 import ManageContacts from './ManageContacts'
-import Menu from './Menu'
 
 class Contacts extends Component {
   constructor (props) {
@@ -22,7 +20,6 @@ class Contacts extends Component {
       <div>
         {!this.state.manageVisible
           ? <div>
-            <Menu />
             <h1>Contacts</h1>
             <ListGroup>
               <ListGroupItem>
