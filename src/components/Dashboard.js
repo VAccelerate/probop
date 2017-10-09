@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 
 import SafeModal from './SafeModal'
-import Menu from './Menu'
 import { getUserLocation } from '../helpers'
 import './Dashboard.css'
 import { CONTACTS } from '../constants'
+
+const GOOGLE_API_KEY = 'AIzaSyCpJxjn4o7c9fZGcqXJcnDeTQnYIhy0Or4'
 
 class Dashboard extends Component {
   constructor (props) {
@@ -91,30 +92,17 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div >
-        <Menu />
-        <div className='buttonContainer'>
-          <a href={this.state.dangerAddress + this.state.dangerMessage}>
-            <Button className='Danger' onClick={this.toggle} block>
-              <h3>I need urgent help</h3>
-              <p>TBC</p>
-            </Button>
+      <div>
+        {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${GOOGLE_API_KEY}`} alt='' /></div>}
+        <div id='alerts' className='buttonContainer'>
+          <a href={this.state.contact + this.state.dangerMessage}>
+            <Button className='danger' onClick={this.handleClick} block>Help! I&#39;m in danger</Button>
           </a>
-          <br />
-          <br />
-          <a href={this.state.vulnerableAddress + this.state.vulnerableMessage}>
-            <Button color='warning' onClick={this.toggle} >
-              <h3>I&#39;m feeling vulnerable</h3>
-            </Button>
+          <a href={this.state.contact + this.state.vulnerableMessage}>
+            <Button className='warning' onClick={this.handleClick} block>I feel unsafe</Button>
           </a>
-          <SafeModal toggle={this.toggle} modal={this.state.modal} />
-          {console.log(this.state.userLocation)}
-          <br />
-          <br />
-          <div className='location'>
-            <a href={`http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`}>See Where I am </a>
-          </div>
         </div>
+        <SafeModal toggle={this.toggle} modal={this.state.modal} />
       </div>
     )
   }

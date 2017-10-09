@@ -1,12 +1,10 @@
 import React from 'react'
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap'
-import Menu from './Menu'
 import * as FontAwesome from 'react-icons/lib/fa'
 
 const Helplines = (props) => {
   return (
     <div>
-      <Menu />
       <h1>Helplines</h1>
       <ListGroup>
         <ListGroup>
