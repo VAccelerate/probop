@@ -11,8 +11,6 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap'
-
-import Menu from './Menu'
 import {
   PROFILE,
   PROFILE_NAME,
@@ -37,6 +35,7 @@ class Profile extends Component {
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.toggle = this.toggle.bind(this)
+    this.getProfileData = this.getProfileData.bind(this)
   }
 
   componentDidMount () {
@@ -50,7 +49,6 @@ class Profile extends Component {
 
   onSubmit (e) {
     e.preventDefault()
-
     let profile = {}
     for (const element of e.target.elements) {
       if (element.name === 'gender' && element.checked) {
@@ -80,7 +78,6 @@ class Profile extends Component {
   render () {
     return (
       <div>
-        <Menu />
         <Form onSubmit={this.onSubmit}>
           <h1>Profile</h1>
           <FormGroup>

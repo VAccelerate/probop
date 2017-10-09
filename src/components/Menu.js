@@ -9,8 +9,18 @@ class Menu extends React.Component {
     super(props)
 
     this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.setCurrentRoute = this.setCurrentRoute.bind(this)
+    this.handleDocumentClick = this.handleDocumentClick.bind(this)
+    document.addEventListener('click', this.handleDocumentClick, true)
     this.state = {
-      collapsed: true
+      collapsed: true,
+      currentRoute: 'Dashboard'
+    }
+  }
+
+  handleDocumentClick (e) {
+    if (!this.state.collapsed) {
+      this.toggleNavbar()
     }
   }
 
@@ -19,29 +29,37 @@ class Menu extends React.Component {
       collapsed: !this.state.collapsed
     })
   }
+
+  setCurrentRoute (route) {
+    console.log(route)
+    this.setState({
+      currentRoute: route
+    })
+  }
+
   render () {
     return (
-      <div className='Menu'>
+      <div className='Menu' >
         <Navbar className='navbar-dark'>
-          <NavbarBrand className='title'><h4>Dashboard</h4>
+          <NavbarBrand className='title'><h4>{ this.state.currentRoute }</h4>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar style={{textAlign: 'right'}}>
               <NavItem className='item'>
-                <Link to='/'>Dashboard</Link>
+                <Link to='/' onClick={() => this.setCurrentRoute('Dashboard')} >Dashboard</Link>
               </NavItem>
               <NavItem>
-                <Link to='/profile'>Manage Profile</Link>
+                <Link to='/profile' onClick={() => this.setCurrentRoute('Manage Profile')}>Manage Profile</Link>
               </NavItem>
               <NavItem>
-                <Link to='/contacts'>Setup Contacts</Link>
+                <Link to='/contacts' onClick={() => this.setCurrentRoute('Setup Contacts')}>Manage Contacts</Link>
               </NavItem>
               <NavItem>
-                <Link to='/helplines'>Helplines</Link>
+                <Link to='/helplines' onClick={() => this.setCurrentRoute('Helplines')}>Helplines</Link>
               </NavItem>
               <NavItem>
-                <Link to='/guide'>How To Use Guide</Link>
+                <Link to='/guide' onClick={() => this.setCurrentRoute('How To Use Guide')}>How To Use Guide</Link>
               </NavItem>
             </Nav>
           </Collapse>

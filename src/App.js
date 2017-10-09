@@ -4,12 +4,13 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Profile from './components/Profile'
 import Helplines from './components/Helplines'
-import Contacts from './components/Contacts'
+import Contacts from './components/contacts/Contacts'
 import Guide from './components/Guide'
-// import NoGps from './components/NoGps'
+import Menu from './components/Menu'
 
 const App = (props) => (
   <div>
+    <Menu />
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/profile' component={Profile} />
