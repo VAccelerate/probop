@@ -37,6 +37,7 @@ class Profile extends Component {
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.toggle = this.toggle.bind(this)
+    this.getProfileData = this.getProfileData.bind(this)
   }
 
   componentDidMount () {
@@ -50,7 +51,6 @@ class Profile extends Component {
 
   onSubmit (e) {
     e.preventDefault()
-
     let profile = {}
     for (const element of e.target.elements) {
       if (element.name === 'gender' && element.checked) {
