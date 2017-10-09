@@ -17,12 +17,16 @@ import {
   PROFILE,
   PROFILE_NAME,
   PROFILE_DOB,
+  PROFILE_GENDER,
   PROFILE_EMAIL,
   PROFILE_MOBILE,
   PROFILE_ADRS1,
   PROFILE_ADRS2,
   PROFILE_CITY,
-  PROFILE_ETHNICITY
+  PROFILE_ETHNICITY,
+  PROFILE_OTHERADRS1,
+  PROFILE_OTHERADRS2,
+  PROFILE_OTHERCITY
 } from '../constants'
 
 class Profile extends Component {
@@ -36,11 +40,23 @@ class Profile extends Component {
     this.getProfileData = this.getProfileData.bind(this)
   }
 
+  componentDidMount () {
+    let genders = document.getElementsByName('gender')
+    genders.forEach((gender) => {
+      if (gender.value === JSON.parse(localStorage.getItem(PROFILE))['profileGender']) {
+        gender.checked = true
+      }
+    })
+  }
+
   onSubmit (e) {
     e.preventDefault()
     let profile = {}
     for (const element of e.target.elements) {
-      // To avoid trailing empty id to be added to object
+      if (element.name === 'gender' && element.checked) {
+        profile[PROFILE_GENDER] = element.value
+      }
+    // To avoid trailing empty id to be added to object
       if (element.id) {
         profile[element.id] = element.value
       }
@@ -75,6 +91,43 @@ class Profile extends Component {
             <Label for='DOB' sm={2}>Date of birth</Label>
             <Input type='date' name='date' id={PROFILE_DOB} defaultValue={this.getProfileData(PROFILE_DOB)} />
           </FormGroup>
+          <FormGroup tag='fieldset' >
+            <Label for='gender' sm={2}>Gender</Label>
+            <FormGroup check>
+              <Label check>
+                <Input type='radio' name='gender' value='Male' />{' '}
+                 Male
+               </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type='radio' name='gender' value='Female' />{' '}
+                 Female
+               </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type='radio' name='gender' value='Trans' />{' '}
+                 Trans
+               </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type='radio' name='gender' value='Other' />{' '}
+                 Other
+               </Label>
+            </FormGroup>
+          </FormGroup>
+          <FormGroup>
+            <Label for='ethnicity' sm={2}>Ethnicity</Label>
+            <Input type='select' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
+              <option>Asian</option>
+              <option>M&#257;ori</option>
+              <option>Pakeha/NZ European</option>
+              <option>Pasifika</option>
+              <option>Other</option>
+            </Input>
+          </FormGroup>
           <FormGroup>
             <Label for='mobile' sm={2}>Mobile Number</Label>
             <Input type='text' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={this.getProfileData(PROFILE_MOBILE)} />
@@ -90,14 +143,12 @@ class Profile extends Component {
             <Input type='text' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_CITY)} />
           </FormGroup>
           <FormGroup>
-            <Label for='ethnicity' sm={2}>Ethnicity</Label>
-            <Input type='select' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
-              <option>Maori</option>
-              <option>Pakeha/NZ European</option>
-              <option>Pasifika</option>
-              <option>...</option>
-            </Input>
+            <Label for='OtherAddress' sm={2}>Other most frequent address</Label>
+            <Input type='text' name='address1' id={PROFILE_OTHERADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_OTHERADRS1)} />
+            <Input type='text' name='address2' id={PROFILE_OTHERADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_OTHERADRS2)} />
+            <Input type='text' name='city' id={PROFILE_OTHERCITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_OTHERCITY)} />
           </FormGroup>
+
           <FormGroup check>
             <Col sm={{ size: 10, offset: 2 }}>
               <Button>Submit</Button>
