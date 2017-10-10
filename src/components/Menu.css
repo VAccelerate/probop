@@ -10,9 +10,6 @@
 .Menu h4 {
   color: #00CED1;
 }
-.Menu > .navbar-dark.navbar {
-    background-color: #000;
-}
 
 div.navbar-collapse {
     font-size: 18pt;
