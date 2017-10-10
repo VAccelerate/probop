@@ -6,7 +6,6 @@ import './Helplines.css'
 const Helplines = (props) => {
   return (
     <div>
-      <h1>Helplines</h1>
       <div className='ListGroup FontAwesome'>
         <ListGroup>
           <ListGroup>
