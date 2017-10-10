@@ -19,9 +19,8 @@
   z-index: 1; /* The z-index should be higher than Google Maps */
   position: absolute;
   top: 60%;
-  left: 3.5rem;
-  width: 20rem; /* a bit hacky but kinda works across multiple form factors */
-  margin: 1em auto;
+  left: 15%;
+  right: 15%;
   margin: 1em auto;
 }
 
@@ -43,7 +42,7 @@
 }
 
 .buttonContainer button {
-  font-size: 1.5em;
+  font-size: 1.3rem;
   border-radius: 0px;
   -webkit-box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
   box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
