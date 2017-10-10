@@ -13,7 +13,7 @@ const SafeModal = (props) => {
     <Modal style={{opacity: 0.9}} isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
       <ModalBody className='text' style={{backgroundColor: '#e60000'}}>
         <h2>Danger alert sent!</h2>
-        <p>We've just sent a text message to your list</p>
+        <p>We&#39;ve just sent a text message to your list</p>
       </ModalBody>
       <ModalFooter className='footer' style={{backgroundColor: '#e60000'}}>
         <Button className='button' color='success' onClick={props.toggle} block>
