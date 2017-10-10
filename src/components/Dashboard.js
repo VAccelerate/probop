@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 
 import SafeModal from './SafeModal'
-import { getUserLocation } from '../helpers'
+import { getUserLocation, getContactNumbers } from '../helpers'
 import './Dashboard.css'
 import { CONTACTS } from '../constants'
 
@@ -14,10 +14,10 @@ class Dashboard extends Component {
     super(props)
     this.state = {
       modal: false,
-      vulnerableAddress: '',
-      dangerAddress: '',
-      vulnerableMessage: '?body=I%20am%20feeling%20vulnerable',
-      dangerMessage: '?body=I%20am%20in%20danger',
+      vulnerableContacts: '',
+      dangerContacts: '',
+      vulnerableMessage: '?body=I am feeling unsafe. This is my location: ',
+      dangerMessage: '?body=Please help, I am in danger. This is my location: ',
       userLocation: {
         latitude: 0,
         longitude: 0
@@ -28,7 +28,7 @@ class Dashboard extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick (e) {
+  handleClick (e, level) {
     e.preventDefault()
     getUserLocation((position) => {
       this.setState({
@@ -37,6 +37,13 @@ class Dashboard extends Component {
       console.log(this.state.userLocation)
     })
     this.toggle()
+
+    if (level === 'danger') {
+      window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
+    }
+    if (level === 'vulnerable') {
+      window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
+    }
   }
 
   toggle () {
@@ -54,37 +61,25 @@ class Dashboard extends Component {
     })
 
     if (localStorage.getItem(CONTACTS)) {
-      let contacts = JSON.parse(localStorage.getItem(CONTACTS))
-      let contactKeys = [Object.keys(contacts)]
-      let vulnerableContacts = []
-      let dangerContacts = []
 
-      contactKeys.forEach((keys) => {
-        keys.forEach((contact) => {
-          if (contacts[contact].contactVulnerable) {
-            vulnerableContacts.push(contacts[contact].contactNumber)
-          }
-          if (contacts[contact].contactDanger) {
-            dangerContacts.push(contacts[contact].contactNumber)
-          }
-        })
-      })
+      let dangerNumbers = getContactNumbers('CONTACT_DANGER', JSON.parse(localStorage.getItem(CONTACTS)))
+      let vulnerableNumbers = getContactNumbers('CONTACT_VULNERABLE', JSON.parse(localStorage.getItem(CONTACTS)))
 
       let userAgent = navigator.userAgent || navigator.vendor || window.opera
 
       if (/android/i.test(userAgent)) {
         this.setState({
-          vulnerableAddress: 'sms:' + vulnerableContacts.toString(),
-          dangerAddress: 'sms:' + dangerContacts.toString()
+          vulnerableContacts: 'sms:' + vulnerableNumbers.toString(),
+          dangerContacts: 'sms:' + dangerNumbers.toString()
         })
       }
 
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         this.setState({
-          vulnerableMessage: '&body=I%20am%20feeling%20vulnerable',
-          dangerMessage: '&body=I%20am%20in%20danger',
-          vulnerableAddress: 'sms://open?addresses=' + vulnerableContacts.toString() + '/',
-          dangerAddress: 'sms://open?addresses=' + dangerContacts.toString() + '/'
+          vulnerableMessage: '&body=I am feeling unsafe. This is my location: ',
+          dangerMessage: '&body=Please help, I am in danger. This is my location: ',
+          vulnerableContacts: 'sms:/open?addresses=' + vulnerableNumbers.toString(),
+          dangerContacts: 'sms:/open?addresses=' + dangerNumbers.toString()
         })
       }
     }
@@ -95,12 +90,8 @@ class Dashboard extends Component {
       <div>
         {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${GOOGLE_API_KEY}`} alt='' /></div>}
         <div id='alerts' className='buttonContainer'>
-          <a href={this.state.contact + this.state.dangerMessage}>
-            <Button className='danger' onClick={this.handleClick} block>Help! I&#39;m in danger</Button>
-          </a>
-          <a href={this.state.contact + this.state.vulnerableMessage}>
-            <Button className='warning' onClick={this.handleClick} block>I feel unsafe</Button>
-          </a>
+          <Button className='danger' onClick={(e)=>this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
+          <Button className='warning' onClick={(e)=>this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
         </div>
         <SafeModal toggle={this.toggle} modal={this.state.modal} />
       </div>

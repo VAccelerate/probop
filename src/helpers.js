@@ -12,3 +12,19 @@ export function getUserLocation (callback) {
       }
     )
 }
+
+export function getContactNumbers (type, contacts) {
+
+  let contactKeys = [Object.keys(contacts)]
+  let numbers = []
+
+  contactKeys.forEach((keys) => {
+    keys.forEach((contact) => {
+        if (contacts[contact][type]) {
+          numbers.push(contacts[contact].contactNumber)
+        }
+    })
+  })
+
+  return numbers
+}
