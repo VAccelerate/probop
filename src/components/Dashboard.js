@@ -9,14 +9,22 @@ import { CONTACTS, CONTACT_VULNERABLE, CONTACT_DANGER } from '../constants'
 
 const GOOGLE_API_KEY = 'AIzaSyCpJxjn4o7c9fZGcqXJcnDeTQnYIhy0Or4'
 
+let dangerNumbers = []
+let vulnerableNumbers = []
+
 class Dashboard extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      contactsAlert: true,
       modal: false,
-      modalMessage: 'Danger alert sent!',
-      modalStyle: {
-        backgroundColor: '#e60000'
+      modalContent: {
+        heading: 'Danger alert sent!',
+        message: 'We\'ve just sent a text message to your list',
+        button: 'I feel safe now',
+        style: {
+          backgroundColor: '#e60000'
+        }
       },
       vulnerableContacts: '',
       dangerContacts: '',
@@ -43,22 +51,56 @@ class Dashboard extends Component {
     this.toggle()
 
     if (level === 'danger') {
-      window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
-      this.setState({
-        modalMessage: 'Danger alert sent!',
-        modalStyle: {
-          backgroundColor: '#e60000'
-        }
-      })
+      if (dangerNumbers.length > 0) {
+        window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
+        this.setState({
+          modalContent: {
+            heading: 'Danger alert sent!',
+            message: 'We\'ve just sent a text message to your list',
+            button: 'I feel safe now',
+            style: {
+              backgroundColor: '#e60000'
+            }
+          }
+        })
+      } else {
+        this.setState({
+          modalContent: {
+            heading: 'Not sent! No contacts added',
+            message: 'Please add contacts and and select the "danger" checkbox',
+            button: 'OK',
+            style: {
+              backgroundColor: '#e60000'
+            }
+          }
+        })
+      }
     }
     if (level === 'vulnerable') {
-      window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
-      this.setState({
-        modalMessage: 'Unsafe alert sent!',
-        modalStyle: {
-          backgroundColor: '#14afb8'
-        }
-      })
+      if (vulnerableNumbers > 0) {
+        window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
+        this.setState({
+          modalContent: {
+            heading: 'Unsafe alert sent!',
+            message: 'We\'ve just sent a text message to your list',
+            button: 'I feel safe now',
+            style: {
+              backgroundColor: '#14afb8'
+            }
+          }
+        })
+      } else {
+        this.setState({
+          modalContent: {
+            heading: 'Not sent! No contacts added',
+            message: 'Please add contacts and and select the "unsafe" checkbox',
+            button: 'OK',
+            style: {
+              backgroundColor: '#14afb8'
+            }
+          }
+        })
+      }
     }
   }
 
@@ -76,9 +118,9 @@ class Dashboard extends Component {
       })
     })
 
-    if (localStorage.getItem(CONTACTS)) {
-      let dangerNumbers = getContactNumbers(CONTACT_DANGER, JSON.parse(localStorage.getItem(CONTACTS)))
-      let vulnerableNumbers = getContactNumbers(CONTACT_VULNERABLE, JSON.parse(localStorage.getItem(CONTACTS)))
+    if (Object.keys(JSON.parse(localStorage.getItem(CONTACTS))).length > 0) {
+      dangerNumbers = getContactNumbers(CONTACT_DANGER, JSON.parse(localStorage.getItem(CONTACTS)))
+      vulnerableNumbers = getContactNumbers(CONTACT_VULNERABLE, JSON.parse(localStorage.getItem(CONTACTS)))
 
       let userAgent = navigator.userAgent || navigator.vendor || window.opera
 
@@ -115,7 +157,7 @@ class Dashboard extends Component {
           <Button className='danger' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
           <Button className='warning' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
         </div>
-        <SafeModal toggle={this.toggle} modal={this.state.modal} modalMessage={this.state.modalMessage} style={this.state.modalStyle} />
+        <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} />
       </div>
     )
   }
