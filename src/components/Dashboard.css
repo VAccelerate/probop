@@ -3,7 +3,6 @@
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: absolute; 
   top: 0; 
   left: 0; 
   z-index: 0; /* Set z-index to 0 as it will be on a layer below the alert buttons */
@@ -17,13 +16,12 @@
 }
   
 #alerts { 
-  position: relative; 
   z-index: 1; /* The z-index should be higher than Google Maps */
-  margin-top: 85%;
-  margin-left: 10%;
-  margin-right: 10%;
-  align-items: center;
-  height: 100vh;
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  right: 15%;
+  margin: 1em auto;
 }
 
 .danger {
@@ -44,7 +42,8 @@
 }
 
 .buttonContainer button {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-radius: 0px;
   -webkit-box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
+  box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
 }
