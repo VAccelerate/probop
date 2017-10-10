@@ -5,7 +5,7 @@ import { Button } from 'reactstrap'
 import SafeModal from './SafeModal'
 import { getUserLocation, getContactNumbers } from '../helpers'
 import './Dashboard.css'
-import { CONTACTS } from '../constants'
+import { CONTACTS, CONTACT_VULNERABLE, CONTACT_DANGER } from '../constants'
 
 const GOOGLE_API_KEY = 'AIzaSyCpJxjn4o7c9fZGcqXJcnDeTQnYIhy0Or4'
 
@@ -77,8 +77,8 @@ class Dashboard extends Component {
     })
 
     if (localStorage.getItem(CONTACTS)) {
-      let dangerNumbers = getContactNumbers('contactDanger', JSON.parse(localStorage.getItem(CONTACTS)))
-      let vulnerableNumbers = getContactNumbers('contactVulnerable', JSON.parse(localStorage.getItem(CONTACTS)))
+      let dangerNumbers = getContactNumbers(CONTACT_DANGER, JSON.parse(localStorage.getItem(CONTACTS)))
+      let vulnerableNumbers = getContactNumbers(CONTACT_VULNERABLE, JSON.parse(localStorage.getItem(CONTACTS)))
 
       let userAgent = navigator.userAgent || navigator.vendor || window.opera
 
