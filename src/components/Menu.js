@@ -40,7 +40,7 @@ class Menu extends React.Component {
   render () {
     return (
       <div className='Menu' >
-        <Navbar className='navbar-dark'>
+        <Navbar className='navbar-dark navbar-fixed-top navbar-absolute navbar-fixed-top'>
           <NavbarBrand className='title'><h4>{ this.state.currentRoute }</h4>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
