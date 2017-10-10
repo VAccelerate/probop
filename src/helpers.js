@@ -26,5 +26,6 @@ export function getContactNumbers (type, contacts) {
     })
   })
 
+    console.log(numbers);
   return numbers
 }
