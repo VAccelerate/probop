@@ -105,8 +105,8 @@ class Dashboard extends Component {
       <div>
         {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${GOOGLE_API_KEY}`} alt='' /></div>}
         <div id='alerts' className='buttonContainer'>
-          <Button className='danger' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
-          <Button className='warning' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
+          <Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
+          <Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
         </div>
         <SafeModal toggle={this.toggle} modal={this.state.modal} modalMessage={this.state.modalMessage} style={this.state.modalStyle} />
       </div>
