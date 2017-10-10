@@ -6,7 +6,7 @@
 .FontAwesome {
   color:#00A0AF;
   font-size: 100%;
-  line-height: 50px;
+  line-height: 4em;
 }
 
 .list-group-item-heading{
@@ -16,10 +16,25 @@
 a {
   color: #00A0AF;
   font-size: fixed;
+  padding:5%;
 }
 
 h1 {
   text-align: center;
   margin-top: 20px;
   margin-bottom: -20px;
+}
+
+.ImageHelpline {
+  margin-top: -20%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Arrow {
+  margin-top: -35%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: row-reverse;
+
 }

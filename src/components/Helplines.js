@@ -2,6 +2,7 @@ import React from 'react'
 import { ListGroup, ListGroupItem, ListGroupItemHeading } from 'reactstrap'
 import * as FontAwesome from 'react-icons/lib/fa'
 import './Helplines.css'
+import ImageHelpline from '../images/arrow1.png'
 
 const Helplines = (props) => {
   return (
@@ -15,16 +16,19 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800787797'>0800 787 797</a>
-              <br /><FontAwesome.FaGlobe size='10%' />&nbsp;&nbsp;&nbsp;
-              <a href='https://alcoholdrughelp.org.nz/'>https://alcoholdrughelp.org.nz</a>
+              <div className='ImageHelpline'>
+                <a href='https://alcoholdrughelp.org.nz/'><img className='ImageHelplinea' alt=''src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
                 Are you Okay (Violence Helpline)
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
-              <a href='tel://+64800456450'>0800 456 450</a> <br /><FontAwesome.FaGlobe size='10%' />&nbsp;&nbsp;&nbsp;
-              <a href='http://www.areyouok.org.nz/'>http://www.areyouok.org.nz/</a>
+              <a href='tel://+64800456450'>0800 456 450</a>
+              <div className='ImageHelpline'>
+                <a href='http://www.areyouok.org.nz/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
@@ -33,8 +37,9 @@ const Helplines = (props) => {
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800456450'>0800 111 757</a> <br /><FontAwesome.FaCommenting size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='sms://4202'>4202</a>  &nbsp;&nbsp;&nbsp;
-              <br /><FontAwesome.FaGlobe size='10%' /> &nbsp;&nbsp;
-              <a href='https://depression.org.nz/'>https://depression.org.nz/</a>
+              <div className='Arrow'>
+                <a href='https://depression.org.nz/'><img alt='' src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
@@ -42,8 +47,9 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800543354'>0800 543 354</a>&nbsp;&nbsp;&nbsp;
-              <br /><FontAwesome.FaGlobe size='10%' />&nbsp;&nbsp;&nbsp;
-              <a href='https://www.lifeline.org.nz/'>https://www.lifeline.org.nz/</a>
+              <div className='ImageHelpline'>
+                <a href='https://www.lifeline.org.nz/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
@@ -60,8 +66,9 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+648006885463'>0800 688 5463</a>&nbsp;&nbsp;&nbsp;
-              <br /><FontAwesome.FaGlobe size='10%' /> &nbsp;&nbsp;&nbsp;
-              <a href='http://www.outline.org.nz/'>http://www.outline.org.nz/</a>
+              <div className='ImageHelpline'>
+                <a href='http://www.outline.org.nz/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
@@ -69,8 +76,9 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800742584'>0800 742 584</a>&nbsp;&nbsp;&nbsp;
-              <br /><FontAwesome.FaGlobe size='10%' />&nbsp;&nbsp;&nbsp;
-              <a href='http://shakti-international.org/'>http://shakti-international.org/</a>
+              <div className='ImageHelpline'>
+                <a href='http://shakti-international.org/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
             <ListGroupItem>
               <ListGroupItemHeading>
@@ -80,8 +88,9 @@ const Helplines = (props) => {
               <a href='tel://+64800376633'>0800 376 633</a>&nbsp;&nbsp;&nbsp;
               <br /><FontAwesome.FaCommenting size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='sms://234'>234</a>&nbsp;&nbsp;&nbsp;
-              <br /><FontAwesome.FaGlobe size='10%' />&nbsp;&nbsp;&nbsp;
-              <a href='https://www.youthline.co.nz/'>https://www.youthline.co.nz/</a>
+              <div className='ImageHelpline'>
+                <a href='https://www.youthline.co.nz/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              </div>
             </ListGroupItem>
           </ListGroup>
         </ListGroup>
