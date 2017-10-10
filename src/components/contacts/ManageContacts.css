@@ -7,7 +7,7 @@
 
 .Title {
   color: #00A9AF;
-  font-size: 1.313em;
+  font-size: 5.4vw;
   font-weight: bold;
 }
 
@@ -24,7 +24,7 @@
   opacity: 0.25;
   margin-top: 3.20%;
   margin-bottom: 9.2%;
-  font-size: 1.313em;
+  font-size: 5.4vw;
 }
 
 .Toggle {
@@ -46,12 +46,12 @@
 
 .Id {
   color: #333333;
-  font-size: 1.3em;
+  font-size: 5.4vw;
 }
 
 .Mobile {
   color: #333333;
-  font-size: 1.188em;
+  font-size: 4.8vw;
   font-weight: bold;
 }
 
@@ -62,7 +62,7 @@
 
 .AlertLevel {
   color: #333333;
-  font-size: 1.3em;
+  font-size: 4.8vw;
   font-style: italic;
 }
 
