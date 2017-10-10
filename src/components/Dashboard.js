@@ -10,7 +10,7 @@ import { CONTACTS, CONTACT_VULNERABLE, CONTACT_DANGER } from '../constants'
 const GOOGLE_API_KEY = 'AIzaSyCpJxjn4o7c9fZGcqXJcnDeTQnYIhy0Or4'
 
 let dangerNumbers = []
-let vulnerableNumbers  =[]
+let vulnerableNumbers = []
 
 class Dashboard extends Component {
   constructor (props) {
@@ -24,7 +24,7 @@ class Dashboard extends Component {
         button: 'I feel safe now',
         style: {
           backgroundColor: '#e60000'
-        },
+        }
       },
       vulnerableContacts: '',
       dangerContacts: '',
@@ -60,11 +60,10 @@ class Dashboard extends Component {
             button: 'I feel safe now',
             style: {
               backgroundColor: '#e60000'
-            },
+            }
           }
         })
-      }
-      else {
+      } else {
         this.setState({
           modalContent: {
             heading: 'Not sent! No contacts added',
@@ -72,7 +71,7 @@ class Dashboard extends Component {
             button: 'OK',
             style: {
               backgroundColor: '#e60000'
-            },
+            }
           }
         })
       }
@@ -90,8 +89,7 @@ class Dashboard extends Component {
             }
           }
         })
-      }
-      else {
+      } else {
         this.setState({
           modalContent: {
             heading: 'Not sent! No contacts added',
@@ -99,7 +97,7 @@ class Dashboard extends Component {
             button: 'OK',
             style: {
               backgroundColor: '#14afb8'
-            },
+            }
           }
         })
       }
