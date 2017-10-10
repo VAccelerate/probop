@@ -26,3 +26,14 @@ div.navbar-collapse {
 .navbar-collapse  li a{
     color: rgba(51, 51, 51, 1);
 }
+
+.navbar-fixed-top.navbar-absolute {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+}
+
+  
+.navbar-absolute + div {
+      margin-top: 68px;
+}
