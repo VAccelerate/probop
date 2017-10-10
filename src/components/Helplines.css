@@ -38,3 +38,22 @@ h1 {
   flex-direction: row-reverse;
 
 }
+
+.TopArrow {
+  margin-top: -29%;
+  margin-bottom: 0%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.CrisisArrow {
+  margin-top: -20%;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.ShaktiArrow {
+  margin-top: -20%;
+  margin-bottom: -5%;
+  display: flex;
+  flex-direction: row-reverse;
+}

@@ -16,8 +16,8 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800787797'>0800 787 797</a>
-              <div className='ImageHelpline'>
-                <a href='https://alcoholdrughelp.org.nz/'><img className='ImageHelplinea' alt=''src={ImageHelpline} /></a>
+              <div className='TopArrow'>
+                <a href='https://alcoholdrughelp.org.nz/'><img alt=''src={ImageHelpline} /></a>
               </div>
             </ListGroupItem>
             <ListGroupItem>
@@ -47,7 +47,7 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800543354'>0800 543 354</a>&nbsp;&nbsp;&nbsp;
-              <div className='ImageHelpline'>
+              <div className='CrisisArrow'>
                 <a href='https://www.lifeline.org.nz/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
               </div>
             </ListGroupItem>
@@ -76,8 +76,8 @@ const Helplines = (props) => {
               </ListGroupItemHeading>
               <FontAwesome.FaPhone size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='tel://+64800742584'>0800 742 584</a>&nbsp;&nbsp;&nbsp;
-              <div className='ImageHelpline'>
-                <a href='http://shakti-international.org/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              <div className='ShaktiArrow'>
+                <a href='http://shakti-international.org/'><img alt=''src={ImageHelpline} /></a>
               </div>
             </ListGroupItem>
             <ListGroupItem>
@@ -88,8 +88,8 @@ const Helplines = (props) => {
               <a href='tel://+64800376633'>0800 376 633</a>&nbsp;&nbsp;&nbsp;
               <br /><FontAwesome.FaCommenting size='10%' />&nbsp;&nbsp;&nbsp;
               <a href='sms://234'>234</a>&nbsp;&nbsp;&nbsp;
-              <div className='ImageHelpline'>
-                <a href='https://www.youthline.co.nz/'><img className='ImageHelpline' alt=''src={ImageHelpline} /></a>
+              <div className='Arrow'>
+                <a href='https://www.youthline.co.nz/'><img alt=''src={ImageHelpline} /></a>
               </div>
             </ListGroupItem>
           </ListGroup>
