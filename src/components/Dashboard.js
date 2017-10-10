@@ -43,9 +43,6 @@ class Dashboard extends Component {
     this.toggle()
 
     if (level === 'danger') {
-
-      console.log(this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`))
-
       window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
       this.setState({
         modalMessage: 'Danger alert sent!',
