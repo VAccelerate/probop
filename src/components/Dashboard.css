@@ -19,10 +19,11 @@
 #alerts { 
   position: relative; 
   z-index: 1; /* The z-index should be higher than Google Maps */
-  margin-top: 90%;
+  margin-top: 85%;
   margin-left: 10%;
   margin-right: 10%;
   align-items: center;
+  height: 100vh;
 }
 
 .danger {
