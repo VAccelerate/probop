@@ -1,0 +1,82 @@
+.Container {
+  margin-left: 6.25%;
+  margin-right: 6.25%;
+  font-family: "HelveticaNeue", sans-serif;
+}
+
+.Title {
+  color: #00A9AF;
+  font-size: 5.4vw;
+  font-weight: bold;
+}
+
+.LineBreak {
+  border: none;
+  margin-top: 2.00%;
+  margin-bottom: 0%;
+  height: 1px;
+  background-color: #999999;
+}
+
+.ContactPolice{
+  color: #333333;
+  opacity: 0.25;
+  margin-top: 3.20%;
+  margin-bottom: 9.2%;
+  font-size: 5.4vw;
+}
+
+.Toggle {
+  position: Absolute;
+  margin-top: 1.2%;
+  right: 6.25%;
+}
+
+.ListGroup {
+  padding-top: 0;
+  position: relative;
+  float: left;
+}
+
+.ListItem {
+  margin-bottom: 0%;
+  padding: 0% 0;
+  border: 0;
+}
+
+.Id {
+  color: #333333;
+  font-size: 5.4vw;
+}
+
+.Mobile {
+  color: #333333;
+  font-size: 4.8vw;
+  font-weight: bold;
+}
+
+.Right{
+  position: Absolute;
+  right: 6.25%;
+}
+
+.AlertLevel {
+  color: #333333;
+  font-size: 4.8vw;
+  font-style: italic;
+}
+
+.Button {
+  background-color: #00A9AF;
+  position: relative;
+  height: 65px;
+  border-radius: 0;
+  margin-bottom: 5px;
+  font-size: 5.0vw;
+}
+
+.a-tag {
+  float: left;
+  width: 100%;
+  padding: 0px;
+}

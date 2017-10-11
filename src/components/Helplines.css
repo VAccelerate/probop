@@ -1,0 +1,29 @@
+.ListGroup {
+  position: absolute;
+  padding-top: 60px;
+}
+
+.list-group-item-heading{
+  color: #000;
+}
+
+a {
+  color: #00A0AF;
+  font-size: fixed;
+  padding: 3%;
+}
+
+.Arrow {
+  position: Absolute;
+  right: 6.25%;
+}
+
+.Phone {
+  height: 40px;
+}
+
+.Sms {
+  padding-left: 10px;
+  padding-left: 7px;
+  height: 40px;
+}

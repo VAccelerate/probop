@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import { Redirect } from 'react-router'
+import './AddContact.css'
 
 import {
   CONTACTS,
@@ -84,7 +85,7 @@ class AddContact extends Component {
   render () {
     const {added, name} = this.state
     return (
-      <div>
+      <div className='Container'>
         {added
         ? <Redirect to={{
           pathname: '/contacts',
@@ -96,29 +97,31 @@ class AddContact extends Component {
         : <div>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label>Name</Label>
-              <Input type='text' id={CONTACT_NAME} />
+              <Label className='Text'>Name</Label>
+              <Input className='Input' type='text' id={CONTACT_NAME} />
             </FormGroup>
             <FormGroup>
-              <Label>Mobile Number</Label>
-              <Input type='tel' id={CONTACT_NUMBER} />
+              <Label className='Text'>Mobile Number</Label>
+              <Input className='Input' type='tel' id={CONTACT_NUMBER} />
             </FormGroup>
             <FormGroup check>
-              <Label check>
-                <Input type='checkbox' id={CONTACT_VULNERABLE} />{' '}
-                  Vulnerable
+              <h6 className='Text'> Contact this person when I am </h6>
+              <Label check className='Text Danger'>
+                <Input className='Checkbox' type='checkbox' id={CONTACT_VULNERABLE} />{' '}
+                  Unsafe
               </Label>
-              <Label check>
-                <Input type='checkbox' id={CONTACT_DANGER} />{' '}
-                  Danger
+              <Label check className='Text'>
+                <Input className='Checkbox' type='checkbox' id={CONTACT_DANGER} />{' '}
+                  In Danger
               </Label>
             </FormGroup>
-            <Button color='primary' size='lg'>Save Changes</Button>{' '}
+            <Button className='AddButton' block>Add</Button>{' '}
           </Form>
           <ContactsModal toggle={this.duplicateModalToggle} modal={this.state.duplicateModal}
             message='Contact with the same name already exists' />
           <ContactsModal toggle={this.emptyModalToggle} modal={this.state.emptyModal}
             message='Name and number are required' />
+          <p className='Notice'>When you add a contact, we will send them a text message to let them know you&#39;ve chosen them to be your safety contact</p>
         </div>
         }
       </div>
@@ -128,12 +131,12 @@ class AddContact extends Component {
 
 const ContactsModal = (props) => {
   return (
-    <Modal isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
+    <Modal className='Modal' isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
       <ModalBody>
-        <h1>{props.message}</h1>
+        <h1 className='ModalText'>{props.message}</h1>
       </ModalBody>
       <ModalFooter>
-        <Button color='success' onClick={props.toggle}>
+        <Button className='OkButton' onClick={props.toggle} block>
           OK
         </Button>
       </ModalFooter>

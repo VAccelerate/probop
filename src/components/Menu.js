@@ -7,7 +7,10 @@ import './Menu.css'
 class Menu extends React.Component {
   constructor (props) {
     super(props)
-
+    window.drift.on('ready', function (api) {
+      // hide the widget when it first loads
+      api.widget.hide()
+    })
     this.toggleNavbar = this.toggleNavbar.bind(this)
     this.setCurrentRoute = this.setCurrentRoute.bind(this)
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
@@ -31,7 +34,6 @@ class Menu extends React.Component {
   }
 
   setCurrentRoute (route) {
-    console.log(route)
     this.setState({
       currentRoute: route
     })
@@ -40,26 +42,31 @@ class Menu extends React.Component {
   render () {
     return (
       <div className='Menu' >
-        <Navbar className='navbar-dark'>
+        <Navbar className='navbar-dark navbar-fixed-top navbar-absolute navbar-fixed-top'>
           <NavbarBrand className='title'><h4>{ this.state.currentRoute }</h4>
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
+          <div className='toggle-container'>
+            <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
+          </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar style={{textAlign: 'right'}}>
-              <NavItem className='item'>
+            <Nav navbar >
+              <NavItem className='dashboard' >
                 <Link to='/' onClick={() => this.setCurrentRoute('Dashboard')} >Dashboard</Link>
               </NavItem>
-              <NavItem>
+              <NavItem className='profile' >
                 <Link to='/profile' onClick={() => this.setCurrentRoute('Manage Profile')}>Manage Profile</Link>
               </NavItem>
-              <NavItem>
+              <NavItem className='contact'>
                 <Link to='/contacts' onClick={() => this.setCurrentRoute('Setup Contacts')}>Manage Contacts</Link>
-              </NavItem>
-              <NavItem>
+              </NavItem >
+              <NavItem className='help' >
                 <Link to='/helplines' onClick={() => this.setCurrentRoute('Helplines')}>Helplines</Link>
               </NavItem>
-              <NavItem>
+              <NavItem className='how'>
                 <Link to='/guide' onClick={() => this.setCurrentRoute('How To Use Guide')}>How To Use Guide</Link>
+              </NavItem>
+              <NavItem className='contact'>
+                <Link className='drift-open-chat' to='/feedback' >Feedback</Link>
               </NavItem>
             </Nav>
           </Collapse>

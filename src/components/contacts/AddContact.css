@@ -1,0 +1,68 @@
+.Container {
+  padding-top: 18.00%;
+  margin-left: 6.25%;
+  margin-right: 6.25%;
+  font-family: "HelveticaNeue", sans-serif;
+}
+
+.Text{
+  color: #333333;
+  font-size: 5.0vw;
+  background-color: white;
+}
+
+.Input{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 5.0vw;
+}
+
+.Checkbox{
+  width: 32px;
+  height: 32px;
+}
+
+.Danger{
+  margin-right: 5%;
+}
+
+.AddButton {
+  background-color: #00A9AF;
+  padding: 5%;
+  margin-top: 5%;
+  font-size: 5.0vw;
+  border-radius: 0;
+}
+
+.Modal {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  right: 10%;
+}
+
+.ModalText{
+  color: #333333;
+  font-size: 5.0vw;
+  background-color: white;
+  text-align: center;
+}
+
+.OkButton {
+  background-color: #00A9AF;
+  font-size: 5.0vw;
+  border-radius: 0;
+  width: 40vw;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.Notice {
+  color: #333333;
+  margin-top: 3%;
+  font-size: 4.0vw;
+  background-color: white;
+  text-align: center;
+}
