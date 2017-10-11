@@ -37,7 +37,6 @@ class Profile extends Component {
     this.toggle = this.toggle.bind(this)
     this.getProfileData = this.getProfileData.bind(this)
     window.drift.on('ready', function (api) {
-  // hide the widget when it first loads
       api.widget.show()
     })
   }
