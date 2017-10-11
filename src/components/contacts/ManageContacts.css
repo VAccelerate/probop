@@ -1,5 +1,4 @@
 .Container {
-  padding-top: 18.00%;
   margin-left: 6.25%;
   margin-right: 6.25%;
   font-family: "HelveticaNeue", sans-serif;
@@ -7,7 +6,7 @@
 
 .Title {
   color: #00A9AF;
-  font-size: 1.313em;
+  font-size: 5.4vw;
   font-weight: bold;
 }
 
@@ -24,7 +23,7 @@
   opacity: 0.25;
   margin-top: 3.20%;
   margin-bottom: 9.2%;
-  font-size: 1.313em;
+  font-size: 5.4vw;
 }
 
 .Toggle {
@@ -34,11 +33,12 @@
 }
 
 .ListGroup {
-  margin-top: 0%;
+  padding-top: 0;
+  position: relative;
+  float: left;
 }
 
 .ListItem {
-  margin-top: 2%;
   margin-bottom: 0%;
   padding: 0% 0;
   border: 0;
@@ -46,12 +46,12 @@
 
 .Id {
   color: #333333;
-  font-size: 1.3em;
+  font-size: 5.4vw;
 }
 
 .Mobile {
   color: #333333;
-  font-size: 1.188em;
+  font-size: 4.8vw;
   font-weight: bold;
 }
 
@@ -62,11 +62,21 @@
 
 .AlertLevel {
   color: #333333;
-  font-size: 1.3em;
+  font-size: 4.8vw;
   font-style: italic;
 }
 
 .Button {
   background-color: #00A9AF;
-  padding: 5%;
+  position: relative;
+  height: 65px;
+  border-radius: 0;
+  margin-bottom: 5px;
+  font-size: 5.0vw;
+}
+
+.a-tag {
+  float: left;
+  width: 100%;
+  padding: 0px;
 }

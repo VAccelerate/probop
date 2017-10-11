@@ -16,7 +16,7 @@ class Dashboard extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      contactsAlert: true,
+      contactsAlert: false,
       modal: false,
       modalContent: {
         heading: 'Danger alert sent!',
@@ -66,8 +66,8 @@ class Dashboard extends Component {
       } else {
         this.setState({
           modalContent: {
-            heading: 'Not sent! No contacts added',
-            message: 'Please add contacts and and select the "danger" checkbox',
+            heading: 'Not sent!',
+            message: 'You haven\'t selected anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
             button: 'OK',
             style: {
               backgroundColor: '#e60000'
@@ -92,8 +92,8 @@ class Dashboard extends Component {
       } else {
         this.setState({
           modalContent: {
-            heading: 'Not sent! No contacts added',
-            message: 'Please add contacts and and select the "unsafe" checkbox',
+            heading: 'Not sent!',
+            message: 'You haven\'t selected anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
             button: 'OK',
             style: {
               backgroundColor: '#14afb8'
@@ -117,8 +117,11 @@ class Dashboard extends Component {
         showUserLocation: true
       })
     })
-
-    if (Object.keys(JSON.parse(localStorage.getItem(CONTACTS))).length > 0) {
+    if (!localStorage.getItem(CONTACTS)) {
+      this.setState({
+        contactsAlert: true
+      })
+    } else if (Object.keys(JSON.parse(localStorage.getItem(CONTACTS))).length > 0) {
       dangerNumbers = getContactNumbers(CONTACT_DANGER, JSON.parse(localStorage.getItem(CONTACTS)))
       vulnerableNumbers = getContactNumbers(CONTACT_VULNERABLE, JSON.parse(localStorage.getItem(CONTACTS)))
 
@@ -139,6 +142,10 @@ class Dashboard extends Component {
           dangerContacts: 'sms:/open?addresses=' + dangerNumbers.toString()
         })
       }
+    } else {
+      this.setState({
+        contactsAlert: true
+      })
     }
   }
 
@@ -150,6 +157,13 @@ class Dashboard extends Component {
           {!navigator.onLine &&
           <UncontrolledAlert color='dark'>
             We don't have your map location because you're offline. But we can still find you through your GPS location
+          </UncontrolledAlert>
+          }
+        </div>
+        <div id='contactsAlert'>
+          {this.state.contactsAlert &&
+          <UncontrolledAlert color='dark'>
+            You haven&#39;t saved any contacts. Go to manage contacts to add some.
           </UncontrolledAlert>
           }
         </div>

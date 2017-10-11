@@ -7,7 +7,10 @@ import './Menu.css'
 class Menu extends React.Component {
   constructor (props) {
     super(props)
-
+    window.drift.on('ready', function (api) {
+      // hide the widget when it first loads
+      api.widget.hide()
+    })
     this.toggleNavbar = this.toggleNavbar.bind(this)
     this.setCurrentRoute = this.setCurrentRoute.bind(this)
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
@@ -31,7 +34,6 @@ class Menu extends React.Component {
   }
 
   setCurrentRoute (route) {
-    console.log(route)
     this.setState({
       currentRoute: route
     })
@@ -62,6 +64,9 @@ class Menu extends React.Component {
               </NavItem>
               <NavItem className='how'>
                 <Link to='/guide' onClick={() => this.setCurrentRoute('How To Use Guide')}>How To Use Guide</Link>
+              </NavItem>
+              <NavItem className='contact'>
+                <Link className='drift-open-chat' to='/feedback' >Feedback</Link>
               </NavItem>
             </Nav>
           </Collapse>
