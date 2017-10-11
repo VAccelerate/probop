@@ -1,9 +1,8 @@
-#googlemaps { 
+#googlemaps {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 0; /* Set z-index to 0 as it will be on a layer below the alert buttons */
@@ -17,12 +16,12 @@
 }
 
 #alerts {
-  position: relative;
   z-index: 1; /* The z-index should be higher than Google Maps */
-  margin-top: 90%;
-  margin-left: 10%;
-  margin-right: 10%;
-  align-items: center;
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  right: 15%;
+  margin: 1em auto;
 }
 
 .danger {
@@ -31,6 +30,7 @@
   color: #fff;
   text-align: center;
   padding: 10%;
+  margin-bottom: 10%;
 }
 
 .warning{
@@ -39,11 +39,25 @@
   color: #fff;
   text-align: center;
   padding: 10%;
-  margin-top: 10%;
 }
 
 .buttonContainer button {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-radius: 0px;
   -webkit-box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
+  box-shadow: 0px 14px 6px -1px rgba(128,128,128,1);
+}
+
+#offlineAlert {
+  top: 8%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+#contactsAlert {
+  top: 8%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
 }
