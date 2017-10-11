@@ -9,7 +9,7 @@
 a {
   color: #00A0AF;
   font-size: fixed;
-  padding:5%;
+  padding: 3%;
 }
 
 .Arrow {
@@ -18,9 +18,10 @@ a {
 }
 
 .Phone {
-  height: 30px;
+  height: 40px;
 }
 
 .Sms {
-  height: 30px;
+  padding-left: 10px;
+  height: 40px;
 }
