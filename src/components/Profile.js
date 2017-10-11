@@ -27,6 +27,7 @@ import {
   PROFILE_OTHERCITY
 } from '../constants'
 import './contacts/AddContact.css'
+import './Profile'
 
 class Profile extends Component {
   constructor (props) {
@@ -83,15 +84,19 @@ class Profile extends Component {
       <div className='Container'>
         <Form onSubmit={this.onSubmit}>
           <FormGroup>
-            <Label for='name' className='Text'>Name</Label>
-            <Input type='text' className='Input' name='name' id={PROFILE_NAME} defaultValue={this.getProfileData(PROFILE_NAME)} />
+            <div className='TextBlock'>
+              <Label for='name' className='Text'>Name</Label>
+              <Input type='text' className='block' name='name' id={PROFILE_NAME} defaultValue={this.getProfileData(PROFILE_NAME)} />
+            </div>
           </FormGroup>
           <FormGroup>
-            <Label for='DOB' className='Text'>Date of birth</Label>
-            <Input type='date' className='Input' name='date' id={PROFILE_DOB} defaultValue={this.getProfileData(PROFILE_DOB)} />
+            <Label for='DOB' className='Text'>D.O.B</Label>
+            <Input type='date' className='block' name='date' id={PROFILE_DOB} defaultValue={this.getProfileData(PROFILE_DOB)} />
           </FormGroup>
           <FormGroup tag='fieldset' >
-            <Label for='gender' className='Text'>Gender</Label>
+            <div className='TextBlock'>
+              <Label for='gender' className='Text'>Gender</Label>
+            </div>
             <FormGroup check>
               <Label check>
                 <Input type='radio' name='gender' value='Male' />{' '}
@@ -118,22 +123,28 @@ class Profile extends Component {
             </FormGroup>
           </FormGroup>
           <FormGroup>
-            <Label for='ethnicity' className='Text'>Ethnicity</Label>
-            <Input type='select' className='Input' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
-              <option>Asian</option>
-              <option>M&#257;ori</option>
-              <option>Pakeha/NZ European</option>
-              <option>Pasifika</option>
-              <option>Other</option>
-            </Input>
+            <div className='TextBlock'>
+              <Label for='mobile' className='Text'>Mobile</Label>
+              <Input type='text' className='block' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={this.getProfileData(PROFILE_MOBILE)} />
+            </div>
           </FormGroup>
           <FormGroup>
-            <Label for='mobile' className='Text'>Mobile Number</Label>
-            <Input type='text' className='Input' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={this.getProfileData(PROFILE_MOBILE)} />
+            <div className='TextBlock'>
+              <Label for='email' className='Text'>Email</Label>
+              <Input type='email' className='block' name='email' id={PROFILE_EMAIL} placeholder='Email' defaultValue={this.getProfileData(PROFILE_EMAIL)} />
+            </div>
           </FormGroup>
           <FormGroup>
-            <Label for='email' className='Text'>Email</Label>
-            <Input type='email' className='Input' name='email' id={PROFILE_EMAIL} placeholder='Email' defaultValue={this.getProfileData(PROFILE_EMAIL)} />
+            <div className='TextBlock'>
+              <Label for='ethnicity' className='Text'>Ethnicity</Label>
+              <Input type='select' className='blockTwo' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
+                <option>Asian</option>
+                <option>M&#257;ori</option>
+                <option>Pakeha/NZ European</option>
+                <option>Pasifika</option>
+                <option>Other</option>
+              </Input>
+            </div>
           </FormGroup>
           <FormGroup>
             <Label for='Address' className='Text'>Address</Label>

@@ -11,8 +11,9 @@
   background-color: white;
 }
 
-.input{
-  border: 1px solid #CCCCCC;
+.Box{
+  border: 1px solid #fff;
   border-radius: 0;
   font-size: 5.0vw;
+
 }
