@@ -36,9 +36,6 @@ class Profile extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.toggle = this.toggle.bind(this)
     this.getProfileData = this.getProfileData.bind(this)
-    window.drift.on('ready', function (api) {
-      api.widget.show()
-    })
   }
 
   componentDidMount () {
