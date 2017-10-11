@@ -1,40 +1,32 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import { Carousel } from 'react-responsive-carousel'
-import { Link } from 'react-router-dom'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
+import './Guide.css'
 
 class Guide extends Component {
   render () {
     return (
-      <div>
-        <Carousel showThumbs={false} >
+      <div className='guide'>
+        <Carousel showThumbs={false} showArrows={false} showStatus={false} emulateTouch >
           <div>
-            <img alt='' src='http://placekitten.com/360/500' />
-            <p className='legend'>WELCOME!</p>
+            <img alt='' src='p1.png' />
           </div>
           <div>
-            <img alt='' src='http://placekitten.com/350/600' />
-            <p className='legend'>How to use the BOPSASS app</p>
+            <img alt='' src='p2.png' />
           </div>
           <div>
-            <img alt='' src='http://placekitten.com/360/600' />
-            <p className='legend'>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </p>
+            <img alt='' src='p3.png' />
           </div>
           <div>
-            <img alt='' src='http://placekitten.com/350/600' />
-            <p className='legend'>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </p>
+            <img alt='' src='p4.png' />
           </div>
         </Carousel>
-        <Button color='warning' >
-          <Link to='/profile'>
-            <h3>Get Started</h3>
-          </Link>
-        </Button>
+        <Link to='/profile'>
+          <Button className='button' block>Get Started</Button>
+        </Link>
       </div>
     )
   }
