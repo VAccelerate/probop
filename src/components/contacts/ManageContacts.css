@@ -1,5 +1,4 @@
 .Container {
-  padding-top: 18.00%;
   margin-left: 6.25%;
   margin-right: 6.25%;
   font-family: "HelveticaNeue", sans-serif;
@@ -38,7 +37,7 @@
 }
 
 .ListItem {
-  margin-top: 2%;
+
   margin-bottom: 0%;
   padding: 0% 0;
   border: 0;
@@ -69,4 +68,5 @@
 .Button {
   background-color: #00A9AF;
   padding: 5%;
+  position: relative;
 }
