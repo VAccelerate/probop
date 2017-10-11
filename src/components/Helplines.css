@@ -1,11 +1,5 @@
 .ListGroup {
-  position:absolute;
-}
-
-.FontAwesome {
-  color:#00A0AF;
-  font-size: 100%;
-  line-height: 4em;
+  position: absolute;
 }
 
 .list-group-item-heading{
@@ -18,42 +12,15 @@ a {
   padding:5%;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: -20px;
-}
-
-.ImageHelpline {
-  margin-top: -20%;
-  display: flex;
-  flex-direction: row-reverse;
-  margin-bottom: 5%;
-}
-
 .Arrow {
-  margin-top: -35%;
-  margin-bottom: 5%;
-  display: flex;
-  flex-direction: row-reverse;
-
+  position: Absolute;
+  right: 6.25%;
 }
 
-.TopArrow {
-  margin-top: -29%;
-  margin-bottom: 0%;
-  display: flex;
-  flex-direction: row-reverse;
+.Phone {
+  height: 30px;
 }
-.CrisisArrow {
-  margin-top: -20%;
-  margin-bottom: 3%;
-  display: flex;
-  flex-direction: row-reverse;
-}
-.ShaktiArrow {
-  margin-top: -20%;
-  margin-bottom: -5%;
-  display: flex;
-  flex-direction: row-reverse;
+
+.Sms {
+  height: 30px;
 }
