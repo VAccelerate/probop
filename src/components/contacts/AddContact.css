@@ -95,4 +95,21 @@
   padding-top: 2%;
   text-align: left;
   width: 75%;
+
+.radioGroup {
+  float: right;
+  text-align: left;
+}
+
+.radioGroup .wrap {
+  display: inline-block;
+  text-align: center;
+}
+
+.radioGroup [type="radio"] {
+  display: block;
+  margin: 0.5em auto;
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }

@@ -93,34 +93,41 @@ class Profile extends Component {
             <Label for='DOB' className='Text'>D.O.B</Label>
             <Input type='date' className='block' name='date' id={PROFILE_DOB} defaultValue={this.getProfileData(PROFILE_DOB)} />
           </FormGroup>
-          <FormGroup tag='fieldset' >
-            <div className='TextBlock'>
+
+          <FormGroup tag='fieldset'>
+
+            <div className='radioGroup'>
               <Label for='gender' className='Text'>Gender</Label>
+              <div className='wrap'>
+                <FormGroup check>
+                  <Label check>
+                    <Input type='radio' name='gender' value='Male' />{' '}
+                    Male
+                  </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type='radio' name='gender' value='Female' />{' '}
+                    Female
+                  </Label>
+                </FormGroup>
+              </div>
+              <div className='wrap'>
+                <FormGroup check>
+                  <Label check>
+                    <Input type='radio' name='gender' value='Trans' />{' '}
+                  Trans
+                </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type='radio' name='gender' value='Other' />{' '}
+                  Other
+                </Label>
+                </FormGroup>
+              </div>
             </div>
-            <FormGroup check>
-              <Label check>
-                <Input type='radio' name='gender' value='Male' />{' '}
-                 Male
-               </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input type='radio' name='gender' value='Female' />{' '}
-                 Female
-               </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input type='radio' name='gender' value='Trans' />{' '}
-                 Trans
-               </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Label check>
-                <Input type='radio' name='gender' value='Other' />{' '}
-                 Other
-               </Label>
-            </FormGroup>
+
           </FormGroup>
           <FormGroup>
             <div className='TextBlock'>
@@ -165,12 +172,12 @@ class Profile extends Component {
             </Col>
           </FormGroup>
         </Form>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} autoFocus={false} backdrop='static'>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} autoFocus={false} backdrop='static' className='Modal'>
           <ModalBody>
-            <h1>Profile Updated Successfully</h1>
+            <h1 className='ModalText'>Profile Updated Successfully</h1>
           </ModalBody>
           <ModalFooter>
-            <Button color='success' onClick={this.toggle}>
+            <Button className='OkButton' color='success' onClick={this.toggle}>
             OK
             </Button>
           </ModalFooter>
