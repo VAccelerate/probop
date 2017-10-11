@@ -1,11 +1,11 @@
 #googlemaps { 
-  height: 100vh; 
+  height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: absolute; 
-  top: 0; 
-  left: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 0; /* Set z-index to 0 as it will be on a layer below the alert buttons */
 }
 
@@ -15,9 +15,9 @@
   width: auto;
   height: auto;
 }
-  
-#alerts { 
-  position: relative; 
+
+#alerts {
+  position: relative;
   z-index: 1; /* The z-index should be higher than Google Maps */
   margin-top: 90%;
   margin-left: 10%;

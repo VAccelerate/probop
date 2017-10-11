@@ -7,7 +7,12 @@ import './Menu.css'
 class Menu extends React.Component {
   constructor (props) {
     super(props)
+    window.drift.on('ready', function (api) {
+  // hide the widget when it first loads
+      api.widget.hide()
+    })
 
+    // this.openSidebar = this.openSidebar.bind(this)
     this.toggleNavbar = this.toggleNavbar.bind(this)
     this.setCurrentRoute = this.setCurrentRoute.bind(this)
     this.handleDocumentClick = this.handleDocumentClick.bind(this)
@@ -60,6 +65,9 @@ class Menu extends React.Component {
               </NavItem>
               <NavItem>
                 <Link to='/guide' onClick={() => this.setCurrentRoute('How To Use Guide')}>How To Use Guide</Link>
+              </NavItem>
+              <NavItem>
+                <Link className='drift-open-chat' to='/feedback' >Feedback</Link>
               </NavItem>
             </Nav>
           </Collapse>

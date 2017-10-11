@@ -23,6 +23,13 @@ class Dashboard extends Component {
     }
     this.toggle = this.toggle.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    console.log(window.drift)
+    console.log(window.driftt.api)
+    // window.drift.api.widget.hide()
+    window.drift.on('ready', function (api) {
+  // hide the widget when it first loads
+      api.widget.hide()
+    })
   }
 
   handleClick (e) {
@@ -60,7 +67,7 @@ class Dashboard extends Component {
 
   render () {
     return (
-      <div>
+      <div id='dashboard-container'>
         {this.state.showUserLocation && <div id='googlemaps'><img className='stretch' src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.userLocation.latitude},${this.state.userLocation.longitude}&zoom=16&size=480x640&markers=color:red|${this.state.userLocation.latitude},${this.state.userLocation.longitude}&key=${GOOGLE_API_KEY}`} alt='' /></div>}
         <div id='alerts' className='buttonContainer'>
           <a href={this.state.contact + this.state.dangerMessage}>

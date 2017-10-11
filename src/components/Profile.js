@@ -36,6 +36,10 @@ class Profile extends Component {
     this.onSubmit = this.onSubmit.bind(this)
     this.toggle = this.toggle.bind(this)
     this.getProfileData = this.getProfileData.bind(this)
+    window.drift.on('ready', function (api) {
+  // hide the widget when it first loads
+      api.widget.show()
+    })
   }
 
   componentDidMount () {
