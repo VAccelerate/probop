@@ -1,12 +1,5 @@
 .ListGroup {
-  position: relative;
-  margin-top: 10%;
-}
-
-.FontAwesome {
-  color:#00A0AF;
-  font-size: 100%;
-  line-height: 50px;
+  position: absolute;
 }
 
 .list-group-item-heading{
@@ -16,4 +9,19 @@
 a {
   color: #00A0AF;
   font-size: fixed;
+  padding: 3%;
+}
+
+.Arrow {
+  position: Absolute;
+  right: 6.25%;
+}
+
+.Phone {
+  height: 40px;
+}
+
+.Sms {
+  padding-left: 10px;
+  height: 40px;
 }
