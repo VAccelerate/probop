@@ -1,5 +1,5 @@
 .Container {
-  padding-top: 18.00%;
+  padding-top: 20.00%;
   margin-left: 6.25%;
   margin-right: 6.25%;
   font-family: "HelveticaNeue", sans-serif;
@@ -20,6 +20,7 @@
 .Checkbox{
   width: 32px;
   height: 32px;
+  display: inline-block;
 }
 
 .Danger{
@@ -67,6 +68,34 @@
   text-align: center;
 }
 
+.TextBlock{
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
+
+.block{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 5.0vw;
+  margin-top: -5%;
+  margin-right:0%;
+  float: right;
+  padding-top: 5%;
+  text-align: left;
+  width: 80%;
+}
+
+.blockTwo{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 5.0vw;
+  margin-top: -3%;
+  margin-right:0%;
+  float: right;
+  padding-top: 2%;
+  text-align: left;
+  width: 75%;
+
 .radioGroup {
   float: right;
   text-align: left;
@@ -79,7 +108,6 @@
 
 .radioGroup [type="radio"] {
   display: block;
-
   margin: 0.5em auto;
   width: 30px;
   height: 30px;
