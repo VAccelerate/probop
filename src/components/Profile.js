@@ -26,6 +26,7 @@ import {
   PROFILE_OTHERADRS2,
   PROFILE_OTHERCITY
 } from '../constants'
+import './contacts/AddContact.css'
 
 class Profile extends Component {
   constructor (props) {
@@ -79,19 +80,18 @@ class Profile extends Component {
 
   render () {
     return (
-      <div>
+      <div className='Container'>
         <Form onSubmit={this.onSubmit}>
-          <h1>Profile</h1>
           <FormGroup>
-            <Label for='name' sm={2}>Name</Label>
-            <Input type='text' name='name' id={PROFILE_NAME} defaultValue={this.getProfileData(PROFILE_NAME)} />
+            <Label for='name' className='Text'>Name</Label>
+            <Input type='text' className='Input' name='name' id={PROFILE_NAME} defaultValue={this.getProfileData(PROFILE_NAME)} />
           </FormGroup>
           <FormGroup>
-            <Label for='DOB' sm={2}>Date of birth</Label>
-            <Input type='date' name='date' id={PROFILE_DOB} defaultValue={this.getProfileData(PROFILE_DOB)} />
+            <Label for='DOB' className='Text'>Date of birth</Label>
+            <Input type='date' className='Input' name='date' id={PROFILE_DOB} defaultValue={this.getProfileData(PROFILE_DOB)} />
           </FormGroup>
           <FormGroup tag='fieldset' >
-            <Label for='gender' sm={2}>Gender</Label>
+            <Label for='gender' className='Text'>Gender</Label>
             <FormGroup check>
               <Label check>
                 <Input type='radio' name='gender' value='Male' />{' '}
@@ -118,8 +118,8 @@ class Profile extends Component {
             </FormGroup>
           </FormGroup>
           <FormGroup>
-            <Label for='ethnicity' sm={2}>Ethnicity</Label>
-            <Input type='select' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
+            <Label for='ethnicity' className='Text'>Ethnicity</Label>
+            <Input type='select' className='Input' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
               <option>Asian</option>
               <option>M&#257;ori</option>
               <option>Pakeha/NZ European</option>
@@ -128,29 +128,29 @@ class Profile extends Component {
             </Input>
           </FormGroup>
           <FormGroup>
-            <Label for='mobile' sm={2}>Mobile Number</Label>
-            <Input type='text' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={this.getProfileData(PROFILE_MOBILE)} />
+            <Label for='mobile' className='Text'>Mobile Number</Label>
+            <Input type='text' className='Input' name='mobile' id={PROFILE_MOBILE} placeholder='Mobile' defaultValue={this.getProfileData(PROFILE_MOBILE)} />
           </FormGroup>
           <FormGroup>
-            <Label for='email' sm={2}>Email</Label>
-            <Input type='email' name='email' id={PROFILE_EMAIL} placeholder='Email' defaultValue={this.getProfileData(PROFILE_EMAIL)} />
+            <Label for='email' className='Text'>Email</Label>
+            <Input type='email' className='Input' name='email' id={PROFILE_EMAIL} placeholder='Email' defaultValue={this.getProfileData(PROFILE_EMAIL)} />
           </FormGroup>
           <FormGroup>
-            <Label for='Address' sm={2}>Address</Label>
-            <Input type='text' name='address1' id={PROFILE_ADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_ADRS1)} />
-            <Input type='text' name='address2' id={PROFILE_ADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_ADRS2)} />
-            <Input type='text' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_CITY)} />
+            <Label for='Address' className='Text'>Address</Label>
+            <Input type='text' className='Input' name='address1' id={PROFILE_ADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_ADRS1)} />
+            <Input type='text' className='Input' name='address2' id={PROFILE_ADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_ADRS2)} />
+            <Input type='text' className='Input' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_CITY)} />
           </FormGroup>
           <FormGroup>
-            <Label for='OtherAddress' sm={2}>Other most frequent address</Label>
-            <Input type='text' name='address1' id={PROFILE_OTHERADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_OTHERADRS1)} />
-            <Input type='text' name='address2' id={PROFILE_OTHERADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_OTHERADRS2)} />
-            <Input type='text' name='city' id={PROFILE_OTHERCITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_OTHERCITY)} />
+            <Label for='OtherAddress' className='Text'>Other most frequent address</Label>
+            <Input type='text' className='Input' name='address1' id={PROFILE_OTHERADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_OTHERADRS1)} />
+            <Input type='text' className='Input' name='address2' id={PROFILE_OTHERADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_OTHERADRS2)} />
+            <Input type='text' className='Input' name='city' id={PROFILE_OTHERCITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_OTHERCITY)} />
           </FormGroup>
 
           <FormGroup check>
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Submit</Button>
+              <Button className='AddButton' block>Submit</Button>
             </Col>
           </FormGroup>
         </Form>
