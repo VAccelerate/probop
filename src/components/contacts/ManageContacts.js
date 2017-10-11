@@ -66,13 +66,13 @@ class ManageContacts extends Component {
           <Toggle
             className='Toggle'
             defaultChecked={false}
-            onChange={console.log('TBD')}
+            onChange={console.log('This is where we integrate 111')}
             icons={false}
             disabled />
         </div>
         <h2 className='Title'>Trusted family or friends</h2>
         <hr className='LineBreak' />
-        <ListGroup className='ListGroup'>
+        <ListGroup className='ListGroup' style={{width: '90vw'}}>
           {
             this.getContacts().map(id =>
               <ListGroupItem key={id} className='ListItem' >
@@ -97,8 +97,8 @@ class ManageContacts extends Component {
               </ListGroupItem>
             )
           }
-        </ListGroup><br />
-        <Link to='/contacts/add-contact'>
+        </ListGroup>
+        <Link className='a-tag' to='/contacts/add-contact'>
           <Button className='Button' block>Add Emergency Contact</Button>
         </Link>
       </div>

@@ -34,7 +34,6 @@ class Menu extends React.Component {
   }
 
   setCurrentRoute (route) {
-    console.log(route)
     this.setState({
       currentRoute: route
     })
