@@ -72,9 +72,6 @@ class ManageContacts extends Component {
         </div>
         <h2 className='Title'>Trusted family or friends</h2>
         <hr className='LineBreak' />
-        <Link to='/contacts/add-contact'>
-          <Button className='Button' block>Add Emergency Contact</Button>
-        </Link>
         <ListGroup className='ListGroup' style={{width: '90vw'}}>
           {
             this.getContacts().map(id =>
@@ -101,6 +98,9 @@ class ManageContacts extends Component {
             )
           }
         </ListGroup>
+        <Link className='a-tag' to='/contacts/add-contact'>
+          <Button className='Button' block>Add Emergency Contact</Button>
+        </Link>
       </div>
     )
   }
