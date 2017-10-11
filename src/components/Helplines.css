@@ -1,5 +1,9 @@
 .ListGroup {
   position: absolute;
+<<<<<<< HEAD
+=======
+  padding-top: 60px;
+>>>>>>> 47794de635ebae262bd78ac5cf08b365fadbc724
 }
 
 .list-group-item-heading{
@@ -22,6 +26,10 @@ a {
 }
 
 .Sms {
+<<<<<<< HEAD
   padding-left: 10px;
+=======
+  padding-left: 7px;
+>>>>>>> 47794de635ebae262bd78ac5cf08b365fadbc724
   height: 40px;
 }
