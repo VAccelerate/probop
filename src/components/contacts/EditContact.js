@@ -1,7 +1,8 @@
 /* global localStorage */
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
-import { Link, Redirect } from 'react-router-dom'
+// eslint-disable-next-line
+import { Redirect, withRouter } from 'react-router-dom'
 import './EditContact.css'
 
 import {
@@ -63,6 +64,7 @@ class EditContact extends Component {
     this.setState({
       contacts
     })
+    this.props.history.push('/contacts')
   }
 
   toggle () {
@@ -118,17 +120,15 @@ class EditContact extends Component {
 
 const DeleteModal = (props) => {
   return (
-    <Modal isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
+    <Modal className='Modal' isOpen={props.modal} toggle={props.toggle} autoFocus={false} backdrop='static'>
       <ModalBody>
-        <h1>Are you sure you want to delete {props.name}?</h1>
+        <h1 className='ModalText'>Are you sure you want to delete {props.name}?</h1>
       </ModalBody>
-      <ModalFooter>
-        <Link to='/contacts'>
-          <Button color='danger' onClick={props.deleteContact}>
-            Yes
-          </Button>
-        </Link>
-        <Button color='danger' onClick={props.toggle}>
+      <ModalFooter style={{border: 0}}>
+        <Button className='YesButton' onClick={props.deleteContact}>
+          Yes
+        </Button>
+        <Button className='NoButton' onClick={props.toggle}>
           No
         </Button>
       </ModalFooter>

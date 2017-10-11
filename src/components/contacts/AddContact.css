@@ -26,21 +26,19 @@
   margin-right: 5%;
 }
 
-.SaveButton {
+.AddButton {
   background-color: #00A9AF;
   padding: 5%;
+  margin-top: 5%;
   font-size: 5.0vw;
-}
-
-.RemoveButton {
-  background-color: #333333;
-  padding: 5%;
-  font-size: 5.0vw;
+  border-radius: 0;
 }
 
 .Modal {
   position: absolute;
   top: 35%;
+  left: 10%;
+  right: 10%;
 }
 
 .ModalText{
@@ -50,24 +48,21 @@
   text-align: center;
 }
 
-.YesButton {
+.OkButton {
   background-color: #00A9AF;
   font-size: 5.0vw;
   border-radius: 0;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  width: 40vw;
-}
-
-.NoButton{
-  background-color: #333333;
-  font-size: 5.0vw;
-  border-radius: 0;
-  padding-top: 5%;
-  padding-bottom: 5%;
   width: 40vw;
 }
 
 .modal-footer {
     justify-content: center;
+}
+
+.Notice {
+  color: #333333;
+  margin-top: 3%;
+  font-size: 4.0vw;
+  background-color: white;
+  text-align: center;
 }
