@@ -66,7 +66,7 @@ class Menu extends React.Component {
               <NavItem className='how'>
                 <Link to='/guide' onClick={() => this.setCurrentRoute('How To Use Guide')}>How To Use Guide</Link>
               </NavItem>
-              <NavItem>
+              <NavItem className='contact'>
                 <Link className='drift-open-chat' to='/feedback' >Feedback</Link>
               </NavItem>
             </Nav>
