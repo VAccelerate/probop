@@ -1,0 +1,18 @@
+.container {
+  padding-top: 18.00%;
+  margin-left: 6.25%;
+  margin-right: 6.25%;
+  font-family: "HelveticaNeue", sans-serif;
+}
+
+.text{
+  color: #333333;
+  font-size: 5.0vw;
+  background-color: white;
+}
+
+.input{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 5.0vw;
+}

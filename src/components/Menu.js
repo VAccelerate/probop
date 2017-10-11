@@ -8,11 +8,9 @@ class Menu extends React.Component {
   constructor (props) {
     super(props)
     window.drift.on('ready', function (api) {
-  // hide the widget when it first loads
+      // hide the widget when it first loads
       api.widget.hide()
     })
-
-    // this.openSidebar = this.openSidebar.bind(this)
     this.toggleNavbar = this.toggleNavbar.bind(this)
     this.setCurrentRoute = this.setCurrentRoute.bind(this)
     this.handleDocumentClick = this.handleDocumentClick.bind(this)

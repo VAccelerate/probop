@@ -38,10 +38,6 @@ class Dashboard extends Component {
     }
     this.toggle = this.toggle.bind(this)
     this.handleClick = this.handleClick.bind(this)
-    window.drift.on('ready', function (api) {
-  // hide the widget when it first loads
-      api.widget.hide()
-    })
   }
 
   handleClick (e, level) {
