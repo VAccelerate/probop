@@ -121,8 +121,11 @@ class Dashboard extends Component {
         showUserLocation: true
       })
     })
-
-    if (Object.keys(JSON.parse(localStorage.getItem(CONTACTS))).length > 0) {
+    if (!localStorage.getItem(CONTACTS)) {
+      this.setState({
+        contactsAlert: true
+      })
+    } else if (Object.keys(JSON.parse(localStorage.getItem(CONTACTS))).length > 0) {
       dangerNumbers = getContactNumbers(CONTACT_DANGER, JSON.parse(localStorage.getItem(CONTACTS)))
       vulnerableNumbers = getContactNumbers(CONTACT_VULNERABLE, JSON.parse(localStorage.getItem(CONTACTS)))
 
