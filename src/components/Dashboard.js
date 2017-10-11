@@ -67,7 +67,7 @@ class Dashboard extends Component {
         this.setState({
           modalContent: {
             heading: 'Not sent!',
-            message: 'You haven\'t selcted any anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
+            message: 'You haven\'t selected anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
             button: 'OK',
             style: {
               backgroundColor: '#e60000'
@@ -93,7 +93,7 @@ class Dashboard extends Component {
         this.setState({
           modalContent: {
             heading: 'Not sent!',
-            message: 'You haven\'t selcted any anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
+            message: 'You haven\'t selected anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
             button: 'OK',
             style: {
               backgroundColor: '#14afb8'
@@ -160,7 +160,7 @@ class Dashboard extends Component {
         <div id='contactsAlert'>
           {this.state.contactsAlert &&
           <UncontrolledAlert color='dark'>
-            You haven't saved any contacts. Go to manage contacts to add some.
+            You haven&#39;t saved any contacts. Go to manage contacts to add some.
           </UncontrolledAlert>
           }
         </div>
