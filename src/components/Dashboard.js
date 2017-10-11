@@ -67,7 +67,7 @@ class Dashboard extends Component {
         this.setState({
           modalContent: {
             heading: 'Not sent!',
-            message: 'You haven\'t selcted any anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.' ,
+            message: 'You haven\'t selcted any anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
             button: 'OK',
             style: {
               backgroundColor: '#e60000'
