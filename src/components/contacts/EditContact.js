@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import { Link, Redirect } from 'react-router-dom'
+import './EditContact.css'
 
 import {
   CONTACTS,
@@ -73,7 +74,7 @@ class EditContact extends Component {
   render () {
     const {name, edited} = this.state
     return (
-      <div>
+      <div className='Container'>
         {edited ? <Redirect to={{
           pathname: '/contacts',
           state: {
@@ -84,25 +85,26 @@ class EditContact extends Component {
         : <div>
           <Form onSubmit={this.editContact}>
             <FormGroup>
-              <Label>Name</Label>
-              <Input type='text' id={CONTACT_NAME} defaultValue={name} />
+              <Label className='Text'>Name</Label>
+              <Input className='Input' type='text' id={CONTACT_NAME} defaultValue={name} />
             </FormGroup>
             <FormGroup>
-              <Label>Mobile Number</Label>
-              <Input type='text' id={CONTACT_NUMBER} defaultValue={this.getContactData(CONTACT_NUMBER)} />
+              <Label className='Text'>Mobile Number</Label>
+              <Input className='Input' type='text' id={CONTACT_NUMBER} defaultValue={this.getContactData(CONTACT_NUMBER)} />
             </FormGroup>
             <FormGroup check>
-              <Label check>
-                <Input type='checkbox' id={CONTACT_VULNERABLE} defaultChecked={this.getContactData(CONTACT_VULNERABLE)} />{' '}
-              Vulnerable
+              <h6 className='Text'> Contact this person when I am </h6>
+              <Label check className='Text Danger'>
+                <Input className='Checkbox' type='checkbox' id={CONTACT_VULNERABLE} defaultChecked={this.getContactData(CONTACT_VULNERABLE)} />{' '}
+              Unsafe
             </Label>
-              <Label check>
-                <Input type='checkbox' id={CONTACT_DANGER} defaultChecked={this.getContactData(CONTACT_DANGER)} />{' '}
-                Danger
+              <Label check className='Text'>
+                <Input className='Checkbox' type='checkbox' id={CONTACT_DANGER} defaultChecked={this.getContactData(CONTACT_DANGER)} />{' '}
+                In Danger
             </Label>
             </FormGroup>
-            <Button color='primary' size='lg'>Save Changes</Button>{' '}
-            <Button color='secondary' size='lg' onClick={this.toggle}>Remove Contact</Button>
+            <Button className='SaveButton' block>Save changes</Button>{' '}
+            <Button className='RemoveButton' onClick={this.toggle}block>Remove emergency contact</Button>
 
           </Form>
           <DeleteModal toggle={this.toggle} modal={this.state.deleteModal} name={name}
