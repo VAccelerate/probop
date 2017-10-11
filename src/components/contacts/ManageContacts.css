@@ -33,11 +33,10 @@
 }
 
 .ListGroup {
-  margin-top: 0%;
+  padding-top: 0;
 }
 
 .ListItem {
-
   margin-bottom: 0%;
   padding: 0% 0;
   border: 0;

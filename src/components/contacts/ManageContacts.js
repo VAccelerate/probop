@@ -66,7 +66,7 @@ class ManageContacts extends Component {
           <Toggle
             className='Toggle'
             defaultChecked={false}
-            onChange={console.log('111 is not active')}
+            onChange={console.log('This is where we integrate 111')}
             icons={false}
             disabled />
         </div>
@@ -100,7 +100,7 @@ class ManageContacts extends Component {
               </ListGroupItem>
             )
           }
-        </ListGroup><br />
+        </ListGroup>
       </div>
     )
   }
