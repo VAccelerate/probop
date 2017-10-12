@@ -69,7 +69,7 @@ class Menu extends React.Component {
                 <Link to='/faq' onClick={() => this.setCurrentRoute('FAQ')}>FAQ</Link>
               </NavItem>
               <NavItem className='contact'>
-                <Link className='drift-open-chat' to='/#' >Feedback</Link>
+                <Link className='drift-open-chat' onClick={() => { window.drift.on('ready', function (api) { api.sidebar.open() }) }} to='/#' >Feedback</Link>
               </NavItem>
             </Nav>
           </Collapse>
