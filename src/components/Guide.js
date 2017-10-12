@@ -8,10 +8,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './Guide.css'
 
 class Guide extends Component {
-  constructor (props) {
-    super(props)
-    console.log(props)
-  }
   render () {
     return (
       <div className='guide'>
