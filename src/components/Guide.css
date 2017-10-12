@@ -10,3 +10,8 @@
     font-size: 6.0vw;
     margin-top: -30px;
 }
+
+.emptyDiv {
+    background-color: black;
+    height: 100vh;
+}   

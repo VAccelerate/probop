@@ -1,0 +1,22 @@
+.gps-container {
+    text-align: center;
+    padding-top: 30vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+
+.one-one-one {
+    background-color: #de0000;
+    color: #fff;
+    text-align: center;
+    border: 0px;
+    border-bottom: 5px solid #bb0000;
+    border-radius: 0;
+    width: 80vw;
+    margin-top: 10px;
+    font-size: 7.0vw;
+    padding: 4%;
+}

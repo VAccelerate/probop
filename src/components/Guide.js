@@ -1,3 +1,4 @@
+/* global localStorage */
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
@@ -12,21 +13,27 @@ class Guide extends Component {
       <div className='guide'>
         <Carousel showThumbs={false} showArrows={false} showStatus={false} emulateTouch >
           <div>
-            <img alt='' src='p1.png' />
+            <img alt='' src='images/p1.png' />
           </div>
           <div>
-            <img alt='' src='p2.png' />
+            <img alt='' src='images/p2.png' />
           </div>
           <div>
-            <img alt='' src='p3.png' />
+            <img alt='' src='images/p3.png' />
           </div>
           <div>
-            <img alt='' src='p4.png' />
+            <img alt='' src='images/p4.png' />
+          </div>
+          <div>
+            <img alt='' src='images/p5.png' />
           </div>
         </Carousel>
-        <Link to='/profile'>
+        { JSON.parse(localStorage.getItem('firstRun'))
+        ? <Link to='/profile'>
           <Button className='button' block>Get Started</Button>
         </Link>
+        : <div className='emptyDiv' />
+        }
       </div>
     )
   }
