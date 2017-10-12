@@ -43,68 +43,76 @@ class Dashboard extends Component {
     }
     this.toggle = this.toggle.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.sendDangerSMS = this.sendDangerSMS.bind(this)
+    this.sendVulnerableSMS = this.sendVulnerableSMS.bind(this)
   }
 
   handleClick (e, level) {
     e.preventDefault()
     getUserLocation((position) => {
+      if (level === 'danger') {
+        this.sendDangerSMS(position)
+      }
+      if (level === 'vulnerable') {
+        this.sendVulnerableSMS(position)
+      }
+      this.toggle()
+    })
+  }
+
+  sendDangerSMS (position) {
+    if (dangerNumbers.length > 0) {
+      window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
       this.setState({
+        modalContent: {
+          heading: 'Danger alert sent!',
+          message: 'We\'ve just sent a text message to your list',
+          button: 'I feel safe now',
+          style: {
+            backgroundColor: '#e60000'
+          }
+        },
         userLocation: position
       })
-    })
-    this.toggle()
-
-    if (level === 'danger') {
-      if (dangerNumbers.length > 0) {
-        window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
-        this.setState({
-          modalContent: {
-            heading: 'Danger alert sent!',
-            message: 'We\'ve just sent a text message to your list',
-            button: 'I feel safe now',
-            style: {
-              backgroundColor: '#e60000'
-            }
+    } else {
+      this.setState({
+        modalContent: {
+          heading: 'Not sent!',
+          message: 'You haven\'t selected anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
+          button: 'OK',
+          style: {
+            backgroundColor: '#e60000'
           }
-        })
-      } else {
-        this.setState({
-          modalContent: {
-            heading: 'Not sent!',
-            message: 'You haven\'t selected anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
-            button: 'OK',
-            style: {
-              backgroundColor: '#e60000'
-            }
-          }
-        })
-      }
+        },
+        userLocation: position
+      })
     }
-    if (level === 'vulnerable') {
-      if (vulnerableNumbers.length > 0) {
-        window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
-        this.setState({
-          modalContent: {
-            heading: 'Unsafe alert sent!',
-            message: 'We\'ve just sent a text message to your list',
-            button: 'I feel safe now',
-            style: {
-              backgroundColor: '#14afb8'
-            }
+  }
+
+  sendVulnerableSMS (position) {
+    if (vulnerableNumbers.length > 0) {
+      window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
+      this.setState({
+        modalContent: {
+          heading: 'Unsafe alert sent!',
+          message: 'We\'ve just sent a text message to your list',
+          button: 'I feel safe now',
+          style: {
+            backgroundColor: '#14afb8'
           }
-        })
-      } else {
-        this.setState({
-          modalContent: {
-            heading: 'Not sent!',
-            message: 'You haven\'t selected anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
-            button: 'OK',
-            style: {
-              backgroundColor: '#14afb8'
-            }
+        }
+      })
+    } else {
+      this.setState({
+        modalContent: {
+          heading: 'Not sent!',
+          message: 'You haven\'t selected anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
+          button: 'OK',
+          style: {
+            backgroundColor: '#14afb8'
           }
-        })
-      }
+        }
+      })
     }
   }
 
@@ -120,7 +128,6 @@ class Dashboard extends Component {
         userLocation: position,
         showUserLocation: true
       })
-      console.log(position)
     })
     if (!localStorage.getItem(CONTACTS)) {
       this.setState({
