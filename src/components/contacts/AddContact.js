@@ -24,6 +24,7 @@ class AddContact extends Component {
     this.duplicateModalToggle = this.duplicateModalToggle.bind(this)
     this.emptyModalToggle = this.emptyModalToggle.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+    this.sendSMS = this.sendSMS.bind(this)
   }
 
   onSubmit (e) {
@@ -33,7 +34,6 @@ class AddContact extends Component {
     let mobile
     // If contacts data already exists in localStorage then set that to new
     // contacts object which will be updated, as localStorage is immutable
-    console.log(e.target.elements)
     if (localStorage.getItem(CONTACTS)) {
       contacts = JSON.parse(localStorage.getItem(CONTACTS))
     }
@@ -68,6 +68,18 @@ class AddContact extends Component {
       added: true,
       name
     })
+    this.sendSMS(mobile)
+  }
+
+  sendSMS (mobile) {
+    let userAgent = navigator.userAgent || navigator.vendor || window.opera
+    let message = 'You have been added to my emergency contacts list. Go to https://bopsass.netlify.com/faq for more information'
+    if (/android/i.test(userAgent)) {
+      window.location = 'sms:' + mobile + '?body=' + message
+    }
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.location = 'sms:/open?addresses=' + mobile + '&body=' + message
+    }
   }
 
   duplicateModalToggle () {
