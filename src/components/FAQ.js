@@ -9,21 +9,21 @@ const FAQ = () => {
       <ol>
         <li>
           It might be helpful  to talk with the people  you trust and share
-          that you are adding them to your Sing Out contact list in case you ever
-          need help. You can even show the Sing Out App to them!
+          that you are adding them to your Connect contact list in case you ever
+          need help. You can even show the Connect App to them!
          </li>
         <li>
-          Sing Out will send them a text that says  they have been added as a
-          helper and that they can look at the Sing Out site for more information
+          Connect will send them a text that says  they have been added as a
+          helper and that they can look at the Connect site for more information
         </li>
       </ol>
-      <h2>What if I am not sure if I should make a Sing Out Alert?</h2>
+      <h2>What if I am not sure if I should make a Connect Alert?</h2>
       <p>
         Your safety comes first!  If you think you may be unsafe or in danger
         it is always good to call out for help. There is a reason you feel that
         way. And we would rather you be safe than sorry.
       </p>
-      <h2>What do I do if I get a Sing Out Alert?</h2>
+      <h2>What do I do if I get a Connect Alert?</h2>
       <ol>
         <li>
           You can tell by the text you received where your friend is that asked
@@ -55,25 +55,25 @@ const FAQ = () => {
         <li>
           Before you leave your friend in a safe place, it may not hurt to remind
           your friend  to press the I&#39;m Safe Now alert in the app ( so everyone
-          knows they are okay now)  and  of the help lines linked in the Sing Out App,
+          knows they are okay now)  and  of the help lines linked in the Connect App,
           if they are needed.
         </li>
       </ol>
       <h2>What if there is no phone reception where I am?</h2>
       <p>
-        If you trigger an alert and there is no phone reception  Sing Out will
+        If you trigger an alert and there is no phone reception  Connect will
         notify you that there is no reception and to call 111 ( calling 111 always
         works.... even when there is no cell reception)
       </p>
       <h2>What if I don&#39;t have data or internet?</h2>
       <p>
-        Sing Out was designed to work even when you do not have data or internet
+        Connect was designed to work even when you do not have data or internet
       </p>
       <h2>Why do you ask so many details about me?</h2>
       <ol>
         <li>
           Your information is stored securely &  is only used for the purpose of
-          the Sing Out App
+          the Connect App
         </li>
         <li>
           UP is designed to  one day send information to 111 if people feel in
@@ -81,7 +81,7 @@ const FAQ = () => {
           system  that the police may require to help someone  requesting help.
         </li>
         <li>
-          Other details helps us to understand who is using Sing Out which can help us
+          Other details helps us to understand who is using Connect which can help us
           make it better for other future users
         </li>
       </ol>
