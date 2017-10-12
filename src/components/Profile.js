@@ -104,34 +104,33 @@ class Profile extends Component {
             <div className='radioGroup'>
               <div className='wrap'>
                 <FormGroup check>
+                  <Input type='radio' name='gender' value='Male' />{' '}
                   <Label check>
-                    <Input type='radio' name='gender' value='Male' />{' '}
                     Male
                   </Label>
                 </FormGroup>
                 <FormGroup check>
+                  <Input type='radio' name='gender' value='Trans' />{' '}
                   <Label check>
-                    <Input type='radio' name='gender' value='Trans' />{' '}
                     Trans
                   </Label>
                 </FormGroup>
               </div>
               <div className='wrap'>
                 <FormGroup check>
+                  <Input type='radio' name='gender' value='Female' />{' '}
                   <Label check>
-                    <Input type='radio' name='gender' value='Female' />{' '}
                   Female
                 </Label>
                 </FormGroup>
                 <FormGroup check>
+                  <Input type='radio' name='gender' value='Other' />{' '}
                   <Label check>
-                    <Input type='radio' name='gender' value='Other' />{' '}
                   Other
                 </Label>
                 </FormGroup>
               </div>
             </div>
-
           </FormGroup>
           <FormGroup>
             <div className='TextBlock'>

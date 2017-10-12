@@ -54,13 +54,17 @@
   text-align: right;
   vertical-align: middle;
   margin-top:0;
-  margin-right: 30%;
   margin-bottom: 5%;
 }
 
 .radioGroup .wrap {
   display: inline-block;
-  text-align: center;
+  text-align: left;
+}
+
+.wrap label{
+  padding: 10px 0 0 40px;
+  width: 90px;
 }
 
 .genderText {
@@ -73,11 +77,10 @@
 }
 /*design*/
 .radioGroup [type="radio"] {
-  display: block;
-  margin: 0.5em auto;
-  width: 2.5em;
-  height: 2.5em;
-  text-align: center;
+  margin: 10px 0 0 8px;
+  width: 1.5em;
+  height: 1.5em;
+
 }
 
 .address1 {
