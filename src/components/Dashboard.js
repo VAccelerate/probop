@@ -51,7 +51,6 @@ class Dashboard extends Component {
       this.setState({
         userLocation: position
       })
-      console.log(this.state.userLocation)
     })
     this.toggle()
 
@@ -121,6 +120,7 @@ class Dashboard extends Component {
         userLocation: position,
         showUserLocation: true
       })
+      console.log(position)
     })
     if (!localStorage.getItem(CONTACTS)) {
       this.setState({
@@ -173,9 +173,10 @@ class Dashboard extends Component {
           </UncontrolledAlert>
           }
         </div>
+        <div className='refresh-container'><Button onClick={() => { window.location.reload() }} className='refresh'>Refresh my location<img style={{height: '20px'}} alt='' src='refresh.png' /></Button></div>
         <div id='alerts' className='buttonContainer'>
-          <Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
-          <Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
+          <div className='danger-border'><Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button></div>
+          <div className='warning-border'><Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button></div>
         </div>
         <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} vulnerableContacts={this.state.vulnerableContacts} dangerContacts={this.state.dangerContacts} safeMessage={this.state.safeMessage} userLocation={this.state.userLocation} />
       </div>

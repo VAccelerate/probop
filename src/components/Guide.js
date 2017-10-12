@@ -24,6 +24,9 @@ class Guide extends Component {
           <div>
             <img alt='' src='images/p4.png' />
           </div>
+          <div>
+            <img alt='' src='images/p5.png' />
+          </div>
         </Carousel>
         { JSON.parse(localStorage.getItem('firstRun'))
         ? <Link to='/profile'>
