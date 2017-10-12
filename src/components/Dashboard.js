@@ -15,6 +15,10 @@ let vulnerableNumbers = []
 class Dashboard extends Component {
   constructor (props) {
     super(props)
+    window.drift.on('ready', function (api) {
+      // hide the widget when it first loads
+      api.widget.hide()
+    })
     this.state = {
       contactsAlert: false,
       modal: false,
@@ -30,6 +34,7 @@ class Dashboard extends Component {
       dangerContacts: '',
       vulnerableMessage: '?body=I am feeling unsafe. This is my location: ',
       dangerMessage: '?body=Please help, I am in danger. This is my location: ',
+      safeMessage: '?body=I am feeling safe now ',
       userLocation: {
         latitude: 0,
         longitude: 0
@@ -38,69 +43,76 @@ class Dashboard extends Component {
     }
     this.toggle = this.toggle.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.sendDangerSMS = this.sendDangerSMS.bind(this)
+    this.sendVulnerableSMS = this.sendVulnerableSMS.bind(this)
   }
 
   handleClick (e, level) {
     e.preventDefault()
     getUserLocation((position) => {
+      if (level === 'danger') {
+        this.sendDangerSMS(position)
+      }
+      if (level === 'vulnerable') {
+        this.sendVulnerableSMS(position)
+      }
+      this.toggle()
+    })
+  }
+
+  sendDangerSMS (position) {
+    if (dangerNumbers.length > 0) {
+      window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
       this.setState({
+        modalContent: {
+          heading: 'Danger alert sent!',
+          message: 'We\'ve just sent a text message to your list',
+          button: 'I feel safe now',
+          style: {
+            backgroundColor: '#e60000'
+          }
+        },
         userLocation: position
       })
-      console.log(this.state.userLocation)
-    })
-    this.toggle()
-
-    if (level === 'danger') {
-      if (dangerNumbers.length > 0) {
-        window.location = this.state.dangerContacts + (this.state.dangerMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
-        this.setState({
-          modalContent: {
-            heading: 'Danger alert sent!',
-            message: 'We\'ve just sent a text message to your list',
-            button: 'I feel safe now',
-            style: {
-              backgroundColor: '#e60000'
-            }
+    } else {
+      this.setState({
+        modalContent: {
+          heading: 'Not sent!',
+          message: 'You haven\'t selected anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
+          button: 'OK',
+          style: {
+            backgroundColor: '#e60000'
           }
-        })
-      } else {
-        this.setState({
-          modalContent: {
-            heading: 'Not sent!',
-            message: 'You haven\'t selected anyone to be contacted when you are in danger. You can update this in the "manage contacts" section.',
-            button: 'OK',
-            style: {
-              backgroundColor: '#e60000'
-            }
-          }
-        })
-      }
+        },
+        userLocation: position
+      })
     }
-    if (level === 'vulnerable') {
-      if (vulnerableNumbers > 0) {
-        window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
-        this.setState({
-          modalContent: {
-            heading: 'Unsafe alert sent!',
-            message: 'We\'ve just sent a text message to your list',
-            button: 'I feel safe now',
-            style: {
-              backgroundColor: '#14afb8'
-            }
+  }
+
+  sendVulnerableSMS (position) {
+    if (vulnerableNumbers.length > 0) {
+      window.location = this.state.vulnerableContacts + (this.state.vulnerableMessage + `http://www.google.com/maps/place/${this.state.userLocation.latitude},${this.state.userLocation.longitude}`)
+      this.setState({
+        modalContent: {
+          heading: 'Unsafe alert sent!',
+          message: 'We\'ve just sent a text message to your list',
+          button: 'I feel safe now',
+          style: {
+            backgroundColor: '#14afb8'
           }
-        })
-      } else {
-        this.setState({
-          modalContent: {
-            heading: 'Not sent!',
-            message: 'You haven\'t selected anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
-            button: 'OK',
-            style: {
-              backgroundColor: '#14afb8'
-            }
+        }
+      })
+    } else {
+      this.setState({
+        modalContent: {
+          heading: 'Not sent!',
+          message: 'You haven\'t selected anyone to be contacted when you are feeling unsafe. You can update this in the "manage contacts" section.',
+          button: 'OK',
+          style: {
+            backgroundColor: '#14afb8'
           }
-        })
-      }
+        }
+      })
     }
   }
 
@@ -138,6 +150,7 @@ class Dashboard extends Component {
         this.setState({
           vulnerableMessage: '&body=I am feeling unsafe. This is my location: ',
           dangerMessage: '&body=Please help, I am in danger. This is my location: ',
+          safeMessage: '&body=I am feeling safe now ',
           vulnerableContacts: 'sms:/open?addresses=' + vulnerableNumbers.toString(),
           dangerContacts: 'sms:/open?addresses=' + dangerNumbers.toString()
         })
@@ -167,11 +180,12 @@ class Dashboard extends Component {
           </UncontrolledAlert>
           }
         </div>
+        <div className='refresh-container'><Button onClick={() => { window.location.reload() }} className='refresh'>Refresh my location<img style={{height: '20px'}} alt='' src='refresh.png' /></Button></div>
         <div id='alerts' className='buttonContainer'>
-          <Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
-          <Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
+          <div className='danger-border'><Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button></div>
+          <div className='warning-border'><Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button></div>
         </div>
-        <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} />
+        <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} vulnerableContacts={this.state.vulnerableContacts} dangerContacts={this.state.dangerContacts} safeMessage={this.state.safeMessage} userLocation={this.state.userLocation} />
       </div>
     )
   }

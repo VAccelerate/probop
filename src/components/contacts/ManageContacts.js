@@ -18,7 +18,7 @@ class ManageContacts extends Component {
     if (localStorage.getItem(CONTACTS)) {
       contacts = JSON.parse(localStorage.getItem(CONTACTS))
     }
-    if (this.props.location.state) {
+    if (this.props.location) {
       contactAdded = this.props.location.state.added || false
       contactEdited = this.props.location.state.edited || false
       name = this.props.location.state.name || ''
@@ -31,6 +31,7 @@ class ManageContacts extends Component {
     }
     this.toggle = this.toggle.bind(this)
     this.getContacts = this.getContacts.bind(this)
+    this.endIntro = this.endIntro.bind(this)
   }
 
   toggle () {
@@ -38,6 +39,11 @@ class ManageContacts extends Component {
       contactAdded: false,
       contactEdited: false
     })
+  }
+
+  endIntro () {
+    localStorage.setItem('firstRun', 'false')
+    this.props.showMenu()
   }
 
   getContacts () {
@@ -98,9 +104,19 @@ class ManageContacts extends Component {
             )
           }
         </ListGroup>
-        <Link className='a-tag' to='/contacts/add-contact'>
+        { JSON.parse(localStorage.getItem('firstRun'))
+        ? <div>
+          <Link className='a-tag' to='/contacts/add-contact'>
+            <Button className='Button' block>Add Emergency Contact</Button>
+          </Link>
+          <Link className='a-tag' to='/'>
+            <Button className='Button' onClick={this.endIntro} block>Next</Button>
+          </Link>
+        </div>
+        : <Link className='a-tag' to='/contacts/add-contact'>
           <Button className='Button' block>Add Emergency Contact</Button>
         </Link>
+        }
       </div>
     )
   }

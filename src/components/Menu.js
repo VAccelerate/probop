@@ -62,11 +62,14 @@ class Menu extends React.Component {
               <NavItem className='help' >
                 <Link to='/helplines' onClick={() => this.setCurrentRoute('Helplines')}>Helplines</Link>
               </NavItem>
-              <NavItem className='how'>
+              <NavItem className='guide-icon'>
                 <Link to='/guide' onClick={() => this.setCurrentRoute('How To Use Guide')}>How To Use Guide</Link>
               </NavItem>
+              <NavItem className='faq'>
+                <Link to='/faq' onClick={() => this.setCurrentRoute('FAQ')}>FAQ</Link>
+              </NavItem>
               <NavItem className='contact'>
-                <Link className='drift-open-chat' to='/feedback' >Feedback</Link>
+                <Link className='drift-open-chat' to='/#' >Feedback</Link>
               </NavItem>
             </Nav>
           </Collapse>

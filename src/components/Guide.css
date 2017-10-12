@@ -1,6 +1,7 @@
 .guide {
-    padding-top: 40px;
+    padding-top: 20px;
     background-color: black;
+    height: 100vh;
 }
 
 .button {
@@ -10,3 +11,8 @@
     font-size: 6.0vw;
     margin-top: -30px;
 }
+
+.emptyDiv {
+    background-color: black;
+    height: 10vh;
+}   
