@@ -23,6 +23,9 @@ class Guide extends Component {
           <div>
             <img alt='' src='images/p4.png' />
           </div>
+          <div>
+            <img alt='' src='images/p5.png' />
+          </div>
         </Carousel>
         <Link to='/profile'>
           <Button className='button' block>Get Started</Button>
