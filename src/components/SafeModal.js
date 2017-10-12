@@ -10,9 +10,14 @@ import './SafeModal.css'
 
 const SafeModal = (props) => {
   const sendSafeSMS = () => {
-    if (props.content.heading === 'Danger alert sent!') {
-      window.location = props.dangerContacts + props.safeMessage
-    } else window.location = props.vulnerableContacts + props.safeMessage
+    let contacts = ''
+    navigator.geolocation.getCurrentPosition((position) => {
+      if (props.content.heading === 'Danger alert sent!') {
+        contacts = props.dangerContacts
+      } else contacts = props.vulnerableContacts
+
+      window.location = contacts + props.safeMessage + `http://www.google.com/maps/place/${position.coords.latitude},${position.coords.longitude}`
+    })
   }
 
   return (
