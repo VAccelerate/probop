@@ -1,5 +1,7 @@
 /* global localStorage */
 import React, { Component } from 'react'
+// eslint-disable-next-line
+import { withRouter } from 'react-router-dom'
 import {
   Col,
   Button,
@@ -64,6 +66,10 @@ class Profile extends Component {
     }
     localStorage.setItem(PROFILE, JSON.stringify(profile))
     this.toggle()
+
+    if (JSON.parse(localStorage.getItem('firstRun'))) {
+      this.props.history.push('/contacts')
+    }
   }
 
   toggle () {
@@ -164,12 +170,16 @@ class Profile extends Component {
             <Input type='text' className='address1' name='address2' id={PROFILE_OTHERADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_OTHERADRS2)} />
             <Input type='text' className='address1' name='city' id={PROFILE_OTHERCITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_OTHERCITY)} />
           </FormGroup>
-
-          <FormGroup check>
+          { JSON.parse(localStorage.getItem('firstRun'))
+          ? <FormGroup>
+            <Button type='submit' className='Button' block>Next</Button>
+          </FormGroup>
+          : <FormGroup check>
             <Col sm={{ size: 10, offset: 2 }}>
               <Button className='AddButton' block>Submit</Button>
             </Col>
           </FormGroup>
+          }
         </Form>
         <Modal isOpen={this.state.modal} toggle={this.toggle} autoFocus={false} backdrop='static' className='Modal'>
           <ModalBody>
