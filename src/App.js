@@ -6,6 +6,7 @@ import Profile from './components/Profile'
 import Helplines from './components/Helplines'
 import Contacts from './components/contacts/Contacts'
 import Guide from './components/Guide'
+import FAQ from './components/FAQ'
 import Menu from './components/Menu'
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path='/helplines' component={Helplines} />
           <Route path='/contacts' render={() => <Contacts showMenu={this.showMenu} />} />
           <Route path='/guide' component={Guide} />
+          <Route path='/faq' component={FAQ} />
         </Switch>
       </div>
     )

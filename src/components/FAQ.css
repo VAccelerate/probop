@@ -1,0 +1,19 @@
+.Container {
+  margin-left: 6.25%;
+  margin-right: 6.25%;
+  font-family: "HelveticaNeue", sans-serif;
+}
+
+h2 {
+  color: #00A9AF;
+  font-size: 5.0vw;
+  font-weight: bold;
+}
+
+li {
+  font-size: 4vw;
+}
+
+p {
+  font-size: 4vw;
+}
