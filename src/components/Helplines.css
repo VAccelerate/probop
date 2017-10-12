@@ -1,6 +1,6 @@
 .ListGroup {
   position: absolute;
-  padding-top: 60px;
+  margin-top: 50px;
 }
 
 .list-group-item-heading{
@@ -23,7 +23,6 @@ a {
 }
 
 .Sms {
-  padding-left: 10px;
-  padding-left: 7px;
+  padding-left: 5px;
   height: 40px;
 }
