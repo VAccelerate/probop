@@ -73,7 +73,7 @@ class AddContact extends Component {
 
   sendSMS (mobile) {
     let userAgent = navigator.userAgent || navigator.vendor || window.opera
-    let message = 'You have been added to my emergency contacts list. Look up the Sing Out app for more information'
+    let message = 'You have been added to my emergency contacts list. Go to https://bopsass.netlify.com/faq for more information'
     if (/android/i.test(userAgent)) {
       window.location = 'sms:' + mobile + '?body=' + message
     }
