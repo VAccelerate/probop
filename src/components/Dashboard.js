@@ -30,6 +30,7 @@ class Dashboard extends Component {
       dangerContacts: '',
       vulnerableMessage: '?body=I am feeling unsafe. This is my location: ',
       dangerMessage: '?body=Please help, I am in danger. This is my location: ',
+      safeMessage: '?body=I am feeling safe now ',
       userLocation: {
         latitude: 0,
         longitude: 0
@@ -138,6 +139,7 @@ class Dashboard extends Component {
         this.setState({
           vulnerableMessage: '&body=I am feeling unsafe. This is my location: ',
           dangerMessage: '&body=Please help, I am in danger. This is my location: ',
+          safeMessage: '&body=I am feeling safe now',
           vulnerableContacts: 'sms:/open?addresses=' + vulnerableNumbers.toString(),
           dangerContacts: 'sms:/open?addresses=' + dangerNumbers.toString()
         })
@@ -171,7 +173,7 @@ class Dashboard extends Component {
           <Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
           <Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
         </div>
-        <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} />
+        <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} vulnerableContacts={this.state.vulnerableContacts} dangerContacts={this.state.dangerContacts} safeMessage={this.state.safeMessage} />
       </div>
     )
   }
