@@ -8,6 +8,10 @@ import NoGps from './NoGps'
 class Home extends Component {
   constructor (props) {
     super(props)
+    window.drift.on('ready', function (api) {
+      // hide the widget when it first loads
+      api.widget.hide()
+    })
     let firstRun = true
     if (localStorage.getItem('firstRun')) {
       firstRun = JSON.parse(localStorage.getItem('firstRun'))
