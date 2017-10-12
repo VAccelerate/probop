@@ -84,3 +84,14 @@
   right: 22%;
   opacity: 0.6;
 }
+
+.warning:hover {
+  background-color: #00A0AF;
+  border-bottom: 5px solid #008895;
+}
+
+.danger:hover {
+  background-color: #de0000;
+  border-bottom: 5px solid #bb0000;
+}
+
