@@ -168,8 +168,8 @@ class Dashboard extends Component {
           }
         </div>
         <div id='alerts' className='buttonContainer'>
-          <Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button>
-          <Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button>
+          <div className='danger-border'><Button className='danger' type='button' onClick={(e) => this.handleClick(e, 'danger')} block>Help! I&#39;m in danger</Button></div>
+          <div className='warning-border'><Button className='warning' type='button' onClick={(e) => this.handleClick(e, 'vulnerable')} block>I feel unsafe</Button></div>
         </div>
         <SafeModal toggle={this.toggle} modal={this.state.modal} content={this.state.modalContent} />
       </div>
