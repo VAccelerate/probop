@@ -26,8 +26,7 @@ import {
   PROFILE_OTHERADRS2,
   PROFILE_OTHERCITY
 } from '../constants'
-import './contacts/AddContact.css'
-import './Profile'
+import './Profile.css'
 
 class Profile extends Component {
   constructor (props) {
@@ -95,9 +94,8 @@ class Profile extends Component {
           </FormGroup>
 
           <FormGroup tag='fieldset'>
-
+            <Label for='gender' className='genderText'>Gender</Label>
             <div className='radioGroup'>
-              <Label for='gender' className='Text'>Gender</Label>
               <div className='wrap'>
                 <FormGroup check>
                   <Label check>
@@ -107,16 +105,16 @@ class Profile extends Component {
                 </FormGroup>
                 <FormGroup check>
                   <Label check>
-                    <Input type='radio' name='gender' value='Female' />{' '}
-                    Female
+                    <Input type='radio' name='gender' value='Trans' />{' '}
+                    Trans
                   </Label>
                 </FormGroup>
               </div>
               <div className='wrap'>
                 <FormGroup check>
                   <Label check>
-                    <Input type='radio' name='gender' value='Trans' />{' '}
-                  Trans
+                    <Input type='radio' name='gender' value='Female' />{' '}
+                  Female
                 </Label>
                 </FormGroup>
                 <FormGroup check>

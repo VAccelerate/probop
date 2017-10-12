@@ -17,3 +17,64 @@
   font-size: 5.0vw;
 
 }
+
+.TextBlock{
+  margin-top: 5%;
+  margin-bottom: 8%;
+}
+
+.block{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 5.0vw;
+  margin-top: -5%;
+  margin-right:0%;
+  float: right;
+  padding-top: 5%;
+  text-align: left;
+  width: 80%;
+}
+
+.blockTwo{
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 5.0vw;
+  margin-top: -3%;
+  margin-right:0%;
+  float: right;
+  padding-top: 2%;
+  text-align: left;
+  width: 75%;
+}
+
+.radioGroup {
+  float: left;
+  text-align: right;
+  vertical-align: middle;
+  margin-top:-3%;
+  margin-right: 30%;
+
+
+}
+
+.radioGroup .wrap {
+  display: inline-block;
+  text-align: center;
+}
+
+.genderText {
+  color: #333333;
+  font-size: 5.0vw;
+  background-color: white;
+  margin-top: 0%;
+  margin-bottom: 8%;
+  float: left;
+}
+
+.radioGroup [type="radio"] {
+  display: block;
+  margin: 0.5em auto;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
