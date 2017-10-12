@@ -4,12 +4,14 @@ import ManageContacts from './ManageContacts'
 import AddContact from './AddContact'
 import EditContact from './EditContact'
 
-const Contacts = () => (
-  <Switch>
-    <Route exact path='/contacts' component={ManageContacts} />
-    <Route path='/contacts/add-contact' component={AddContact} />
-    <Route path='/contacts/edit-contact' component={EditContact} />
-  </Switch>
+const Contacts = (props) => (
+  <div>
+    <Switch>
+      <Route exact path='/contacts' render={() => <ManageContacts showMenu={props.showMenu} />} />
+      <Route path='/contacts/add-contact' component={AddContact} />
+      <Route path='/contacts/edit-contact' component={EditContact} />
+    </Switch>
+    {console.log(props)}</div>
 )
 
 export default Contacts
