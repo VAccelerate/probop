@@ -142,7 +142,8 @@ class Profile extends Component {
           <FormGroup>
             <div className='TextBlock'>
               <Label for='ethnicity' className='Text'>Ethnicity</Label>
-              <Input type='select' className='blockTwo' name='ethnicity' id={PROFILE_ETHNICITY} defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
+              <Input type='select' className='blockTwo' name='ethnicity' id={PROFILE_ETHNICITY} placeholder='Select one' defaultValue={this.getProfileData(PROFILE_ETHNICITY)} >
+                <option>Select one</option>
                 <option>Asian</option>
                 <option>M&#257;ori</option>
                 <option>Pakeha/NZ European</option>
@@ -152,16 +153,16 @@ class Profile extends Component {
             </div>
           </FormGroup>
           <FormGroup>
-            <Label for='Address' className='Text'>Address</Label>
-            <Input type='text' className='Input' name='address1' id={PROFILE_ADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_ADRS1)} />
-            <Input type='text' className='Input' name='address2' id={PROFILE_ADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_ADRS2)} />
-            <Input type='text' className='Input' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_CITY)} />
+            <Label for='Address' className='Text'>Home address</Label>
+            <Input type='text' className='address1' name='address1' id={PROFILE_ADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_ADRS1)} />
+            <Input type='text' className='address1' name='address2' id={PROFILE_ADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_ADRS2)} />
+            <Input type='text' className='address1' name='city' id={PROFILE_CITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_CITY)} />
           </FormGroup>
           <FormGroup>
-            <Label for='OtherAddress' className='Text'>Other most frequent address</Label>
-            <Input type='text' className='Input' name='address1' id={PROFILE_OTHERADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_OTHERADRS1)} />
-            <Input type='text' className='Input' name='address2' id={PROFILE_OTHERADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_OTHERADRS2)} />
-            <Input type='text' className='Input' name='city' id={PROFILE_OTHERCITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_OTHERCITY)} />
+            <Label for='OtherAddress' className='Text'>Other address (e.g.friends house)</Label>
+            <Input type='text' className='address1' name='address1' id={PROFILE_OTHERADRS1} placeholder='Address Line 1' defaultValue={this.getProfileData(PROFILE_OTHERADRS1)} />
+            <Input type='text' className='address1' name='address2' id={PROFILE_OTHERADRS2} placeholder='Address Line 2' defaultValue={this.getProfileData(PROFILE_OTHERADRS2)} />
+            <Input type='text' className='address1' name='city' id={PROFILE_OTHERCITY} placeholder='City' defaultValue={this.getProfileData(PROFILE_OTHERCITY)} />
           </FormGroup>
 
           <FormGroup check>

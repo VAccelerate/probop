@@ -5,9 +5,9 @@
   font-family: "HelveticaNeue", sans-serif;
 }
 
-.text{
+.Text{
   color: #333333;
-  font-size: 5.0vw;
+  font-size: 2.0vw;
   background-color: white;
 }
 
@@ -45,16 +45,17 @@
   padding-top: 2%;
   text-align: left;
   width: 75%;
+  height: 50px !important;
+  position:relative;
 }
 
 .radioGroup {
   float: left;
   text-align: right;
   vertical-align: middle;
-  margin-top:-3%;
+  margin-top:0;
   margin-right: 30%;
-
-
+  margin-bottom: 5%;
 }
 
 .radioGroup .wrap {
@@ -66,15 +67,21 @@
   color: #333333;
   font-size: 5.0vw;
   background-color: white;
-  margin-top: 0%;
+  margin-top: 4%;
   margin-bottom: 8%;
   float: left;
 }
-
+/*design*/
 .radioGroup [type="radio"] {
   display: block;
   margin: 0.5em auto;
-  width: 30px;
-  height: 30px;
+  width: 2.5em;
+  height: 2.5em;
   text-align: center;
+}
+
+.address1 {
+  margin-top: 0%;
+  margin-bottom: 4%;
+  height: 50px !important;
 }
