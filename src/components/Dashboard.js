@@ -15,6 +15,10 @@ let vulnerableNumbers = []
 class Dashboard extends Component {
   constructor (props) {
     super(props)
+    window.drift.on('ready', function (api) {
+      // hide the widget when it first loads
+      api.widget.hide()
+    })
     this.state = {
       contactsAlert: false,
       modal: false,

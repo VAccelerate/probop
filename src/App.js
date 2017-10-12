@@ -1,3 +1,4 @@
+/* global localStorage */
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
@@ -12,8 +13,16 @@ import Menu from './components/Menu'
 class App extends Component {
   constructor (props) {
     super(props)
+    window.drift.on('ready', function (api) {
+      // hide the widget when it first loads
+      api.widget.hide()
+    })
+    let showMenu = false
+    if (JSON.parse(localStorage.getItem('firstRun')) === false) {
+      showMenu = true
+    }
     this.state = {
-      showMenu: false
+      showMenu
     }
     this.showMenu = this.showMenu.bind(this)
   }
