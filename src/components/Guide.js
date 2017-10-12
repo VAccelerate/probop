@@ -1,3 +1,4 @@
+/* global localStorage */
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
@@ -28,9 +29,12 @@ class Guide extends Component {
             <img alt='' src='p4.png' />
           </div>
         </Carousel>
-        <Link to='/profile'>
+        { JSON.parse(localStorage.getItem('firstRun'))
+        ? <Link to='/profile'>
           <Button className='button' block>Get Started</Button>
         </Link>
+        : <div className='emptyDiv' />
+        }
       </div>
     )
   }
